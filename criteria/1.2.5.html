@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.2.5 Audio Description (Prerecorded).">
+  <title>1.2.5 Audio Description (Prerecorded) — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.2 Time-based Media</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.2.5 Audio Description (Prerecorded)</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-aa">Level AA</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.2 Time-based Media</span>
+            </div>
+            <h1>1.2.5 Audio Description (Prerecorded)</h1>
+            <p class="criterion-page-description">
+              Audio description must be provided for all prerecorded video content in synchronised
+              media. Unlike SC 1.2.3 (Level A), a text media alternative is no longer sufficient —
+              an actual audio description track is required at this Level AA threshold.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.2.5 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.2.5</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">AA (Standard)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Audio description (AD) provides a spoken narration of visual information that is not
+              already conveyed through the existing audio track. It is inserted during natural pauses
+              in dialogue to describe actions, scene changes, on-screen text, and other meaningful
+              visual content.
+            </p>
+            <p>
+              SC 1.2.5 is the Level AA version of SC 1.2.3. The key difference:
+            </p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.4rem;">
+              <li><strong>1.2.3 (Level A):</strong> Audio description OR text media alternative — either option satisfies</li>
+              <li><strong>1.2.5 (Level AA):</strong> Audio description is required — text alternative alone is no longer sufficient</li>
+            </ul>
+            <p>
+              Audio description benefits not just blind users but also people with cognitive disabilities
+              who benefit from reinforced verbal descriptions of what they are watching.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="distinctions-heading">
+          <h2 id="distinctions-heading">Key Distinctions</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Standard vs. Extended Audio Description</div>
+              <div class="exception-item__desc">
+                Standard AD inserts narration during existing pauses. Extended AD (SC 1.2.7, AAA)
+                pauses the video to allow longer descriptions when there is insufficient pause time.
+                For complex visual content, consider extended AD even if it is not strictly required.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Audio Already Describes the Visual — Exception</div>
+              <div class="exception-item__desc">
+                If the existing dialogue and sound fully convey all visual information, no separate
+                audio description is required. The exception applies when the audio track is entirely
+                self-describing — "as you can see" does not qualify.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Browser Support for <code>kind="descriptions"</code></div>
+              <div class="exception-item__desc">
+                Most browsers render <code>&lt;track kind="descriptions"&gt;</code> as text, not spoken
+                audio. Screen reader users read the cue text. An accessible media player (AblePlayer,
+                MediaElement.js) is needed to speak the descriptions as audio to all users.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: No AD, text alternative only -->
+            <article class="example" id="ex-text-alt-not-enough" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">Text Alternative Provided — But Level AA Requires Audio Description</h3>
+                  <p class="example__scenario">A company website provides a text media alternative alongside their product video — this satisfies 1.2.3 (Level A). However, the site targets Level AA compliance. At Level AA (1.2.5), a text alternative alone is insufficient — an audio description track must also be provided.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Fails 1.2.5</span>
+                  <span class="tag tag--special">Passes 1.2.3 only</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Level A only — Fails at Level AA</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAILS 1.2.5</span></div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"product.mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-comment">&lt;!-- No &lt;track kind="descriptions"&gt;
+       Text alt alone passes 1.2.3 (A)
+       but fails 1.2.5 (AA) --&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"product-media-alt.html"</span><span class="tok-tag">&gt;</span>
+  Full media alternative
+<span class="tok-tag">&lt;/a&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> The text alternative approach meets Level A (1.2.3) but not Level AA (1.2.5). If your target conformance is AA — as required for most legal and procurement standards — you must add an audio description track.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Audio Description Track Added — Satisfies 1.2.5</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS 1.2.5</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H96: audio description track
+     satisfies 1.2.5 (AA) --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"product.mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"descriptions"</span>
+    <span class="tok-hi">src</span>=<span class="tok-val">"product-ad.vtt"</span>
+    <span class="tok-hi">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-hi">label</span>=<span class="tok-val">"Audio description"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- Text alt kept as supplement --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"product-media-alt.html"</span><span class="tok-tag">&gt;</span>
+  Full media alternative
+<span class="tok-tag">&lt;/a&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Add <code>&lt;track kind="descriptions"&gt;</code> with a WebVTT file containing timed audio description cues. Keep the text alternative as a supplement — it helps users who prefer reading.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: AD with WebVTT sample -->
+            <article class="example" id="ex-ad-vtt" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">Writing Effective Audio Description — WebVTT Examples</h3>
+                  <p class="example__scenario">A training video shows a nurse performing a hand-washing procedure. The camera shows detailed hand movements that are not described by the voiceover. The audio description must fill these gaps precisely.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G78</span>
+                  <span class="tag tag--technique">Technique: H96</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Audio Description — Too Brief</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT</span><span class="code-status code-status--fail">INSUFFICIENT</span></div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:00:03.000 --> 00:00:05.000</span>
+<span class="tok-val">Nurse washes hands.</span>
+
+<span class="tok-comment">00:00:14.000 --> 00:00:16.000</span>
+<span class="tok-val">Uses soap.</span>
+
+<span class="tok-comment">&lt;!-- Problems:
+  - No detail about technique
+  - Doesn't describe which steps
+  - Missing timing (how long each step)
+  - Fails to convey the clinical
+    procedure being demonstrated --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> The description is technically present but conveys none of the specific information shown — the six-step WHO hand-washing technique, the circular motions, interlocking fingers, etc. It is equivalent to saying "slide shows data" for a chart.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Effective Audio Description — Specific and Timed</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:00:02.000 --> 00:00:06.000</span>
+<span class="tok-val">The nurse applies one pump of soap</span>
+<span class="tok-val">to dry hands, then rubs palms together</span>
+<span class="tok-val">in circular motions for 5 seconds.</span>
+
+<span class="tok-comment">00:00:12.000 --> 00:00:17.000</span>
+<span class="tok-val">Interlacing fingers, they scrub between</span>
+<span class="tok-val">each finger on both hands for 5 seconds.</span>
+
+<span class="tok-comment">00:00:22.000 --> 00:00:27.000</span>
+<span class="tok-val">Cupping fingers, they scrub the backs</span>
+<span class="tok-val">of both hands. The on-screen timer</span>
+<span class="tok-val">reaches 20 seconds total.</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind trainee hears</span><span class="sr-output__text">"The nurse applies one pump of soap to dry hands, then rubs palms together in circular motions for 5 seconds." — precise technique is conveyed</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Good AD:</strong> Describe specific actions, body positions, visual text (like timers), and critical details. Use present tense. Be concise but complete. The description should allow someone to perform the task based solely on what they hear.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: AD for on-screen text -->
+            <article class="example" id="ex-onscreen-text" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">On-screen Text — Titles, Labels, and Data Must Be Described</h3>
+                  <p class="example__scenario">A corporate explainer video displays on-screen text: product names, statistics, and a callout quote. The voiceover does not read these out — it speaks generally about the topic while text appears on screen.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Common failure</span>
+                  <span class="tag tag--technique">Technique: G78</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ On-screen Text Not Described</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Video frame — on-screen text visible</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:12px;">
+                        <div style="text-align:center;color:#fff;">
+                          <div style="font-size:0.8rem;font-weight:700;color:#38bdf8;margin-bottom:6px;">Revenue grew 47%</div>
+                          <div style="font-size:0.55rem;color:#94a3b8;">year-on-year in Q3 2024</div>
+                          <div style="margin-top:10px;border-top:1px solid #334155;padding-top:8px;font-size:0.5rem;color:#64748b;font-style:italic;">"The best quarter in company history" — CEO</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ "Revenue grew 47%" visible but NOT in audio track</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT — Missing</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- This moment in the video shows:
+  "Revenue grew 47%"
+  "year-on-year in Q3 2024"
+  "The best quarter in company
+   history" — CEO
+
+The voiceover says: "We've had a
+fantastic year." Nothing more.
+
+No AD cue covers this timestamp —
+all on-screen text is lost. --&gt;</span></code></pre>
+                  </div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ On-screen Text Read in AD Cue</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Same video frame — text now in AD track</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:12px;">
+                        <div style="text-align:center;color:#fff;">
+                          <div style="font-size:0.8rem;font-weight:700;color:#38bdf8;margin-bottom:6px;">Revenue grew 47%</div>
+                          <div style="font-size:0.55rem;color:#94a3b8;">year-on-year in Q3 2024</div>
+                          <div style="margin-top:10px;border-top:1px solid #334155;padding-top:8px;font-size:0.5rem;color:#64748b;font-style:italic;">"The best quarter in company history" — CEO</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ AD cue reads all on-screen text aloud</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:00:18.000 --> 00:00:23.000</span>
+<span class="tok-val">On screen: "Revenue grew 47%</span>
+<span class="tok-val">year-on-year in Q3 2024."</span>
+<span class="tok-val">Below that, a pull quote reads:</span>
+<span class="tok-val">"The best quarter in company</span>
+<span class="tok-val">history" — attributed to CEO.</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"On screen: Revenue grew 47% year-on-year in Q3 2024. Below that, a pull quote reads: The best quarter in company history — attributed to CEO."</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Rule:</strong> Every piece of on-screen text that is not also spoken in the audio track must appear in the audio description. This includes titles, statistics, captions, subtitles, and graphic text.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: AD for scene changes -->
+            <article class="example" id="ex-scene-changes" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Scene Changes and Setting Descriptions</h3>
+                  <p class="example__scenario">A documentary film cuts between locations — a hospital ward, an outdoor market, and a government building. The audio track consists only of interview dialogue. Without scene descriptions, blind viewers have no sense of where each interview takes place, which is important context.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G78</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ No Scene Setting</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT — Missing</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">WEBVTT
+
+&lt;!-- The film cuts to a hospital ward.
+     A nurse is interviewed.
+
+     No AD cue describes the setting.
+     The viewer only hears:
+     "We see about 30 patients a day
+     in our ward." They cannot tell
+     where the speaker is or who
+     is speaking. --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> Without a scene-setting description, blind viewers cannot understand the context — the hospital environment, the nurse's uniform, and the ward backdrop all convey important meaning that is lost.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Scene and Speaker Described</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">WebVTT</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:04:02.000 --> 00:04:07.000</span>
+<span class="tok-val">Cut to: a busy hospital ward. A nurse</span>
+<span class="tok-val">in blue scrubs stands beside a row</span>
+<span class="tok-val">of occupied beds. A caption reads</span>
+<span class="tok-val">"Sister Amara Osei, Ward Manager."</span>
+
+<span class="tok-comment">00:04:08.000 --> 00:04:12.000</span>
+<span class="tok-comment">[Nurse speaks — AD pauses]</span>
+
+<span class="tok-comment">00:07:14.000 --> 00:07:18.000</span>
+<span class="tok-val">Cut to: an outdoor street market.</span>
+<span class="tok-val">Colourful stalls line both sides of</span>
+<span class="tok-val">a narrow alley. A vendor gestures</span>
+<span class="tok-val">toward shelves of produce.</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind viewer hears</span><span class="sr-output__text">"Cut to: a busy hospital ward. A nurse in blue scrubs stands beside a row of occupied beds. A caption reads 'Sister Amara Osei, Ward Manager.'" — setting and speaker ID are clear</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Good AD:</strong> Describe scene transitions, settings, key characters (including what they look like and on-screen name captions), and any meaningful visual activity during pauses in dialogue. Use concise, objective language.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.2.4.html" class="criterion-nav__link">← 1.2.4 Captions (Live)</a>
+            <a href="1.3.1.html" class="criterion-nav__link">Next: 1.3.1 Info and Relationships →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded" rel="noopener noreferrer" target="_blank">Understanding 1.2.5</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#audio-description-prerecorded" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

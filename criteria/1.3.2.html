@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.3.2 Meaningful Sequence.">
+  <title>1.3.2 Meaningful Sequence — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.3 Adaptable</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.3.2 Meaningful Sequence</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.3 Adaptable</span>
+            </div>
+            <h1>1.3.2 Meaningful Sequence</h1>
+            <p class="criterion-page-description">
+              When the sequence in which content is presented affects its meaning, the correct reading
+              order can be programmatically determined. The DOM order — not the visual layout — is
+              what assistive technologies and keyboard users experience.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.3.2 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.3.2</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">A (Minimum)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Sighted users perceive layout visually — a multi-column layout reads left column first,
+              then right. CSS can reorder content visually without changing the DOM order. Screen readers
+              and keyboard navigation follow the <strong>DOM order</strong>, not the visual layout.
+            </p>
+            <p>
+              This criterion requires that when reading order affects meaning — a numbered list,
+              a question followed by an answer, a form with instructions before fields — the DOM
+              order must match the correct logical reading order. Using CSS to change visual position
+              without changing DOM order creates a mismatch.
+            </p>
+            <p>
+              This interacts closely with SC 2.4.3 (Focus Order) — both require that the logical
+              sequence be correct. 1.3.2 focuses on reading/perception; 2.4.3 focuses on focus/interaction.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: CSS positioning creates wrong reading order -->
+            <article class="example" id="ex-css-position" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">CSS <code>position: absolute</code> Reverses Reading Order</h3>
+                  <p class="example__scenario">A two-column layout places a sidebar on the left visually, but the DOM has the main content first and the sidebar second. CSS uses absolute positioning to move the sidebar into the left column. Screen readers follow the DOM and announce main content before sidebar — matching visual intent. But when the same technique reverses intended reading order, it fails.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F32</span>
+                  <span class="tag tag--technique">Technique: C27</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Visual layout (left to right)</span>
+                    <div aria-hidden="true" style="background:#0f172a;border-radius:8px;padding:8px;display:flex;gap:6px;max-width:340px;">
+                      <div style="width:35%;background:#1e293b;border-radius:6px;padding:8px;font-size:0.6rem;color:#e2e8f0;">
+                        <p style="color:#6ee7b7;font-weight:700;margin:0 0 4px;">Step 1</p>
+                        <p style="margin:0;color:#94a3b8;">Read the instructions first</p>
+                      </div>
+                      <div style="flex:1;background:#1e293b;border-radius:6px;padding:8px;font-size:0.6rem;color:#e2e8f0;">
+                        <p style="color:#f59e0b;font-weight:700;margin:0 0 4px;">Step 2</p>
+                        <p style="margin:0;color:#94a3b8;">Complete the form</p>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#94a3b8;margin-top:4px;font-style:italic;">Visual: Step 1 → Step 2 (correct)</p>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:2px;font-style:italic;">✗ DOM order: Step 2 → Step 1 (wrong)</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML + CSS</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- DOM order: Step 2 first,
+     then Step 1 — wrong! --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">style</span>=<span class="tok-val">"position:relative"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-hi">&lt;div</span> <span class="tok-attr">style</span>=<span class="tok-val">"position:absolute;
+    left:200px"</span><span class="tok-hi">&gt;</span>
+    Step 2: Complete the form
+  <span class="tok-hi">&lt;/div&gt;</span>
+  <span class="tok-hi">&lt;div</span> <span class="tok-attr">style</span>=<span class="tok-val">"position:absolute;
+    left:0"</span><span class="tok-hi">&gt;</span>
+    Step 1: Read the instructions
+  <span class="tok-hi">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span>
+
+<span class="tok-comment">&lt;!-- F32: visual order (1→2) differs
+     from DOM order (2→1) --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Step 2: Complete the form. Step 1: Read the instructions." — DOM order is wrong; the steps are heard in reverse</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F32):</strong> CSS absolute positioning changes the visual position without changing the DOM order. Screen readers read the DOM, so the logical sequence is broken.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML + CSS</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- C27: DOM order matches
+     visual reading order.
+     Use CSS flex/grid for layout,
+     keep source order logical. --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">style</span>=<span class="tok-val">"display:flex;gap:1rem"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-hi">&lt;div&gt;</span>
+    Step 1: Read the instructions
+  <span class="tok-hi">&lt;/div&gt;</span>
+  <span class="tok-hi">&lt;div&gt;</span>
+    Step 2: Complete the form
+  <span class="tok-hi">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span>
+
+<span class="tok-comment">&lt;!-- DOM order: 1 → 2 (correct)
+     Visual order: 1 → 2 (matches)
+     No mismatch. --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Step 1: Read the instructions. Step 2: Complete the form." — correct logical order</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (C27):</strong> Ensure the DOM source order matches the correct logical reading order. Use CSS Flexbox or Grid to control visual layout while keeping source in the right order. Avoid <code>position: absolute</code> for content ordering.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: CSS order property -->
+            <article class="example" id="ex-flex-order" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">CSS <code>order</code> Property Creates Reading Order Mismatch</h3>
+                  <p class="example__scenario">A card component places an image before the heading in the DOM, but uses CSS <code>order</code> in a Flexbox layout to display the heading first visually. This is visually correct but creates a mismatch for screen readers and keyboard users.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F1</span>
+                  <span class="tag tag--technique">Technique: C27</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML + CSS</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- DOM: image first, heading second
+     Visual: heading first, image second
+     F1: CSS order overrides DOM order --&gt;</span>
+<span class="tok-tag">&lt;article</span> <span class="tok-attr">style</span>=<span class="tok-val">"display:flex;
+  flex-direction:column"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-hi">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"photo.jpg"</span>
+       <span class="tok-attr">alt</span>=<span class="tok-val">"Product photo"</span>
+       <span class="tok-hi">style</span>=<span class="tok-val">"order:2"</span><span class="tok-hi">&gt;</span>
+  <span class="tok-hi">&lt;h3</span> <span class="tok-attr">style</span>=<span class="tok-val">"order:1"</span><span class="tok-hi">&gt;</span>
+    Product Name
+  <span class="tok-hi">&lt;/h3&gt;</span>
+  <span class="tok-hi">&lt;p</span> <span class="tok-attr">style</span>=<span class="tok-val">"order:3"</span><span class="tok-hi">&gt;</span>Description<span class="tok-hi">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/article&gt;</span>
+
+<span class="tok-comment">&lt;!-- Screen reader: image → heading → p
+     Visual: heading → image → p --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Image: Product photo. Product Name, heading level 3. Description." — image announced before heading creates confusing context</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F1):</strong> CSS <code>order</code> visually resequences content but does not change DOM order. Screen reader and keyboard focus order follow the DOM, creating a disconnect from what sighted users experience.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- C27: DOM order matches
+     the correct reading order.
+     No CSS order overrides needed. --&gt;</span>
+<span class="tok-tag">&lt;article&gt;</span>
+  <span class="tok-hi">&lt;h3&gt;</span>Product Name<span class="tok-hi">&lt;/h3&gt;</span>
+  <span class="tok-hi">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"photo.jpg"</span>
+       <span class="tok-attr">alt</span>=<span class="tok-val">"Product photo"</span><span class="tok-hi">&gt;</span>
+  <span class="tok-hi">&lt;p&gt;</span>Description<span class="tok-hi">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/article&gt;</span>
+
+<span class="tok-comment">/* CSS layout — no order overrides */
+article {
+  display: flex;
+  flex-direction: column;
+}</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Product Name, heading level 3. Image: Product photo. Description." — matches the visual order and logical reading sequence</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (C27):</strong> Write the DOM in the correct logical order — heading, then image, then description — and use CSS to control layout without changing the sequence. Avoid <code>order</code>, <code>float</code>, or <code>position</code> to swap the reading sequence.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Table used for layout -->
+            <article class="example" id="ex-layout-table" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Layout Table Creates Wrong Reading Order</h3>
+                  <p class="example__scenario">An older page uses an HTML table for two-column layout. The left column contains a navigation sidebar. The right column contains the main article. In the DOM, the navigation cells come before the article cells — but visually users expect article content first.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F33</span>
+                  <span class="tag tag--technique">Technique: C27</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F33: layout table creates wrong
+     linearised reading order --&gt;</span>
+<span class="tok-tag">&lt;table&gt;</span>
+  <span class="tok-tag">&lt;tr&gt;</span>
+    <span class="tok-comment">&lt;!-- DOM reads nav BEFORE article --&gt;</span>
+    <span class="tok-hi">&lt;td&gt;</span>
+      <span class="tok-tag">&lt;nav&gt;</span>
+        <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"#"</span><span class="tok-tag">&gt;</span>Section 1<span class="tok-tag">&lt;/a&gt;</span>
+        <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"#"</span><span class="tok-tag">&gt;</span>Section 2<span class="tok-tag">&lt;/a&gt;</span>
+      <span class="tok-tag">&lt;/nav&gt;</span>
+    <span class="tok-hi">&lt;/td&gt;</span>
+    <span class="tok-hi">&lt;td&gt;</span>
+      <span class="tok-tag">&lt;article&gt;</span>
+        <span class="tok-tag">&lt;h1&gt;</span>Main article heading<span class="tok-tag">&lt;/h1&gt;</span>
+        <span class="tok-tag">&lt;p&gt;</span>Article content…<span class="tok-tag">&lt;/p&gt;</span>
+      <span class="tok-tag">&lt;/article&gt;</span>
+    <span class="tok-hi">&lt;/td&gt;</span>
+  <span class="tok-tag">&lt;/tr&gt;</span>
+<span class="tok-tag">&lt;/table&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Navigation, Section 1 link. Section 2 link. Main article heading, heading level 1. Article content…" — nav before main content disrupts reading</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F33):</strong> When a layout table is linearised (as screen readers do), the cell contents are read in DOM order — left cell, then right cell — regardless of which column contains the main content.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML + CSS</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- C27: semantic layout with CSS.
+     Main content first in DOM,
+     sidebar repositioned with CSS. --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"page-layout"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-hi">&lt;main&gt;</span>
+    <span class="tok-tag">&lt;h1&gt;</span>Main article heading<span class="tok-tag">&lt;/h1&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span>Article content…<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-hi">&lt;/main&gt;</span>
+  <span class="tok-hi">&lt;nav</span> <span class="tok-attr">aria-label</span>=<span class="tok-val">"Section navigation"</span><span class="tok-hi">&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"#"</span><span class="tok-tag">&gt;</span>Section 1<span class="tok-tag">&lt;/a&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"#"</span><span class="tok-tag">&gt;</span>Section 2<span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-hi">&lt;/nav&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span>
+
+<span class="tok-comment">/* CSS: nav appears on left visually */
+.page-layout { display: flex; }
+nav { order: -1; } /* visual only */</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"Main article heading, heading level 1. Article content…" then "Section navigation: Section 1 link. Section 2 link." — main content encountered first</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Replace layout tables with CSS layout (Flexbox, Grid). Put main content before navigation in the DOM. Use <code>order: -1</code> in CSS to visually move the nav to the left without changing the DOM reading order.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: CSS pseudo-elements with meaningful content -->
+            <article class="example" id="ex-pseudo-content" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Meaningful Content in CSS <code>::before</code> / <code>::after</code></h3>
+                  <p class="example__scenario">A developer uses CSS pseudo-elements to insert meaningful text content — for example, adding a "Required" label or numbering steps with <code>counter</code>. This content exists only in CSS and is typically not exposed to screen readers.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F87</span>
+                  <span class="tag tag--technique">Technique: C22</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">CSS</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">/* F87: meaningful content in CSS
+   ::before — not in DOM, not read
+   by most screen readers */</span>
+
+<span class="tok-hi">.step::before</span> {
+  <span class="tok-attr">content</span>: <span class="tok-val">"Step " counter(step) ": "</span>;
+  <span class="tok-attr">counter-increment</span>: <span class="tok-val">step</span>;
+  <span class="tok-attr">font-weight</span>: <span class="tok-val">bold</span>;
+}
+
+<span class="tok-hi">.required-field::after</span> {
+  <span class="tok-attr">content</span>: <span class="tok-val">" (Required)"</span>;
+  <span class="tok-attr">color</span>: <span class="tok-val">red</span>;
+}
+
+<span class="tok-comment">/* Screen reader support for
+   CSS-generated content is
+   inconsistent — never rely on it
+   for meaningful information */</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader may announce</span><span class="sr-output__text">"Enable notifications" (without step number or required marker) — CSS-generated content is not reliably exposed by assistive technology</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F87):</strong> CSS <code>::before</code> and <code>::after</code> content is not in the DOM. Screen reader support for generated content is inconsistent — some read it, some do not. Never rely on it for meaningful text.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- C22: meaningful text in the DOM.
+     CSS for decoration only. --&gt;</span>
+<span class="tok-tag">&lt;ol&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"notifications"</span><span class="tok-tag">&gt;</span>
+      Enable notifications
+      <span class="tok-hi">&lt;span class="req-text"&gt;</span>
+        (required)
+      <span class="tok-hi">&lt;/span&gt;</span>
+    <span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span>
+      <span class="tok-attr">id</span>=<span class="tok-val">"notifications"</span>
+      <span class="tok-attr">type</span>=<span class="tok-val">"checkbox"</span>
+      <span class="tok-attr">required</span>
+    <span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/li&gt;</span>
+<span class="tok-tag">&lt;/ol&gt;</span>
+
+<span class="tok-comment">/* CSS: style but not generate
+   meaningful text */
+.req-text { color: red; }</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"List, 1 item. Enable notifications (required), checkbox, required, unchecked." — step sequence from &lt;ol&gt;, required from both text and attribute</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Put meaningful text — step numbers, required indicators, state labels — in the HTML DOM. Use <code>&lt;ol&gt;</code> for numbered sequences. CSS pseudo-elements should only add decorative content (icons, bullets, borders) that carries no meaning.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.3.1.html" class="criterion-nav__link">← 1.3.1 Info and Relationships</a>
+            <a href="1.3.3.html" class="criterion-nav__link">Next: 1.3.3 Sensory Characteristics →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence" rel="noopener noreferrer" target="_blank">Understanding 1.3.2</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#meaningful-sequence" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

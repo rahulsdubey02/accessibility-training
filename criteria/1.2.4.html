@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.2.4 Captions (Live).">
+  <title>1.2.4 Captions (Live) — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.2 Time-based Media</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.2.4 Captions (Live)</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-aa">Level AA</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.2 Time-based Media</span>
+            </div>
+            <h1>1.2.4 Captions (Live)</h1>
+            <p class="criterion-page-description">
+              Captions must be provided for all live audio content in synchronised media — webinars,
+              live streams, broadcast events, and other real-time video with audio. The captions must
+              be synchronised and provided in real time.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/captions-live"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.2.4 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.2.4</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">AA (Standard)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Live captions allow deaf and hard-of-hearing users to participate in real-time events
+              on equal terms. Unlike prerecorded content (SC 1.2.2), live captions cannot be prepared
+              in advance and must be produced in real time. Two main approaches exist:
+            </p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+              <li><strong>CART (Communication Access Realtime Translation)</strong> — a trained human stenographer types at 200+ wpm using a specialised steno keyboard. Gold-standard accuracy (~98%); includes speaker IDs and sound effects. Most expensive.</li>
+              <li><strong>ASR (Automatic Speech Recognition)</strong> — real-time machine captioning (Google Meet, Teams, Zoom auto-captions). Faster to deploy and free/low cost, but significantly lower accuracy — especially for technical terms and accents. WCAG accepts ASR as a live captioning method, though CART is strongly preferred.</li>
+            </ul>
+            <p>
+              Post-event captions added after the stream ends do <strong>not</strong> satisfy this
+              criterion — they are prerecorded captions (SC 1.2.2) for what is now a recording.
+              Live captions must be available during the live event.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="distinctions-heading">
+          <h2 id="distinctions-heading">Key Distinctions</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Live Captions Have Inherent Latency</div>
+              <div class="exception-item__desc">
+                Real-time captions always have a short delay — CART typically 1–3 seconds, ASR up to
+                5+ seconds. This is accepted by WCAG. However, captions added only as a post-event
+                archive are not acceptable as live captions.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Applies to Live Synchronised Media Only</div>
+              <div class="exception-item__desc">
+                This criterion covers live video with audio. A live audio-only stream is covered by
+                SC 1.2.9 (AAA). A live text chat or live transcript alongside audio does not constitute
+                "synchronised media" and is a different kind of accessible alternative.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Accuracy Expectations Are Lower for Live</div>
+              <div class="exception-item__desc">
+                WCAG acknowledges that live captions are harder to produce accurately than prerecorded
+                ones. The requirement is for "real-time captions" — not perfect captions. However,
+                accuracy should still be as high as reasonably achievable.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: No live captions on webinar -->
+            <article class="example" id="ex-no-live-captions" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">Live Webinar with No Captions</h3>
+                  <p class="example__scenario">An organisation hosts a mandatory all-hands meeting via live stream. No captions are provided during the event. A deaf employee attending cannot access any of the spoken content. Post-event captions are promised "later today" — this does not satisfy the criterion.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F75</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview" aria-label="Live stream without captions">
+                    <span class="preview-label">Live stream player — no captions</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <div style="position:absolute;top:8px;left:10px;display:flex;align-items:center;gap:5px;">
+                          <div style="width:7px;height:7px;border-radius:50%;background:#ef4444;"></div>
+                          <span style="color:#fff;font-size:0.55rem;font-weight:700;letter-spacing:0.04em;">LIVE</span>
+                        </div>
+                        <div style="text-align:center;">
+                          <div style="width:50px;height:50px;border-radius:50%;background:#1e293b;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#475569" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                          <span style="color:#64748b;font-size:0.55rem;">Presenter speaking…</span>
+                        </div>
+                        <!-- No captions area -->
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <div style="flex:1;font-size:0.55rem;color:#64748b;">No caption option available</div>
+                        <div style="background:#334155;border-radius:3px;padding:1px 4px;font-size:0.5rem;color:#475569;font-weight:700;">CC</div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ LIVE badge shown — CC inactive, no captions</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Scenario</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Live stream embedded without
+     any captioning service --&gt;</span>
+
+<span class="tok-comment">&lt;!-- Promise of post-event captions
+     does NOT satisfy 1.2.4 --&gt;</span>
+
+<span class="tok-val">"Captions will be added to the
+recording within 24 hours."</span>
+
+<span class="tok-comment">&lt;!-- This satisfies 1.2.2 (prerecorded)
+     for the archive. The live event
+     itself remains non-compliant. --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A deaf employee experiences</span><span class="sr-output__text">The live stream plays; the presenter speaks for 45 minutes; no text appears anywhere on screen; the employee cannot participate or follow the meeting in real time</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F75):</strong> The live event has no real-time captions. The post-event promise does not help during the event. This is a direct barrier to participation for deaf users.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice — CART Captions</span></div>
+                  <div class="example__preview" aria-label="Live stream with CART captions">
+                    <span class="preview-label">Live stream with real-time captions</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:flex-end;justify-content:center;position:relative;">
+                        <div style="position:absolute;top:8px;left:10px;display:flex;align-items:center;gap:5px;">
+                          <div style="width:7px;height:7px;border-radius:50%;background:#ef4444;"></div>
+                          <span style="color:#fff;font-size:0.55rem;font-weight:700;letter-spacing:0.04em;">LIVE</span>
+                        </div>
+                        <div style="position:absolute;top:30%;left:50%;transform:translateX(-50%);">
+                          <div style="width:42px;height:42px;border-radius:50%;background:#1e293b;display:flex;align-items:center;justify-content:center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#475569" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                        </div>
+                        <div style="width:100%;background:rgba(0,0,0,0.84);padding:5px 10px;text-align:center;">
+                          <span style="color:#fff;font-size:0.56rem;line-height:1.5;">CEO: Good morning everyone. I'm excited to share our Q3 results with you today.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <div style="flex:1;font-size:0.55rem;color:#6ee7b7;">CART captions active</div>
+                        <div style="background:#16a34a;border-radius:3px;padding:1px 4px;font-size:0.5rem;color:#fff;font-weight:700;">CC</div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Real-time captions synchronised with speech</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Implementation</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- CART implementation approaches: --&gt;</span>
+
+<span class="tok-comment">&lt;!-- Option A: Platform with built-in
+     CART support (Zoom, Teams, Google
+     Meet with CART integration) --&gt;</span>
+
+<span class="tok-comment">&lt;!-- Option B: Separate caption URL
+     displayed alongside stream --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"live-stream-wrapper"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;iframe</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"https://stream.example.com/live"</span>
+    <span class="tok-attr">title</span>=<span class="tok-val">"All-hands meeting live stream"</span>
+    <span class="tok-attr">allow</span>=<span class="tok-val">"autoplay"</span>
+  <span class="tok-tag">&gt;&lt;/iframe&gt;</span>
+  <span class="tok-tag">&lt;iframe</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"https://captions.example.com/live"</span>
+    <span class="tok-attr">title</span>=<span class="tok-val">"Live CART captions"</span>
+    <span class="tok-attr">aria-label</span>=<span class="tok-val">"Real-time captions"</span>
+  <span class="tok-tag">&gt;&lt;/iframe&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A deaf employee reads</span><span class="sr-output__text">"CEO: Good morning everyone. I'm excited to share our Q3 results with you today." — every word is available within 1–2 seconds of being spoken</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Book a CART service or integrate the platform's CART captioning capability before the event. Captions appear in real time during the live stream.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: ASR auto-captions -->
+            <article class="example" id="ex-asr-captions" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">ASR Auto-captions — Acceptable but With Caveats</h3>
+                  <p class="example__scenario">A small team holds a weekly internal video call using Zoom's built-in auto-captions. The speaker is a native English speaker with a neutral accent discussing everyday topics. ASR accuracy is high enough for this context. However, the team should be aware of accuracy limitations for technical or multilingual content.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--special">Conditionally acceptable</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ When ASR Is Not Sufficient</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">ASR captions on a medical conference call</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:340px;">
+                      <p style="font-size:0.6rem;color:#64748b;margin:0 0 8px;text-transform:uppercase;font-weight:600;letter-spacing:0.04em;">ASR auto-caption output</p>
+                      <p style="margin:0 0 5px;font-size:0.63rem;color:#e2e8f0;line-height:1.6;">the <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;">myo card eel</span> infarction in the <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;">lad</span> territory showed <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;">tropo nine in</span> elevation</p>
+                      <p style="margin:0;font-size:0.58rem;color:#94a3b8;font-style:italic;margin-top:6px;">Should read: "myocardial infarction in the LAD territory showed troponin elevation"</p>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Context</span><span class="code-status code-status--fail">INSUFFICIENT</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- ASR captions are insufficient when:
+  - Medical/legal/technical terminology
+  - Speakers with non-native accents
+  - Heavy background noise
+  - Multiple simultaneous speakers
+  - Names, acronyms, proper nouns
+
+In these cases, CART is required for
+meaningful accessibility. --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>When ASR fails:</strong> For medical conferences, legal proceedings, or highly technical content, ASR accuracy drops significantly. The captions become misleading — particularly dangerous for medical or safety-critical contexts.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ ASR Acceptable — Routine Internal Meeting</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Zoom auto-captions on general topic call</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:340px;">
+                      <p style="font-size:0.6rem;color:#64748b;margin:0 0 8px;text-transform:uppercase;font-weight:600;letter-spacing:0.04em;">ASR auto-caption output</p>
+                      <p style="margin:0;font-size:0.63rem;color:#e2e8f0;line-height:1.6;">The sprint planning session will start at ten o'clock. Please make sure you have reviewed the backlog before joining the call tomorrow.</p>
+                      <p style="margin:0;font-size:0.58rem;color:#6ee7b7;font-style:italic;margin-top:6px;">✓ High accuracy for everyday language — acceptable for this context</p>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Implementation guidance</span><span class="code-status code-status--pass">ACCEPTABLE</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- ASR is acceptable when:
+  - Everyday language and topics
+  - Clear native speakers
+  - Low background noise
+  - Teams/Zoom/Meet built-in ASR
+    enabled for the meeting
+
+Best practices even with ASR:
+  - Train speakers to speak clearly
+  - Avoid talking over one another
+  - Repeat acronyms in full first
+  - Inform attendees captions available
+  - Offer CART on request --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Guideline:</strong> ASR auto-captions in Zoom, Teams, or Google Meet satisfy 1.2.4 for general-purpose meetings with clear speakers. For technical or specialist content, book CART. Always offer to provide CART on request as reasonable adjustment.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Pre-scripted live content -->
+            <article class="example" id="ex-pre-scripted" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Pre-scripted Live Events — Preparing Captions in Advance</h3>
+                  <p class="example__scenario">A news organisation broadcasts a live speech by a public official. The speech text is known in advance. The captioning team loads the prepared text, and the captioner advances through the pre-written captions in sync with the speaker, making corrections for any deviations in real time.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Best practice</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Relying on Real-time Typing Only</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Missed opportunity</span><span class="code-status code-status--fail">SUBOPTIMAL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Even with a known speech text,
+     relying on CART alone means:
+
+  - Errors in proper nouns
+  - Delay while stenographer catches up
+  - Risk of falling behind if speaker
+    deviates from script or speaks fast
+  - No chance to pre-check terminology
+
+For a public broadcast, this raises
+reputational and accuracy risk. --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Missed opportunity:</strong> When the script is known in advance, not preparing captions ahead of time introduces unnecessary error risk and delay — both of which reduce quality for deaf viewers.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Pre-scripted Captions with Real-time Correction</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Workflow</span><span class="code-status code-status--pass">BEST PRACTICE</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Pre-scripted live captioning workflow:
+
+1. Obtain speech text in advance
+2. Pre-load into captioning software
+3. Captioner advances cues live,
+   correcting for deviation
+4. Provides near-perfect accuracy
+   even at high speaking speed
+
+Tools that support this:
+- Eclipse captioning software
+- CART platforms with pre-load feature
+- Broadcast teleprompter integration
+
+This approach also allows:
+- Technical term verification
+- Speaker ID preparation
+- Sound effect planning (e.g. applause) --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A deaf viewer reads</span><span class="sr-output__text">"PRESIDENT: Good evening. Tonight, I want to speak to you about the nation's economic priorities…" — near-perfect accuracy with correct names, titles, and terminology</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Best practice:</strong> For known-script events, pre-load captions and have a human advance them in real time. This achieves near-perfect live caption quality while still meeting the synchronised real-time requirement of 1.2.4.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Caption window alongside stream -->
+            <article class="example" id="ex-caption-window" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Separate Caption Window for Live Stream Embed</h3>
+                  <p class="example__scenario">A website embeds a third-party live stream (e.g., YouTube Live) that does not support direct caption track injection. The team provides a separate, synchronised caption feed alongside the embed using a CART provider's web display.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G87</span>
+                  <span class="tag tag--technique">Alternative approach</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Stream Embed Without Caption Feed</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Third-party live stream without
+     accessible caption option --&gt;</span>
+<span class="tok-tag">&lt;iframe</span>
+  <span class="tok-attr">src</span>=<span class="tok-val">"https://stream.example.com/live"</span>
+  <span class="tok-attr">title</span>=<span class="tok-val">"Live event stream"</span>
+  <span class="tok-attr">width</span>=<span class="tok-val">"800"</span>
+  <span class="tok-attr">height</span>=<span class="tok-val">"450"</span>
+<span class="tok-tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="tok-comment">&lt;!-- No caption provision of any kind
+     alongside the embed --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> The embedded player's built-in controls are inaccessible from outside the iframe. No caption feed is provided on the surrounding page. Deaf users have no recourse.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Caption Window Alongside Embed</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Layout: stream + live caption panel</span>
+                    <div aria-hidden="true" style="max-width:340px;display:flex;flex-direction:column;gap:6px;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;border-radius:6px;border:1px solid #334155;display:flex;align-items:center;justify-content:center;">
+                        <div style="text-align:center;"><div style="position:relative;display:inline-block;"><div style="width:7px;height:7px;border-radius:50%;background:#ef4444;display:inline-block;margin-right:4px;"></div><span style="color:#fff;font-size:0.55rem;font-weight:700;">LIVE</span></div><div style="color:#64748b;font-size:0.55rem;margin-top:4px;">Embedded stream</div></div>
+                      </div>
+                      <div style="background:#1e293b;border-radius:6px;border:1px solid #334155;padding:8px 10px;">
+                        <p style="font-size:0.55rem;color:#6ee7b7;font-weight:600;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.04em;">Live captions</p>
+                        <p style="font-size:0.62rem;color:#e2e8f0;margin:0;line-height:1.6;">MODERATOR: We'll now open the floor for questions. Please use the raise hand feature to be recognised.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"live-event-layout"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-tag">&lt;iframe</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"https://stream.example.com/live"</span>
+    <span class="tok-attr">title</span>=<span class="tok-val">"Live event stream"</span>
+    <span class="tok-attr">width</span>=<span class="tok-val">"800"</span>
+    <span class="tok-attr">height</span>=<span class="tok-val">"450"</span>
+  <span class="tok-tag">&gt;&lt;/iframe&gt;</span>
+
+  <span class="tok-comment">&lt;!-- Live caption feed from CART
+       provider, updated in real time --&gt;</span>
+  <span class="tok-tag">&lt;div</span>
+    <span class="tok-attr">role</span>=<span class="tok-val">"region"</span>
+    <span class="tok-attr">aria-label</span>=<span class="tok-val">"Live captions"</span>
+    <span class="tok-attr">aria-live</span>=<span class="tok-val">"polite"</span>
+    <span class="tok-attr">id</span>=<span class="tok-val">"caption-panel"</span>
+  <span class="tok-tag">&gt;</span>
+    <span class="tok-comment">&lt;!-- CART JS updates this region --&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"Live captions region: MODERATOR: We'll now open the floor for questions. Please use the raise hand feature to be recognised." — updated via aria-live</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Render CART caption output into an <code>aria-live="polite"</code> region adjacent to the embedded stream. This works with any embed and ensures screen reader users also receive the live caption updates.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.2.3.html" class="criterion-nav__link">← 1.2.3 Audio Description or Media Alternative</a>
+            <a href="1.2.5.html" class="criterion-nav__link">Next: 1.2.5 Audio Description (Prerecorded) →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/captions-live" rel="noopener noreferrer" target="_blank">Understanding 1.2.4</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#captions-live" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

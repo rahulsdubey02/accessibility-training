@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.3.5 Identify Input Purpose.">
+  <title>1.3.5 Identify Input Purpose — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.3 Adaptable</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.3.5 Identify Input Purpose</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-aa">Level AA</span>
+              <span class="badge badge--v21">WCAG 2.1</span>
+              <span class="criterion-guideline">1.3 Adaptable</span>
+            </div>
+            <h1>1.3.5 Identify Input Purpose</h1>
+            <p class="criterion-page-description">
+              The purpose of each input field that collects personal information about the user can
+              be programmatically determined. This enables browsers to offer accurate autofill,
+              assistive technologies to display custom icons, and users to understand what each
+              field is collecting.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.3.5 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.3.5</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">AA (Standard)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.1 (2018)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              The <code>autocomplete</code> attribute tells browsers — and assistive technologies —
+              what type of personal information a field collects. When correctly applied, browsers
+              can pre-populate fields with saved data, reducing cognitive load and the need for
+              typing. This particularly benefits users with cognitive disabilities, motor
+              disabilities, and those using switch access or eye-tracking.
+            </p>
+            <p>
+              This criterion applies specifically to fields collecting <strong>personal data about
+              the current user</strong> — name, email, phone, address, payment info, and so on.
+              It uses the WHATWG <code>autocomplete</code> token list defined in the HTML specification.
+            </p>
+            <p>Important constraints:</p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.4rem;">
+              <li>Only applies to inputs collecting personal information (not search, filter, or other inputs)</li>
+              <li>The input must be in a <code>&lt;form&gt;</code> (directly or via <code>form</code> attribute)</li>
+              <li>The <code>autocomplete</code> token must be a value from the official WHATWG list — custom values do not satisfy the criterion</li>
+              <li>Does not apply when the input's purpose is intentionally ambiguous (security questions)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="tokens-heading">
+          <h2 id="tokens-heading">Key <code>autocomplete</code> Tokens</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Personal Identity</div>
+              <div class="exception-item__desc">
+                <code>name</code> · <code>given-name</code> · <code>family-name</code> ·
+                <code>additional-name</code> · <code>nickname</code> · <code>honorific-prefix</code> ·
+                <code>honorific-suffix</code> · <code>organization</code> · <code>organization-title</code>
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Contact Details</div>
+              <div class="exception-item__desc">
+                <code>email</code> · <code>tel</code> · <code>tel-national</code> ·
+                <code>url</code> · <code>username</code>
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Address</div>
+              <div class="exception-item__desc">
+                <code>street-address</code> · <code>address-line1</code> · <code>address-line2</code> ·
+                <code>address-level1</code> (state) · <code>address-level2</code> (city) ·
+                <code>postal-code</code> · <code>country</code> · <code>country-name</code>
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Payment &amp; Credentials</div>
+              <div class="exception-item__desc">
+                <code>cc-name</code> · <code>cc-number</code> · <code>cc-exp</code> ·
+                <code>cc-exp-month</code> · <code>cc-exp-year</code> · <code>cc-csc</code> ·
+                <code>current-password</code> · <code>new-password</code> · <code>one-time-code</code>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: No autocomplete on personal data fields -->
+            <article class="example" id="ex-no-autocomplete" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">Personal Data Fields Without <code>autocomplete</code></h3>
+                  <p class="example__scenario">A registration form collects name, email, and phone number. None of the fields have an <code>autocomplete</code> attribute. Browsers cannot offer autofill. A user with motor difficulties who saves data in their browser's autofill must type everything manually every time.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F107</span>
+                  <span class="tag tag--technique">Technique: H98</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Registration form — no autofill available</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:300px;display:flex;flex-direction:column;gap:8px;">
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Full name</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:5px;padding:6px 10px;color:#64748b;font-size:0.7rem;width:100%;box-sizing:border-box;" placeholder="No autofill" readonly>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Email address</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:5px;padding:6px 10px;color:#64748b;font-size:0.7rem;width:100%;box-sizing:border-box;" placeholder="No autofill" readonly>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Phone number</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:5px;padding:6px 10px;color:#64748b;font-size:0.7rem;width:100%;box-sizing:border-box;" placeholder="No autofill" readonly>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Browser cannot identify field purposes — no autofill dropdown offered</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F107: no autocomplete attribute
+     on personal data inputs --&gt;</span>
+<span class="tok-tag">&lt;form&gt;</span>
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"name"</span><span class="tok-tag">&gt;</span>Full name<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"name"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"email"</span><span class="tok-tag">&gt;</span>Email address<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"email"</span> <span class="tok-attr">type</span>=<span class="tok-val">"email"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"phone"</span><span class="tok-tag">&gt;</span>Phone number<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"phone"</span> <span class="tok-attr">type</span>=<span class="tok-val">"tel"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/form&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem (F107):</strong> Without <code>autocomplete</code>, browsers cannot identify what each field expects. Users with motor or cognitive disabilities who rely on autofill must type all personal data manually on every form.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Same form — autofill available</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:300px;display:flex;flex-direction:column;gap:8px;">
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Full name</label>
+                        <div style="position:relative;">
+                          <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #2563eb;border-radius:5px;padding:6px 10px;color:#e2e8f0;font-size:0.7rem;width:100%;box-sizing:border-box;" value="Sarah Chen" readonly>
+                          <div style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:14px;height:14px;background:#2563eb;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700;">✓</div>
+                        </div>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Email address</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #2563eb;border-radius:5px;padding:6px 10px;color:#e2e8f0;font-size:0.7rem;width:100%;box-sizing:border-box;" value="sarah@example.com" readonly>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <label style="font-size:0.63rem;color:#94a3b8;font-weight:600;">Phone number</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #2563eb;border-radius:5px;padding:6px 10px;color:#e2e8f0;font-size:0.7rem;width:100%;box-sizing:border-box;" value="+44 7700 900123" readonly>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Browser autofill populates all fields — one click for all data</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H98: autocomplete tokens applied
+     to each personal data field --&gt;</span>
+<span class="tok-tag">&lt;form&gt;</span>
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"name"</span><span class="tok-tag">&gt;</span>Full name<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"name"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-hi">autocomplete</span>=<span class="tok-val">"name"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"email"</span><span class="tok-tag">&gt;</span>Email address<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"email"</span> <span class="tok-attr">type</span>=<span class="tok-val">"email"</span>
+         <span class="tok-hi">autocomplete</span>=<span class="tok-val">"email"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"phone"</span><span class="tok-tag">&gt;</span>Phone number<span class="tok-tag">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"phone"</span> <span class="tok-attr">type</span>=<span class="tok-val">"tel"</span>
+         <span class="tok-hi">autocomplete</span>=<span class="tok-val">"tel"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/form&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix (H98):</strong> Add the correct <code>autocomplete</code> token to each personal data field. The browser recognises the field's purpose and can offer autofill from saved profiles — one click populates the entire form.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: Full address form -->
+            <article class="example" id="ex-address-form" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">Full Address Form with Complete <code>autocomplete</code> Tokens</h3>
+                  <p class="example__scenario">A checkout form collects a full delivery address. Without autocomplete, every field must be manually typed. With correct tokens, the browser fills the entire shipping address from the user's saved profile in a single interaction.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: H98</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-tag">&lt;form&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-attr">placeholder</span>=<span class="tok-val">"Address line 1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-attr">placeholder</span>=<span class="tok-val">"Address line 2"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-attr">placeholder</span>=<span class="tok-val">"City"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-attr">placeholder</span>=<span class="tok-val">"Postcode"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+         <span class="tok-attr">placeholder</span>=<span class="tok-val">"Country"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/form&gt;</span>
+
+<span class="tok-comment">&lt;!-- No autocomplete attributes,
+     no labels, no visible context.
+     Also fails SC 1.3.1 (no labels) --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> No <code>autocomplete</code> attributes — browser cannot autofill. No <code>&lt;label&gt;</code> elements — also fails SC 1.3.1. A user entering their 10th checkout form this month must type 5+ fields every time.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Full Address Form — Correct Tokens</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-tag">&lt;form&gt;</span>
+  <span class="tok-tag">&lt;div&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"addr1"</span><span class="tok-tag">&gt;</span>Address line 1<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"addr1"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+           <span class="tok-hi">autocomplete</span>=<span class="tok-val">"address-line1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;div&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"addr2"</span><span class="tok-tag">&gt;</span>Address line 2<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"addr2"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+           <span class="tok-hi">autocomplete</span>=<span class="tok-val">"address-line2"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;div&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"city"</span><span class="tok-tag">&gt;</span>City<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"city"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+           <span class="tok-hi">autocomplete</span>=<span class="tok-val">"address-level2"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;div&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"postcode"</span><span class="tok-tag">&gt;</span>Postcode<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"postcode"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+           <span class="tok-hi">autocomplete</span>=<span class="tok-val">"postal-code"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;div&gt;</span>
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"country"</span><span class="tok-tag">&gt;</span>Country<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;select</span> <span class="tok-attr">id</span>=<span class="tok-val">"country"</span>
+            <span class="tok-hi">autocomplete</span>=<span class="tok-val">"country"</span><span class="tok-tag">&gt;</span>
+      <span class="tok-tag">&lt;option</span> <span class="tok-attr">value</span>=<span class="tok-val">"GB"</span><span class="tok-tag">&gt;</span>United Kingdom<span class="tok-tag">&lt;/option&gt;</span>
+    <span class="tok-tag">&lt;/select&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/form&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix (H98):</strong> Apply the correct WHATWG <code>autocomplete</code> token to each field. Note: city maps to <code>address-level2</code> (not <code>city</code>), and country should use the ISO 3166 country code token <code>country</code>. <code>autocomplete</code> works on <code>&lt;select&gt;</code> elements too.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Wrong autocomplete value -->
+            <article class="example" id="ex-wrong-token" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Wrong or Custom <code>autocomplete</code> Token</h3>
+                  <p class="example__scenario">A developer adds autocomplete attributes but uses non-standard values ("firstname", "lastname") instead of the WHATWG tokens ("given-name", "family-name"). Non-standard values are treated as <code>off</code> by browsers — no autofill is offered.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F107</span>
+                  <span class="tag tag--technique">Technique: H98</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Invalid Tokens</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F107: custom tokens that do NOT
+     match the WHATWG autocomplete
+     token list --&gt;</span>
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"firstname"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- should be: given-name --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"lastname"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- should be: family-name --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"postcode"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- should be: postal-code --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"phone"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- should be: tel --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem (F107):</strong> Non-standard autocomplete values ("firstname", "postcode") are not recognised by browsers and do not satisfy 1.3.5. The field purpose cannot be programmatically determined. Always use the exact WHATWG token list values.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Correct WHATWG Tokens</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H98: exact WHATWG tokens --&gt;</span>
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"given-name"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- NOT: firstname --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"family-name"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- NOT: lastname --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"postal-code"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- NOT: postcode --&gt;</span>
+
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-val">"tel"</span>
+       <span class="tok-hi">autocomplete</span>=<span class="tok-val">"tel"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- NOT: phone --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Use the exact token values from the WHATWG HTML specification. Common mistakes: <code>firstname</code> → <code>given-name</code>, <code>postcode</code> → <code>postal-code</code>, <code>phone</code> → <code>tel</code>, <code>card-number</code> → <code>cc-number</code>.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Billing vs shipping sections -->
+            <article class="example" id="ex-sections" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Separate Billing and Shipping Sections Using <code>section-</code> Prefix</h3>
+                  <p class="example__scenario">A checkout form has both a shipping address and a billing address. Both sections contain identical-looking fields (address line 1, city, postcode). The <code>section-</code> prefix distinguishes them so the browser offers the correct autofill for each group.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: H98</span>
+                  <span class="tag tag--technique">Advanced pattern</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Ambiguous — Same Token, Two Purposes</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">AMBIGUOUS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Browser cannot distinguish
+     which address-line1 is shipping
+     vs. billing. Autofill may apply
+     the same data to both fields. --&gt;</span>
+
+<span class="tok-tag">&lt;fieldset&gt;</span>
+  <span class="tok-tag">&lt;legend&gt;</span>Shipping address<span class="tok-tag">&lt;/legend&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">autocomplete</span>=<span class="tok-val">"address-line1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">autocomplete</span>=<span class="tok-val">"postal-code"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/fieldset&gt;</span>
+
+<span class="tok-tag">&lt;fieldset&gt;</span>
+  <span class="tok-tag">&lt;legend&gt;</span>Billing address<span class="tok-tag">&lt;/legend&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">autocomplete</span>=<span class="tok-val">"address-line1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span> <span class="tok-attr">autocomplete</span>=<span class="tok-val">"postal-code"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/fieldset&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Issue:</strong> Both sets of fields have the same <code>autocomplete</code> token. The browser may autofill both with the same address, or behave unexpectedly. The section is not clearly distinguished.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Section Prefix Distinguishes Groups</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- The "section-" prefix groups
+     related fields. The browser
+     treats each section as a
+     separate autofill context. --&gt;</span>
+
+<span class="tok-tag">&lt;fieldset&gt;</span>
+  <span class="tok-tag">&lt;legend&gt;</span>Shipping address<span class="tok-tag">&lt;/legend&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">autocomplete</span>=<span class="tok-val">"section-shipping
+      address-line1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">autocomplete</span>=<span class="tok-val">"section-shipping
+      postal-code"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/fieldset&gt;</span>
+
+<span class="tok-tag">&lt;fieldset&gt;</span>
+  <span class="tok-tag">&lt;legend&gt;</span>Billing address<span class="tok-tag">&lt;/legend&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">autocomplete</span>=<span class="tok-val">"section-billing
+      address-line1"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">autocomplete</span>=<span class="tok-val">"section-billing
+      postal-code"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/fieldset&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Browser autofill behaviour</span><span class="sr-output__text">Shipping fields offer shipping address from saved profile. Billing fields offer billing address separately — the section prefix allows different saved addresses per group</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Pattern:</strong> The <code>section-*</code> prefix (any unique string after "section-") groups autocomplete fields. Within each section, use standard WHATWG tokens. The section name is arbitrary — use meaningful names like "section-shipping" or "section-billing".</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.3.4.html" class="criterion-nav__link">← 1.3.4 Orientation</a>
+            <a href="../index.html" class="criterion-nav__link">All Criteria →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose" rel="noopener noreferrer" target="_blank">Understanding 1.3.5</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#identify-input-purpose" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+        <li><a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill" rel="noopener noreferrer" target="_blank">WHATWG Autocomplete Tokens</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

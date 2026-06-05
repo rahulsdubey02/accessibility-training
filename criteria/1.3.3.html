@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.3.3 Sensory Characteristics.">
+  <title>1.3.3 Sensory Characteristics — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.3 Adaptable</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.3.3 Sensory Characteristics</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.3 Adaptable</span>
+            </div>
+            <h1>1.3.3 Sensory Characteristics</h1>
+            <p class="criterion-page-description">
+              Instructions for using content must not rely solely on sensory characteristics — shape,
+              colour, size, visual location, orientation, or sound. Instructions must include text
+              identification that does not depend on the user being able to see, hear, or perceive
+              spatial layout.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.3.3 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.3.3</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">A (Minimum)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Instructions that say "click the green button" or "see the chart on the right" are
+              meaningless to users who cannot see colour, cannot perceive layout, or are using a
+              screen reader. This criterion requires that instructions identify UI components and
+              content by <strong>name or label</strong> — not just by sensory properties.
+            </p>
+            <p>The rule: <strong>instructions must work without seeing, hearing, or knowing where things are positioned.</strong></p>
+            <p>Sensory characteristics include:</p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.3rem;">
+              <li><strong>Shape:</strong> "click the circular icon", "press the square button"</li>
+              <li><strong>Colour:</strong> "click the green button", "errors are shown in red"</li>
+              <li><strong>Size:</strong> "click the large button", "see the smaller text below"</li>
+              <li><strong>Visual location:</strong> "see the menu on the left", "the field on the right"</li>
+              <li><strong>Orientation:</strong> "the arrow pointing down", "swipe left"</li>
+              <li><strong>Sound:</strong> "wait for the beep", "when you hear the chime"</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: Colour only instruction -->
+            <article class="example" id="ex-colour-only" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">Instruction References Colour Only</h3>
+                  <p class="example__scenario">A form's help text tells users to "click the green Submit button." A blind user, or a user with colour blindness who cannot distinguish green, cannot identify which button is meant. The button must be identified by its label.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F14</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Form with colour-only instruction</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:300px;display:flex;flex-direction:column;gap:10px;">
+                      <p style="margin:0;font-size:0.7rem;color:#94a3b8;">When you are ready, <strong style="color:#ef4444;">click the green button</strong> to submit your application.</p>
+                      <div style="display:flex;gap:8px;">
+                        <button tabindex="-1" style="background:#64748b;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:0.7rem;cursor:pointer;">Cancel</button>
+                        <button tabindex="-1" style="background:#16a34a;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:0.7rem;font-weight:600;cursor:pointer;">Submit</button>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Colour is the only distinguishing instruction — fails for blind and colour-blind users</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F14: instruction relies solely
+     on colour to identify the control --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>When ready,
+  <span class="tok-hi">click the green button</span>
+  to submit your application.
+<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;button&gt;</span>Cancel<span class="tok-tag">&lt;/button&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">class</span>=<span class="tok-val">"btn-green"</span><span class="tok-tag">&gt;</span>
+  Submit
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"click the green button to submit" — no way to identify a "green button"; Cancel button and Submit button are both announced without colour</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F14):</strong> Colour cannot be perceived by blind users or users with certain colour vision deficiencies. "Green button" is meaningless without a label name to identify it.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Form with name-based instruction</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:300px;display:flex;flex-direction:column;gap:10px;">
+                      <p style="margin:0;font-size:0.7rem;color:#94a3b8;">When you are ready, click <strong style="color:#6ee7b7;">"Submit application"</strong> to complete your form.</p>
+                      <div style="display:flex;gap:8px;">
+                        <button tabindex="-1" style="background:#64748b;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:0.7rem;cursor:pointer;">Cancel</button>
+                        <button tabindex="-1" style="background:#16a34a;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:0.7rem;font-weight:600;cursor:pointer;">Submit application</button>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Button identified by its label — works for all users</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Instruction uses the button label --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>When ready, click
+  <span class="tok-hi">"Submit application"</span>
+  to complete your form.
+<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;button&gt;</span>Cancel<span class="tok-tag">&lt;/button&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">class</span>=<span class="tok-val">"btn-green"</span><span class="tok-tag">&gt;</span>
+  Submit application
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"click Submit application to complete your form" — matches the exact button label announced by the screen reader; unambiguous</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Give the button a descriptive label ("Submit application") and reference that exact label in the instructions. The instruction works regardless of colour perception, vision, or screen reader usage.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: Location-based instruction -->
+            <article class="example" id="ex-location-only" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">Instruction References Visual Location Only</h3>
+                  <p class="example__scenario">An onboarding guide says "see the navigation menu on the left for all options." A screen reader user may encounter the nav anywhere in the DOM; they cannot find content by "left side." On a mobile device, the menu may not be on the left at all.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F14</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F14: location-only instruction --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>
+  Use the
+  <span class="tok-hi">navigation menu on the left</span>
+  to explore all available sections.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-tag">&lt;p&gt;</span>
+  The error details can be found in
+  <span class="tok-hi">the panel on the right side</span>
+  of your screen.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-comment">&lt;!-- "On the left" / "on the right"
+     are meaningless to:
+     - Screen reader users
+     - Mobile users (no columns)
+     - Zoom users (layout changes) --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A screen reader user hears</span><span class="sr-output__text">"Use the navigation menu on the left to explore all available sections." — cannot determine which element "on the left" refers to</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F14):</strong> Spatial references like "on the left", "above", "below", and "on the right" assume sighted, 2D layout perception. They fail for screen reader users, keyboard-only users, and anyone using a single-column or responsive layout.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Reference by name/label instead --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>
+  Use the
+  <span class="tok-hi">Main navigation menu</span>
+  to explore all available sections.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-tag">&lt;p&gt;</span>
+  The error details can be found in
+  the <span class="tok-hi">Error details panel</span>.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-comment">&lt;!-- Combine with location for
+     sighted users — this is fine: --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>
+  Use the <span class="tok-hi">Main navigation menu</span>
+  (on the left in desktop view)
+  to explore all sections.
+<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A screen reader user hears</span><span class="sr-output__text">"Use the Main navigation menu to explore all available sections." — matches the aria-label of the nav element; unambiguous without spatial context</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Reference UI elements by their label or name. The label used in the instruction should match what the element is called — its heading, aria-label, or visible text. Location may be included as supplementary context but must not be the only identifier.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Shape-only instruction -->
+            <article class="example" id="ex-shape-only" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Icon Buttons Referenced Only by Shape</h3>
+                  <p class="example__scenario">A media player's help documentation says "click the triangular play button." A blind user cannot perceive a triangle. If the button has no accessible label — just an icon — the instruction fails doubly: the sensory reference is meaningless and the button itself is inaccessible.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F14</span>
+                  <span class="tag tag--technique">SC 1.1.1 related</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Media player controls — unlabelled icons</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:300px;">
+                      <p style="font-size:0.65rem;color:#94a3b8;margin:0 0 8px;">Click the <strong style="color:#ef4444;">triangular button</strong> to play. Click the <strong style="color:#ef4444;">two vertical bars</strong> to pause.</p>
+                      <div style="display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" style="background:#2563eb;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <button tabindex="-1" style="background:#334155;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F14: shape-only reference
+     + SC 1.1.1 failure (no label) --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Click the
+  <span class="tok-hi">triangular button</span> to play.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-comment">&lt;!-- Button has no accessible name --&gt;</span>
+<span class="tok-tag">&lt;button&gt;</span>
+  <span class="tok-tag">&lt;svg&gt;</span>…play icon…<span class="tok-tag">&lt;/svg&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"button" (no label) — the instruction "triangular button" is meaningless; the button itself has no accessible name</span></span></div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Same controls — labelled and referenced by name</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:300px;">
+                      <p style="font-size:0.65rem;color:#94a3b8;margin:0 0 8px;">Click <strong style="color:#6ee7b7;">"Play"</strong> to start the audio. Click <strong style="color:#6ee7b7;">"Pause"</strong> to stop.</p>
+                      <div style="display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" aria-label="Play" style="background:#2563eb;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <button tabindex="-1" aria-label="Pause" style="background:#334155;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Instruction uses button label.
+     Button has accessible name via
+     aria-label (also fixes SC 1.1.1). --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Click
+  <span class="tok-hi">"Play"</span> to start the audio.
+<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-tag">&lt;button</span> <span class="tok-hi">aria-label</span>=<span class="tok-val">"Play"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;svg</span> <span class="tok-attr">aria-hidden</span>=<span class="tok-val">"true"</span><span class="tok-tag">&gt;</span>
+    …play icon…
+  <span class="tok-tag">&lt;/svg&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"Play, button" — matches the instruction "Click Play to start the audio"; accessible and unambiguous</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Add <code>aria-label</code> to icon-only buttons. Update instructions to reference the label name. This also fixes SC 1.1.1 (non-text content) and SC 4.1.2 (name, role, value) simultaneously.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Combining sensory + text -->
+            <article class="example" id="ex-combined" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Combining Sensory Cues with Text Labels — Acceptable</h3>
+                  <p class="example__scenario">Instructions may include sensory characteristics <em>in addition to</em> a text label — they just cannot be the only means of identification. "Click the green Submit button" fails. "Click the Submit button (green, bottom right)" passes — the label "Submit" is sufficient on its own, and the sensory details are supplementary for sighted users.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Best practice</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Sensory Only — Fails</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Examples that fail</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- All fail 1.3.3 --&gt;</span>
+
+<span class="tok-val">"Click the green button."</span>
+<span class="tok-comment">&lt;!-- colour only --&gt;</span>
+
+<span class="tok-val">"Press the large button."</span>
+<span class="tok-comment">&lt;!-- size only --&gt;</span>
+
+<span class="tok-val">"Select the round option."</span>
+<span class="tok-comment">&lt;!-- shape only --&gt;</span>
+
+<span class="tok-val">"Use the field on the right."</span>
+<span class="tok-comment">&lt;!-- location only --&gt;</span>
+
+<span class="tok-val">"Click when you hear the chime."</span>
+<span class="tok-comment">&lt;!-- sound only --&gt;</span>
+
+<span class="tok-val">"See the diagram below."</span>
+<span class="tok-comment">&lt;!-- location only --&gt;</span></code></pre>
+                  </div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Label + Sensory Cue — Passes</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Examples that pass</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- All pass 1.3.3 --&gt;</span>
+
+<span class="tok-val">"Click the Submit button."</span>
+<span class="tok-comment">&lt;!-- label only — sufficient --&gt;</span>
+
+<span class="tok-val">"Click the Submit button (green)."</span>
+<span class="tok-comment">&lt;!-- label + colour as supplement --&gt;</span>
+
+<span class="tok-val">"Press the Confirm button (large,
+ at the bottom of the form)."</span>
+<span class="tok-comment">&lt;!-- label + size + location --&gt;</span>
+
+<span class="tok-val">"Use the Postcode field."</span>
+<span class="tok-comment">&lt;!-- label — no location needed --&gt;</span>
+
+<span class="tok-val">"See the 'Regional breakdown' chart."</span>
+<span class="tok-comment">&lt;!-- named reference — no "below" --&gt;</span>
+
+<span class="tok-val">"When the Ready indicator turns green,
+ click Start."</span>
+<span class="tok-comment">&lt;!-- named indicator + colour as
+     supplement. "Start" is the label --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Rule:</strong> The instruction must be understandable <em>without</em> the sensory cue. Test by removing all colour/shape/location/sound references — if the instruction still makes sense, it passes. If it becomes ambiguous, add a text label.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.3.2.html" class="criterion-nav__link">← 1.3.2 Meaningful Sequence</a>
+            <a href="1.3.4.html" class="criterion-nav__link">Next: 1.3.4 Orientation →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics" rel="noopener noreferrer" target="_blank">Understanding 1.3.3</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#sensory-characteristics" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

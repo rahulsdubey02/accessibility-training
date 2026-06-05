@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.2.3 Audio Description or Media Alternative (Prerecorded).">
+  <title>1.2.3 Audio Description or Media Alternative — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.2 Time-based Media</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.2.3 Audio Description or Media Alternative (Prerecorded)</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.2 Time-based Media</span>
+            </div>
+            <h1>1.2.3 Audio Description or Media Alternative (Prerecorded)</h1>
+            <p class="criterion-page-description">
+              An alternative for time-based media or an audio description of the prerecorded video
+              content is provided for synchronised media — except when the media is a text alternative
+              and clearly labelled as such.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.2.3 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.2.3</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">A (Minimum)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              This criterion ensures that blind users can access visual information in prerecorded
+              synchronised media (video with audio). Unlike SC 1.2.5 (Level AA), 1.2.3 gives authors
+              a choice of two approaches:
+            </p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.4rem;">
+              <li><strong>Audio description</strong> — a narration track added during natural pauses in dialogue that describes important visual information (actions, settings, scene changes, on-screen text)</li>
+              <li><strong>Full media alternative</strong> — a text document that describes everything in the video in sequential order, combining both transcript and visual description</li>
+            </ul>
+            <p>
+              Either option satisfies this Level A requirement. SC 1.2.5 (AA) requires the audio
+              description approach specifically — the text alternative is no longer sufficient at that level.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="distinctions-heading">
+          <h2 id="distinctions-heading">Key Distinctions</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Audio Description vs. Transcript</div>
+              <div class="exception-item__desc">
+                A transcript only captures speech. An audio description narrates visual elements not
+                covered by speech — what is shown on screen, who is in frame, on-screen text, meaningful
+                gestures. The media alternative required here must cover both.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Applies Only When Audio Doesn't Already Describe the Visual</div>
+              <div class="exception-item__desc">
+                If the existing audio track fully explains what is happening visually — as in a
+                lecture where the speaker describes every chart — no audio description is needed.
+                The visual information is already conveyed via the audio.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Media Alternative Exemption</div>
+              <div class="exception-item__desc">
+                If the video is itself a media alternative for existing text content on the page
+                and is clearly labelled as such, this criterion does not apply. The text provides
+                the equivalent and the video is supplemental.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: No description at all -->
+            <article class="example" id="ex-no-description" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">Tutorial Video with Visual Steps — No Description</h3>
+                  <p class="example__scenario">A software tutorial shows the presenter clicking through menus and configuring settings visually. The voiceover says "click here, then select this option" without naming what is shown. A blind user following along has no way to identify what is on screen.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F67</span>
+                  <span class="tag tag--technique">Technique: G69</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad" aria-label="Poor practice">✗ Poor Practice</span>
+                  </div>
+                  <div class="example__preview" aria-label="Poor practice output">
+                    <span class="preview-label">Video element — no description provided</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <div style="width:80%;background:#1e293b;border-radius:6px;aspect-ratio:4/3;display:flex;flex-direction:column;padding:8px;gap:4px;">
+                          <div style="height:6px;background:#334155;border-radius:2px;width:60%;"></div>
+                          <div style="height:5px;background:#334155;border-radius:2px;width:40%;"></div>
+                          <div style="margin-top:6px;display:flex;gap:6px;flex-direction:column;">
+                            <div style="height:20px;background:#2563eb;border-radius:3px;width:100%;display:flex;align-items:center;padding:0 6px;"><div style="height:4px;background:rgba(255,255,255,0.4);border-radius:2px;width:50%;"></div></div>
+                            <div style="height:20px;background:#334155;border-radius:3px;width:100%;"></div>
+                          </div>
+                        </div>
+                        <!-- No AD badge -->
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:25%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:32 / 2:10</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"tutorial.mp4"</span>
+          <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-comment">&lt;!-- F67: no audio description
+       and no media alternative --&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"Now click here and select this option from the menu" — no information about what menu, what is highlighted, or what the UI shows</span></span>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem (F67):</strong> The audio track references visual elements without naming them. Blind users cannot follow the tutorial because the key information exists only on screen.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good" aria-label="Good practice">✓ Good Practice</span>
+                  </div>
+                  <div class="example__preview" aria-label="Good practice output">
+                    <span class="preview-label">Media alternative — full text description</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:340px;">
+                      <p style="font-size:0.62rem;color:#6ee7b7;font-weight:600;margin:0 0 8px;text-transform:uppercase;letter-spacing:0.04em;">Video: Configuring Notification Settings</p>
+                      <p style="font-size:0.63rem;color:#e2e8f0;margin:0 0 6px;line-height:1.6;"><strong style="color:#94a3b8;">0:00</strong> — The Settings screen opens, showing five menu items in a vertical list: Profile, Notifications, Privacy, Appearance, and Security.</p>
+                      <p style="font-size:0.63rem;color:#e2e8f0;margin:0 0 6px;line-height:1.6;"><strong style="color:#94a3b8;">0:08</strong> — The cursor moves to "Notifications" and clicks it. The Notifications panel slides in from the right.</p>
+                      <p style="font-size:0.63rem;color:#e2e8f0;margin:0;line-height:1.6;"><strong style="color:#94a3b8;">0:14</strong> — A toggle labelled "Email Alerts" is currently off. The narrator says: "Switch this on." The toggle is clicked and turns blue.</p>
+                    </div>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- G69: full media alternative --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span>
+       <span class="tok-attr">aria-describedby</span>=<span class="tok-val">"tutorial-alt"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"tutorial.mp4"</span>
+          <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-tag">&lt;section</span> <span class="tok-attr">id</span>=<span class="tok-val">"tutorial-alt"</span>
+         <span class="tok-attr">aria-label</span>=<span class="tok-val">"Full video description"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h3&gt;</span>Video: Configuring Notification Settings<span class="tok-tag">&lt;/h3&gt;</span>
+  <span class="tok-tag">&lt;p&gt;&lt;strong&gt;</span>0:00<span class="tok-tag">&lt;/strong&gt;</span> — The Settings screen opens,
+  showing five menu items: Profile,
+  Notifications, Privacy, Appearance,
+  Security.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;p&gt;&lt;strong&gt;</span>0:08<span class="tok-tag">&lt;/strong&gt;</span> — Cursor moves to
+  "Notifications" and clicks. The
+  Notifications panel slides in.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-comment">&lt;!-- continues for full video --&gt;</span>
+<span class="tok-tag">&lt;/section&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span><span class="sr-output__label">A blind user reads</span><span class="sr-output__text">"0:00 — The Settings screen opens, showing five menu items: Profile, Notifications, Privacy…" — every visual action is described in sequence</span></span>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix (G69):</strong> A full media alternative document is provided on the same page, describing both the audio content and the visual actions in time-stamped sequence. This satisfies 1.2.3 at Level A.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: Audio description track -->
+            <article class="example" id="ex-audio-desc-track" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">Audio Description Track via &lt;track&gt; Element</h3>
+                  <p class="example__scenario">A documentary film contains extended sequences of visual-only storytelling — archival footage with no narration. An audio description track narrates what is shown during natural pauses or silent passages.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G78</span>
+                  <span class="tag tag--technique">Technique: H96</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+                  <div class="example__preview">
+                    <span class="preview-label">Video without description track</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#1a1a2e;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+                        <div style="text-align:center;">
+                          <div style="width:50px;height:50px;border-radius:50%;border:3px solid #334155;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#475569" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+                          <span style="color:#475569;font-size:0.6rem;">Historical documentary footage</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:40%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">1:03 / 2:42</span>
+                        <span style="color:#475569;font-size:0.55rem;font-weight:700;background:#1e293b;border:1px solid #334155;border-radius:3px;padding:1px 4px;">AD</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ AD button present but no description track loaded</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"documentary.mp4"</span>
+          <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-comment">&lt;!-- No &lt;track kind="descriptions"&gt;
+       Visual-only passages are
+       completely inaccessible --&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">Silence for 12 seconds during an archival footage sequence — the content of the footage is completely inaccessible</span></span>
+                  </div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+                  <div class="example__preview">
+                    <span class="preview-label">Video with description track active</span>
+                    <div aria-hidden="true" style="max-width:320px;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#1a1a2e;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;border:3px solid #334155;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#475569" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div></div>
+                        <!-- AD overlay -->
+                        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.8);padding:4px 8px;text-align:center;"><span style="color:#d1fae5;font-size:0.56rem;font-style:italic;">[AD] Black-and-white footage: a crowded city street, 1940s. Horse-drawn carts share the road with early automobiles.</span></div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:40%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">1:03 / 2:42</span>
+                        <span style="color:#fff;font-size:0.55rem;font-weight:700;background:#16a34a;border-radius:3px;padding:1px 4px;">AD</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Description track active — visual content narrated</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML + WebVTT</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- G78 + H96: audio description track --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"documentary.mp4"</span>
+          <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"descriptions"</span>
+    <span class="tok-hi">src</span>=<span class="tok-val">"documentary-ad.vtt"</span>
+    <span class="tok-hi">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-hi">label</span>=<span class="tok-val">"Audio description"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- documentary-ad.vtt: --&gt;
+WEBVTT
+
+01:00.000 --> 01:12.000
+[AD] Black-and-white footage: a crowded
+city street, 1940s. Horse-drawn carts
+share the road with early automobiles.</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"[AD] Black-and-white footage: a crowded city street, 1940s. Horse-drawn carts share the road with early automobiles." — visual content is narrated during the silent passage</span></span>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix (G78 + H96):</strong> A <code>&lt;track kind="descriptions"&gt;</code> element references a WebVTT file containing narration of visual content timed to appear during natural pauses in the audio.</p>
+                </div>
+              </div>
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item"><span class="remediation-item__icon" aria-hidden="true">⚠️</span><div class="remediation-item__body"><p class="remediation-item__title">Browser support for <code>kind="descriptions"</code> is incomplete</p><p class="remediation-item__desc">Most browsers do not natively play description tracks as audio. Screen reader users can read the cue text, but the audio description experience requires a player that explicitly supports it (e.g., AblePlayer). Always provide a text media alternative as a guaranteed fallback.</p></div></div>
+                  <div class="remediation-item"><span class="remediation-item__icon" aria-hidden="true">⏸️</span><div class="remediation-item__body"><p class="remediation-item__title">Descriptions must fit in existing pauses</p><p class="remediation-item__desc">Standard audio description inserts narration during natural pauses without pausing the video. If there is insufficient time in the pauses to describe complex visual content, extended audio description (SC 1.2.7) pauses the video to allow longer narration.</p></div></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Audio already describes everything -->
+            <article class="example" id="ex-audio-self-describing" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Video Where Audio Already Describes the Visual Content</h3>
+                  <p class="example__scenario">An educational lecture recording features a presenter who explicitly describes every slide they show: "This bar chart shows three bars — the tallest on the left represents Q1 at 42%…" No additional audio description is needed because the visual information is already conveyed through speech.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--special">Exception case</span>
+                  <span class="tag tag--technique">Technique: G78</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Narration — Requires Description</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Transcript excerpt</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">Speaker audio (paraphrased):</span>
+
+<span class="tok-val">"As you can see from this chart,</span>
+<span class="tok-val">Q1 performed significantly better</span>
+<span class="tok-val">than the other quarters."</span>
+
+<span class="tok-comment">&lt;!-- Problem: "as you can see" assumes
+     sighted viewing. The data values,
+     bars, and comparisons are NOT
+     conveyed in the audio. --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"As you can see from this chart, Q1 performed significantly better…" — no actual data, no values, the chart content is completely lost</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> Phrases like "as you can see" and "significantly better" do not describe the visual. An audio description is required to convey the actual chart data.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Self-describing Audio — No Extra Description Needed</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Transcript excerpt</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">Speaker audio (paraphrased):</span>
+
+<span class="tok-val">"This bar chart shows four bars.</span>
+<span class="tok-val">Q1 is the tallest at 42%. Q2 drops</span>
+<span class="tok-val">to 31%. Q3 recovers slightly at 35%.</span>
+<span class="tok-val">Q4 reaches 38%."</span>
+
+<span class="tok-comment">&lt;!-- No audio description needed:
+     all chart data is stated aloud.
+     1.2.3 is satisfied by the
+     existing audio track. --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user hears</span><span class="sr-output__text">"This bar chart shows four bars. Q1 is the tallest at 42%. Q2 drops to 31%…" — all visual data is conveyed directly through speech</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Exception:</strong> When the narrator explicitly describes all visual content in the audio track, no separate audio description is required. Design video scripts to be self-describing.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Linked media alternative -->
+            <article class="example" id="ex-linked-alt" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Linked Media Alternative — Separate Page</h3>
+                  <p class="example__scenario">A marketing video showcasing a product is embedded on a page. Rather than providing a long description on the same page, the team links to a separate page containing a full media alternative document combining the transcript and visual description.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G58</span>
+                  <span class="tag tag--technique">Technique: G69</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"product-video.mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- A link to the transcript exists
+     but only provides the spoken words,
+     not the visual content --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"transcript.html"</span><span class="tok-tag">&gt;</span>
+  Read the transcript
+<span class="tok-tag">&lt;/a&gt;</span>
+
+<span class="tok-comment">&lt;!-- Missing: description of what
+     is shown visually on screen --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> Providing only a speech transcript is not a media alternative — it omits the visual information. The link text "transcript" does not indicate it covers visual content, and the linked document only contains dialogue.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-tag">&lt;figure</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"product-video.mp4"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/video&gt;</span>
+  <span class="tok-tag">&lt;figcaption&gt;</span>
+    <span class="tok-comment">&lt;!-- G58: adjacent link to alt --&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"product-media-alt.html"</span><span class="tok-tag">&gt;</span>
+      Full media alternative for
+      this video (transcript with
+      visual description)
+    <span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-tag">&lt;/figcaption&gt;</span>
+<span class="tok-tag">&lt;/figure&gt;</span>
+
+<span class="tok-comment">&lt;!-- product-media-alt.html contains
+     both the dialogue AND descriptions
+     of all visual content, in sequence --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A blind user reads the link</span><span class="sr-output__text">"Full media alternative for this video (transcript with visual description)" — purpose is clear; linked page provides complete sequential description of both audio and video</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (G58 + G69):</strong> The link is adjacent to the video and its label makes clear it is a full media alternative — not just a transcript. The linked document covers visual content in addition to dialogue.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.2.2.html" class="criterion-nav__link">← 1.2.2 Captions (Prerecorded)</a>
+            <a href="1.2.4.html" class="criterion-nav__link">Next: 1.2.4 Captions (Live) →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded" rel="noopener noreferrer" target="_blank">Understanding 1.2.3</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#audio-description-or-media-alternative-prerecorded" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

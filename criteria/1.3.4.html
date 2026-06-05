@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.3.4 Orientation.">
+  <title>1.3.4 Orientation — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.3 Adaptable</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.3.4 Orientation</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-aa">Level AA</span>
+              <span class="badge badge--v21">WCAG 2.1</span>
+              <span class="criterion-guideline">1.3 Adaptable</span>
+            </div>
+            <h1>1.3.4 Orientation</h1>
+            <p class="criterion-page-description">
+              Content must not restrict its view and operation to a single display orientation —
+              portrait or landscape — unless that specific orientation is essential. Users who have
+              their devices mounted in a fixed orientation must be able to use the content.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/orientation"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.3.4 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.3.4</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">AA (Standard)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.1 (2018)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">4 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Many users with motor disabilities mount their devices in a fixed position — a wheelchair-mounted tablet is often in landscape, while a communication device may be locked in portrait. If a web application forces a specific orientation, these users may be completely unable to use it.
+            </p>
+            <p>
+              This criterion requires that content work in <strong>both portrait and landscape</strong>
+              orientations. Orientation restrictions should only be applied when it is genuinely
+              <em>essential</em> to the content's function — a piano keyboard application that
+              meaningfully requires landscape to show enough keys, for example.
+            </p>
+            <p>
+              The restriction may come from HTML (<code>meta viewport</code> with lock), CSS
+              (<code>@media (orientation:)</code> hiding content), or JavaScript (detecting and
+              refusing rotation). All of these are failures unless an essential exception applies.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="distinctions-heading">
+          <h2 id="distinctions-heading">Key Distinctions</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">OS Orientation Lock vs. App Lock</div>
+              <div class="exception-item__desc">
+                If a user has locked their device orientation in OS settings, the failure is the
+                OS choice — not the website. This criterion covers when the <em>content itself</em>
+                restricts orientation regardless of OS settings.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">The Essential Exception</div>
+              <div class="exception-item__desc">
+                Orientation locking is permitted when a specific orientation is essential to the
+                content. A bank cheque deposit scanner that must see the full cheque in landscape,
+                a virtual piano app, or a specific game mechanic may qualify. These are narrow
+                exceptions — most apps do not qualify.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Optimised vs. Locked</div>
+              <div class="exception-item__desc">
+                Content may be <em>optimised</em> for one orientation — showing a different layout
+                in portrait vs. landscape — as long as it remains fully functional in both. The
+                failure occurs only when content is completely <em>blocked</em> or broken in one orientation.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: CSS orientation lock -->
+            <article class="example" id="ex-css-lock" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 4</p>
+                  <h3 class="example__title" id="ex1-title">CSS Orientation Lock — Content Hidden in Portrait</h3>
+                  <p class="example__scenario">A web application hides its main content in portrait orientation and displays a "Please rotate your device" message. A user with a wheelchair-mounted tablet in landscape may be forced to use portrait. They see only the rotate message and cannot access the application.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F97</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Portrait view — content blocked</span>
+                    <div aria-hidden="true" style="width:140px;border-radius:12px;overflow:hidden;border:3px solid #334155;background:#0f172a;margin:0 auto;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:12px;text-align:center;">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.5" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/><path d="M9 11l3-3 3 3M12 8v8" stroke-width="1.5"/></svg>
+                      <span style="color:#ef4444;font-size:0.6rem;font-weight:600;">Please rotate your device to landscape mode</span>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Users with fixed-mount devices cannot rotate — content inaccessible</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">CSS</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">/* F97: portrait orientation blocked */</span>
+
+<span class="tok-hi">@media (orientation: portrait)</span> {
+  <span class="tok-attr">.app-content</span> {
+    <span class="tok-val">display: none</span>;
+  }
+  <span class="tok-attr">.rotate-message</span> {
+    <span class="tok-val">display: flex</span>;
+  }
+}
+
+<span class="tok-comment">/* Main content is completely
+   hidden in portrait — not just
+   optimised, but blocked --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">A screen reader user in portrait hears</span><span class="sr-output__text">"Please rotate your device to landscape mode." — entire application is inaccessible; no controls or content available</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F97):</strong> Hiding all content in one orientation completely blocks access. Users with motor disabilities may have their devices mounted in a fixed orientation and cannot rotate them on demand.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice — Both Orientations Work</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Portrait view — content visible (different layout)</span>
+                    <div aria-hidden="true" style="width:140px;border-radius:12px;overflow:hidden;border:3px solid #334155;background:#0f172a;margin:0 auto;aspect-ratio:9/16;display:flex;flex-direction:column;padding:8px;gap:6px;">
+                      <div style="background:#1e293b;border-radius:4px;padding:4px 6px;font-size:0.52rem;color:#e2e8f0;font-weight:600;">Dashboard</div>
+                      <div style="background:#1e293b;border-radius:4px;padding:6px;flex:1;display:flex;flex-direction:column;gap:4px;">
+                        <div style="background:#2563eb;border-radius:3px;height:20px;"></div>
+                        <div style="background:#334155;border-radius:3px;height:12px;width:80%;"></div>
+                        <div style="background:#334155;border-radius:3px;height:12px;width:60%;"></div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Portrait layout — stacked, full function</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">CSS</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">/* Content works in both orientations.
+   Layout adapts — not blocks. */</span>
+
+<span class="tok-comment">/* Default: stacked portrait layout */</span>
+<span class="tok-attr">.dashboard</span> {
+  <span class="tok-val">display: flex</span>;
+  <span class="tok-val">flex-direction: column</span>;
+}
+
+<span class="tok-comment">/* Landscape: side-by-side layout */</span>
+<span class="tok-hi">@media (orientation: landscape)</span> {
+  <span class="tok-attr">.dashboard</span> {
+    <span class="tok-val">flex-direction: row</span>;
+  }
+}
+
+<span class="tok-comment">/* .rotate-message not used at all --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader user in portrait</span><span class="sr-output__text">Entire dashboard is accessible; layout stacks vertically; all controls and content reachable via keyboard and screen reader</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Remove the rotate-message pattern entirely. Use responsive CSS to adapt the layout for each orientation without hiding or blocking content. Both layouts must be fully functional.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: JavaScript orientation lock -->
+            <article class="example" id="ex-js-lock" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 4</p>
+                  <h3 class="example__title" id="ex2-title">JavaScript Orientation Lock Using the Screen Orientation API</h3>
+                  <p class="example__scenario">A web app calls <code>screen.orientation.lock("landscape")</code> programmatically, forcing the device into landscape regardless of how the user holds it. This prevents users with fixed mounts from ever accessing the content in portrait.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F97</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">JavaScript</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">// F97: programmatic orientation lock</span>
+
+<span class="tok-hi">document.addEventListener</span>(<span class="tok-val">"DOMContentLoaded"</span>, () => {
+  <span class="tok-comment">// Forces landscape — blocks all
+  // portrait-mounted device users</span>
+  screen.orientation
+    .<span class="tok-hi">lock</span>(<span class="tok-val">"landscape"</span>)
+    .catch(err => {
+      console.log(<span class="tok-val">"Could not lock"</span>, err);
+    });
+});</code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem (F97):</strong> The Screen Orientation API actively forces the device orientation. This removes user control. Even though the API may fail silently on some browsers, this pattern signals intent to lock orientation and should be avoided.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice — No Locking</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">JavaScript</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">// Respond to orientation changes
+// without locking them</span>
+
+<span class="tok-hi">window.addEventListener</span>(
+  <span class="tok-val">"orientationchange"</span>,
+  () => {
+    <span class="tok-comment">// Adapt layout — don't lock</span>
+    <span class="tok-hi">updateLayout</span>(
+      screen.orientation.type
+    );
+  }
+);
+
+<span class="tok-tag">function</span> <span class="tok-hi">updateLayout</span>(orientationType) {
+  <span class="tok-comment">// Adjust UI for orientation
+  // but keep all content accessible</span>
+  <span class="tok-val">const</span> isLandscape =
+    orientationType.includes(<span class="tok-val">"landscape"</span>);
+  document.body.classList
+    .toggle(<span class="tok-val">"landscape"</span>, isLandscape);
+}</code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Fix:</strong> Listen to orientation changes and adapt the layout — but never call <code>screen.orientation.lock()</code> for general content. Let the user (or OS setting) control orientation. Only update CSS classes or layout logic in response to the change.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Spreadsheet that needs landscape -->
+            <article class="example" id="ex-essential-exception" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 4</p>
+                  <h3 class="example__title" id="ex3-title">Essential Exception — When Landscape Is Genuinely Required</h3>
+                  <p class="example__scenario">A piano learning app renders a full piano keyboard requiring landscape to display the minimum number of keys needed to play the target exercises. The app legitimately requires landscape for its core function. However, it must communicate this clearly rather than silently blocking portrait users.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--special">Essential exception</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor — Blocks Without Explanation</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">Scenario</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Even with a valid essential
+     exception, simply hiding content
+     without explanation fails.
+
+     Bad pattern:
+     - Portrait: blank screen
+     - No message
+     - No reason given
+     - No alternative offered
+
+     Users don't know if the app
+     has crashed or requires rotation --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--problem"><strong>Problem:</strong> Even genuine essential exceptions must communicate the requirement to users and explain why. A blank screen or silent failure is never acceptable.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good — Essential Exception with Clear Communication</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">ACCEPTABLE</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- Essential exception handled well:
+     1. Explains WHY landscape is needed
+     2. Offers alternative if possible
+     3. Screen reader accessible message --&gt;</span>
+
+<span class="tok-hi">@media (orientation: portrait)</span> {
+  <span class="tok-attr">.piano-content</span> { <span class="tok-val">display: none</span>; }
+  <span class="tok-attr">.orientation-notice</span> { <span class="tok-val">display: block</span>; }
+}
+
+<span class="tok-comment">&lt;!-- In HTML: --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"orientation-notice"</span>
+     <span class="tok-attr">role</span>=<span class="tok-val">"alert"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h2&gt;</span>Landscape required<span class="tok-tag">&lt;/h2&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>This piano exercise needs landscape
+  orientation to show all the keys.
+  Please rotate your device or enable
+  rotation in your OS settings.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"exercises-text.html"</span><span class="tok-tag">&gt;</span>
+    View exercise as text instead
+  <span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Essential exception:</strong> If landscape is genuinely essential, explain why clearly in the portrait view, using a proper heading and descriptive text. Offer an alternative (text-based version). Ensure the notice itself is accessible via screen reader.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Testing orientation compliance -->
+            <article class="example" id="ex-testing" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 4</p>
+                  <h3 class="example__title" id="ex4-title">Testing Orientation — Common Implementation Mistakes</h3>
+                  <p class="example__scenario">Developers often encounter orientation failures unintentionally — forms that overflow in portrait, tables that clip, or navigation that becomes unusable. Testing both orientations systematically catches these issues before they reach users.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Testing guidance</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Common Unintentional Failures</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">CSS / HTML</span><span class="code-status code-status--fail">CHECK THESE</span></div>
+                    <pre><code><span class="tok-comment">/* Common 1.3.4 failures to check: */</span>
+
+<span class="tok-comment">/* 1. Fixed-width containers that
+      overflow in portrait */</span>
+<span class="tok-hi">.app-wrapper</span> {
+  <span class="tok-val">width: 1024px</span>; <span class="tok-comment">/* too wide for portrait */</span>
+}
+
+<span class="tok-comment">/* 2. Horizontal scrolling disabled */</span>
+<span class="tok-hi">body</span> {
+  <span class="tok-val">overflow-x: hidden</span>;
+  <span class="tok-val">overflow-y: scroll</span>;
+}
+
+<span class="tok-comment">/* 3. Form fields with fixed widths */</span>
+<span class="tok-hi">input</span> { <span class="tok-val">width: 600px</span>; }
+
+<span class="tok-comment">/* 4. Viewport meta that disables zoom
+      (related but separate issue) */</span>
+<span class="tok-tag">&lt;meta</span> <span class="tok-attr">name</span>=<span class="tok-val">"viewport"</span>
+  <span class="tok-attr">content</span>=<span class="tok-val">"width=device-width,
+    initial-scale=1,
+    user-scalable=no"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- user-scalable=no also fails
+     SC 1.4.4 Resize Text --&gt;</span></code></pre>
+                  </div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Responsive Patterns That Pass</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">CSS</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">/* Responsive patterns that work in
+   both orientations: */</span>
+
+<span class="tok-comment">/* 1. Fluid containers */</span>
+<span class="tok-hi">.app-wrapper</span> {
+  <span class="tok-val">max-width: 1200px</span>;
+  <span class="tok-val">width: 100%</span>;
+  <span class="tok-val">box-sizing: border-box</span>;
+}
+
+<span class="tok-comment">/* 2. Fluid inputs */</span>
+<span class="tok-hi">input, textarea</span> {
+  <span class="tok-val">width: 100%</span>;
+  <span class="tok-val">max-width: 480px</span>;
+}
+
+<span class="tok-comment">/* 3. Viewport meta — allow zoom */</span>
+<span class="tok-tag">&lt;meta</span> <span class="tok-attr">name</span>=<span class="tok-val">"viewport"</span>
+  <span class="tok-attr">content</span>=<span class="tok-val">"width=device-width,
+    initial-scale=1"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- No user-scalable restriction --&gt;</span>
+
+<span class="tok-comment">/* 4. Test using DevTools:
+   Chrome/Firefox: toggle device
+   toolbar → rotate icon --&gt;</span></code></pre>
+                  </div>
+                  <p class="example__note example__note--solution"><strong>Testing approach:</strong> Use browser DevTools device emulation and toggle between portrait and landscape for every page. Check that all content is reachable, no horizontal overflow is clipped, and all interactive controls remain operable. Test with a screen reader in both orientations.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.3.3.html" class="criterion-nav__link">← 1.3.3 Sensory Characteristics</a>
+            <a href="1.3.5.html" class="criterion-nav__link">Next: 1.3.5 Identify Input Purpose →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/orientation" rel="noopener noreferrer" target="_blank">Understanding 1.3.4</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#orientation" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

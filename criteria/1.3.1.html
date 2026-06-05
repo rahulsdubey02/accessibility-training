@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples and guidance for WCAG 2.2 SC 1.3.1 Info and Relationships.">
+  <title>1.3.1 Info and Relationships — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="criterion-page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.3 Adaptable</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.3.1 Info and Relationships</li>
+          </ol>
+        </nav>
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.3 Adaptable</span>
+            </div>
+            <h1>1.3.1 Info and Relationships</h1>
+            <p class="criterion-page-description">
+              Information, structure, and relationships conveyed through visual presentation can be
+              programmatically determined or are available in text. If something looks like a heading,
+              acts like a table header, or appears required — the markup must express that meaning.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships"
+                 class="btn btn--outline-green" target="_blank" rel="noopener noreferrer">
+                W3C Understanding 1.3.1 ↗
+              </a>
+            </div>
+          </div>
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item"><dt class="quick-info-item__label">Criterion</dt><dd class="quick-info-item__value">1.3.1</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Level</dt><dd class="quick-info-item__value">A (Minimum)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Principle</dt><dd class="quick-info-item__value">1. Perceivable</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">WCAG Version</dt><dd class="quick-info-item__value">2.0 (2008)</dd></div>
+              <div class="quick-info-item"><dt class="quick-info-item__label">Examples below</dt><dd class="quick-info-item__value">5 scenarios</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              Sighted users perceive structure visually — headings look larger and bolder, table
+              headers appear different from data cells, required fields are marked with an asterisk.
+              This criterion requires that the same structural meaning be available
+              <em>programmatically</em> — encoded in the HTML so that assistive technologies
+              (screen readers, braille displays) can expose it to users who cannot see the
+              visual presentation.
+            </p>
+            <p>The key principle: <strong>if it looks like structure, it must be marked up as structure.</strong></p>
+            <ul style="margin:0.75rem 0;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.4rem;">
+              <li>Text styled to look like a heading → must be a <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> element</li>
+              <li>A row of cells acting as column headers → must use <code>&lt;th&gt;</code> not <code>&lt;td&gt;</code></li>
+              <li>Fields grouped together → must use <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code></li>
+              <li>Required status conveyed by red asterisk → must also be in the label or via ARIA</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+          <div class="examples-list">
+
+            <!-- Example 1: Table with no headers -->
+            <article class="example" id="ex-table-no-headers" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 5</p>
+                  <h3 class="example__title" id="ex1-title">Data Table with No Header Cells</h3>
+                  <p class="example__scenario">A pricing table displays plan names, monthly costs, and feature limits. Visually the top row clearly acts as column headers. But the HTML uses only <code>&lt;td&gt;</code> throughout — screen readers announce data cells without any column association.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F91</span>
+                  <span class="tag tag--technique">Technique: H51</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview" aria-label="Rendered table">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="overflow-x:auto;">
+                      <table style="width:100%;border-collapse:collapse;font-size:0.7rem;">
+                        <tbody>
+                          <tr style="background:#1e293b;font-weight:700;color:#94a3b8;">
+                            <td style="padding:6px 10px;border:1px solid #334155;">Plan</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">Price/mo</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">Users</td>
+                          </tr>
+                          <tr style="background:#0f172a;color:#e2e8f0;">
+                            <td style="padding:6px 10px;border:1px solid #334155;">Starter</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">£9</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">1–5</td>
+                          </tr>
+                          <tr style="background:#0f172a;color:#e2e8f0;">
+                            <td style="padding:6px 10px;border:1px solid #334155;">Pro</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">£29</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">Up to 20</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Header row looks right but has no semantic markup</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-tag">&lt;table&gt;</span>
+  <span class="tok-tag">&lt;tr&gt;</span>
+    <span class="tok-comment">&lt;!-- F91: header row uses &lt;td&gt;,
+         not &lt;th&gt; --&gt;</span>
+    <span class="tok-hi">&lt;td&gt;</span>Plan<span class="tok-hi">&lt;/td&gt;</span>
+    <span class="tok-hi">&lt;td&gt;</span>Price/mo<span class="tok-hi">&lt;/td&gt;</span>
+    <span class="tok-hi">&lt;td&gt;</span>Users<span class="tok-hi">&lt;/td&gt;</span>
+  <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;tr&gt;</span>
+    <span class="tok-tag">&lt;td&gt;</span>Starter<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;td&gt;</span>£9<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;td&gt;</span>1–5<span class="tok-tag">&lt;/td&gt;</span>
+  <span class="tok-tag">&lt;/tr&gt;</span>
+<span class="tok-tag">&lt;/table&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"Table, 3 columns, 3 rows. Row 1: Plan, Price/mo, Users. Row 2: Starter, £9, 1–5." — no column-header relationship established</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F91):</strong> When navigating individual cells, a screen reader cannot tell the user which column header a cell belongs to. "£9" has no relationship to "Price/mo" in the markup.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__preview" aria-label="Rendered table with proper markup">
+                    <span class="preview-label">Same visual result — correct markup</span>
+                    <div aria-hidden="true" style="overflow-x:auto;">
+                      <table style="width:100%;border-collapse:collapse;font-size:0.7rem;">
+                        <thead>
+                          <tr style="background:#1e293b;">
+                            <th style="padding:6px 10px;border:1px solid #334155;color:#6ee7b7;font-weight:700;text-align:left;">Plan</th>
+                            <th style="padding:6px 10px;border:1px solid #334155;color:#6ee7b7;font-weight:700;text-align:left;">Price/mo</th>
+                            <th style="padding:6px 10px;border:1px solid #334155;color:#6ee7b7;font-weight:700;text-align:left;">Users</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr style="background:#0f172a;color:#e2e8f0;">
+                            <td style="padding:6px 10px;border:1px solid #334155;">Starter</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">£9</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">1–5</td>
+                          </tr>
+                          <tr style="background:#0f172a;color:#e2e8f0;">
+                            <td style="padding:6px 10px;border:1px solid #334155;">Pro</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">£29</td>
+                            <td style="padding:6px 10px;border:1px solid #334155;">Up to 20</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ &lt;th&gt; elements with &lt;thead&gt; establish column relationships</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H51: use &lt;th&gt; for header cells
+     scope attribute clarifies direction --&gt;</span>
+<span class="tok-tag">&lt;table&gt;</span>
+  <span class="tok-tag">&lt;caption&gt;</span>Pricing plans<span class="tok-tag">&lt;/caption&gt;</span>
+  <span class="tok-tag">&lt;thead&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-hi">&lt;th scope="col"&gt;</span>Plan<span class="tok-hi">&lt;/th&gt;</span>
+      <span class="tok-hi">&lt;th scope="col"&gt;</span>Price/mo<span class="tok-hi">&lt;/th&gt;</span>
+      <span class="tok-hi">&lt;th scope="col"&gt;</span>Users<span class="tok-hi">&lt;/th&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/thead&gt;</span>
+  <span class="tok-tag">&lt;tbody&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>Starter<span class="tok-tag">&lt;/td&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>£9<span class="tok-tag">&lt;/td&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>1–5<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/tbody&gt;</span>
+<span class="tok-tag">&lt;/table&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"Table, Pricing plans, 3 columns, 2 rows. Row 1, Column 1: Starter. Price/mo: £9. Users: 1–5." — column headers announced with each cell</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (H51):</strong> Use <code>&lt;th scope="col"&gt;</code> for column headers and <code>&lt;th scope="row"&gt;</code> for row headers. Wrap header rows in <code>&lt;thead&gt;</code> and data rows in <code>&lt;tbody&gt;</code>. Add a <code>&lt;caption&gt;</code> for the table's purpose.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 2: Heading styled with CSS only -->
+            <article class="example" id="ex-fake-heading" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 5</p>
+                  <h3 class="example__title" id="ex2-title">Visual Heading Implemented with a &lt;div&gt;</h3>
+                  <p class="example__scenario">A developer styles a <code>&lt;div&gt;</code> to look like a section heading — large, bold, and dark. Visually it functions as a heading. A screen reader user navigating by headings (a very common pattern) skips it entirely because it is not an <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> element.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F2</span>
+                  <span class="tag tag--technique">Technique: H42</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output — looks like a heading</span>
+                    <div aria-hidden="true" style="background:#0f172a;border-radius:8px;padding:16px;max-width:340px;">
+                      <div style="font-size:1.1rem;font-weight:700;color:#e2e8f0;margin-bottom:6px;border-bottom:2px solid #2563eb;padding-bottom:6px;">Account Settings</div>
+                      <p style="font-size:0.7rem;color:#94a3b8;margin:0;">Manage your profile, security, and notification preferences.</p>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Looks like an h2 but is a &lt;div&gt; — invisible to heading navigation</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F2: heading conveyed visually
+     but not in markup --&gt;</span>
+<span class="tok-hi">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"heading-styled"</span><span class="tok-hi">&gt;</span>
+  Account Settings
+<span class="tok-hi">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Manage your profile…<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-comment">/* CSS only creates visual appearance */
+.heading-styled {
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 2px solid blue;
+}</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">When navigating by headings (H key)</span><span class="sr-output__text">"Account Settings" is skipped entirely — the section cannot be reached via heading navigation and has no heading level announced</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F2):</strong> Screen reader users frequently navigate a page by jumping between headings using a keyboard shortcut. A <code>&lt;div&gt;</code> styled to look like a heading is completely invisible to this navigation pattern.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H42: use actual heading element.
+     CSS still controls appearance.
+     Structure comes from the tag. --&gt;</span>
+<span class="tok-hi">&lt;h2</span> <span class="tok-attr">class</span>=<span class="tok-val">"section-heading"</span><span class="tok-hi">&gt;</span>
+  Account Settings
+<span class="tok-hi">&lt;/h2&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Manage your profile…<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-comment">/* Style the h2 — same visual result */
+.section-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 2px solid blue;
+}</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"Account Settings, heading level 2" — reachable via heading navigation; the section is now navigable</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (H42):</strong> Replace the <code>&lt;div&gt;</code> with the appropriate heading level element (<code>&lt;h2&gt;</code>–<code>&lt;h6&gt;</code>). CSS still controls the visual appearance. The heading level should reflect the document outline, not the desired size.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 3: Form without labels -->
+            <article class="example" id="ex-no-labels" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 5</p>
+                  <h3 class="example__title" id="ex3-title">Form Fields Without Programmatically Associated Labels</h3>
+                  <p class="example__scenario">A login form uses placeholder text as the only labelling mechanism. The placeholder disappears when the user starts typing, leaving the field unlabelled. Screen readers announce placeholder text inconsistently and it vanishes from view — both sighted and non-sighted users are affected.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F68</span>
+                  <span class="tag tag--technique">Technique: H44</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Login form — placeholders as labels</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:280px;display:flex;flex-direction:column;gap:10px;">
+                      <input type="text" placeholder="Email address" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;color:#64748b;font-size:0.75rem;width:100%;box-sizing:border-box;pointer-events:none;" readonly>
+                      <input type="password" placeholder="Password" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;color:#64748b;font-size:0.75rem;width:100%;box-sizing:border-box;pointer-events:none;" readonly>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Placeholder disappears when user types — label is lost</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F68: no &lt;label&gt; associated --&gt;</span>
+<span class="tok-tag">&lt;input</span>
+  <span class="tok-attr">type</span>=<span class="tok-val">"email"</span>
+  <span class="tok-hi">placeholder</span>=<span class="tok-val">"Email address"</span>
+<span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;input</span>
+  <span class="tok-attr">type</span>=<span class="tok-val">"password"</span>
+  <span class="tok-hi">placeholder</span>=<span class="tok-val">"Password"</span>
+<span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- placeholder is not a label:
+     - Disappears on focus/input
+     - Often low contrast
+     - Not consistently exposed by AT --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader on focus</span><span class="sr-output__text">"Edit text" (placeholder text may or may not be read — varies by AT). Once user starts typing: field has no label; "edit blank"</span></span></div>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__preview">
+                    <span class="preview-label">Form with visible labels</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:16px;max-width:280px;display:flex;flex-direction:column;gap:10px;">
+                      <div style="display:flex;flex-direction:column;gap:4px;">
+                        <label style="font-size:0.68rem;color:#94a3b8;font-weight:600;">Email address</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:0.75rem;width:100%;box-sizing:border-box;pointer-events:none;" readonly>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:4px;">
+                        <label style="font-size:0.68rem;color:#94a3b8;font-weight:600;">Password</label>
+                        <input type="text" tabindex="-1" style="background:#0f172a;border:1px solid #334155;border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:0.75rem;width:100%;box-sizing:border-box;pointer-events:none;" readonly>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Visible label always present, programmatically associated</p>
+                  </div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H44: &lt;label for&gt; associates
+     label with input by id --&gt;</span>
+<span class="tok-tag">&lt;div&gt;</span>
+  <span class="tok-hi">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"email"</span><span class="tok-hi">&gt;</span>Email address<span class="tok-hi">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">id</span>=<span class="tok-val">"email"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"email"</span>
+    <span class="tok-attr">autocomplete</span>=<span class="tok-val">"email"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;div&gt;</span>
+  <span class="tok-hi">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"password"</span><span class="tok-hi">&gt;</span>Password<span class="tok-hi">&lt;/label&gt;</span>
+  <span class="tok-tag">&lt;input</span>
+    <span class="tok-hi">id</span>=<span class="tok-val">"password"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"password"</span>
+    <span class="tok-attr">autocomplete</span>=<span class="tok-val">"current-password"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader on focus</span><span class="sr-output__text">"Email address, edit text" — label is permanent, does not disappear when the user types</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (H44):</strong> Use <code>&lt;label for="id"&gt;</code> paired with a matching <code>id</code> on the input. The label remains visible and associated permanently. Use placeholder text as supplementary hint only, never as the only label.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 4: Required field indication -->
+            <article class="example" id="ex-required-field" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 5</p>
+                  <h3 class="example__title" id="ex4-title">Required Fields Indicated by Visual Asterisk Only</h3>
+                  <p class="example__scenario">A registration form marks required fields with a red asterisk (*). The key explaining "* = required" appears at the top of the form. The asterisk is a visual character inside the label — screen readers announce "asterisk" or ignore it, and the programmatic required state is never communicated.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F81</span>
+                  <span class="tag tag--technique">Technique: H90</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F81: required communicated
+     only through visual asterisk --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Fields marked * are required<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"name"</span><span class="tok-tag">&gt;</span>
+  Full name <span class="tok-hi">&lt;span aria-hidden="true"&gt;</span>*<span class="tok-hi">&lt;/span&gt;</span>
+<span class="tok-tag">&lt;/label&gt;</span>
+<span class="tok-tag">&lt;input</span> <span class="tok-attr">id</span>=<span class="tok-val">"name"</span> <span class="tok-attr">type</span>=<span class="tok-val">"text"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- No required attribute, no
+     aria-required, no text cue
+     in the accessible name --&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader on focus</span><span class="sr-output__text">"Full name, edit text" — required status is not communicated; the asterisk is hidden; user may submit without completing required fields</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F81):</strong> Using <code>aria-hidden="true"</code> on the asterisk hides it from screen readers — but then no mechanism communicates required status. The asterisk must be paired with <code>required</code> or <code>aria-required</code>.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H90: visual asterisk + programmatic
+     required attribute together --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Fields marked * are required<span class="tok-tag">&lt;/p&gt;</span>
+
+<span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-val">"name"</span><span class="tok-tag">&gt;</span>
+  Full name
+  <span class="tok-hi">&lt;span aria-hidden="true"&gt;</span> *<span class="tok-hi">&lt;/span&gt;</span>
+<span class="tok-tag">&lt;/label&gt;</span>
+<span class="tok-tag">&lt;input</span>
+  <span class="tok-attr">id</span>=<span class="tok-val">"name"</span>
+  <span class="tok-attr">type</span>=<span class="tok-val">"text"</span>
+  <span class="tok-hi">required</span>
+  <span class="tok-comment">&lt;!-- or: aria-required="true" --&gt;</span>
+<span class="tok-tag">&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader on focus</span><span class="sr-output__text">"Full name, edit text, required" — required status announced regardless of the asterisk</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (H90):</strong> Add the <code>required</code> attribute (or <code>aria-required="true"</code>) to every required field. The visual asterisk is kept for sighted users with <code>aria-hidden="true"</code> to avoid "asterisk" being read aloud. Both audiences receive the required cue through their own channel.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Example 5: List content not using list markup -->
+            <article class="example" id="ex-fake-list" aria-labelledby="ex5-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 5 of 5</p>
+                  <h3 class="example__title" id="ex5-title">Visual List Built with Line Breaks and Dashes</h3>
+                  <p class="example__scenario">A features section presents a list of product capabilities using CSS-styled <code>&lt;div&gt;</code> elements or paragraphs with manual dashes — "— Real-time sync", "— 256-bit encryption". Screen readers cannot determine how many items are in the list or jump between them.</p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F43</span>
+                  <span class="tag tag--technique">Technique: H48</span>
+                </div>
+              </div>
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--bad">✗ Poor Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--fail">FAIL</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- F43: list structure conveyed
+     only through visual formatting --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"features"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-hi">&lt;p&gt;</span>— Real-time sync<span class="tok-hi">&lt;/p&gt;</span>
+  <span class="tok-hi">&lt;p&gt;</span>— 256-bit encryption<span class="tok-hi">&lt;/p&gt;</span>
+  <span class="tok-hi">&lt;p&gt;</span>— 99.9% uptime SLA<span class="tok-hi">&lt;/p&gt;</span>
+  <span class="tok-hi">&lt;p&gt;</span>— 24/7 support<span class="tok-hi">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--bad" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader reads</span><span class="sr-output__text">"dash Real-time sync. dash 256-bit encryption. dash 99.9% uptime SLA…" — no list count announced, no list navigation; "dash" is read aloud</span></span></div>
+                  <p class="example__note example__note--problem"><strong>Problem (F43):</strong> Screen readers cannot tell the user there are 4 items in this group. The visual "—" marker is read literally. Users cannot jump between list items using arrow keys.</p>
+                </div>
+                <div class="example__col example__col--good">
+                  <div class="example__col-header"><span class="practice-badge practice-badge--good">✓ Good Practice</span></div>
+                  <div class="example__code">
+                    <div class="code-toolbar"><span class="code-lang">HTML</span><span class="code-status code-status--pass">PASS</span></div>
+                    <pre><code><span class="tok-comment">&lt;!-- H48: use &lt;ul&gt; for unordered lists.
+     CSS can style the bullets.
+     Structure communicates the group. --&gt;</span>
+<span class="tok-hi">&lt;ul&gt;</span>
+  <span class="tok-hi">&lt;li&gt;</span>Real-time sync<span class="tok-hi">&lt;/li&gt;</span>
+  <span class="tok-hi">&lt;li&gt;</span>256-bit encryption<span class="tok-hi">&lt;/li&gt;</span>
+  <span class="tok-hi">&lt;li&gt;</span>99.9% uptime SLA<span class="tok-hi">&lt;/li&gt;</span>
+  <span class="tok-hi">&lt;li&gt;</span>24/7 support<span class="tok-hi">&lt;/li&gt;</span>
+<span class="tok-hi">&lt;/ul&gt;</span></code></pre>
+                  </div>
+                  <div class="sr-output sr-output--good" role="note"><span class="sr-output__icon" aria-hidden="true">🔊</span><span><span class="sr-output__label">Screen reader announces</span><span class="sr-output__text">"List, 4 items. Real-time sync. 256-bit encryption. 99.9% uptime SLA. 24/7 support. End of list." — count and list structure communicated</span></span></div>
+                  <p class="example__note example__note--solution"><strong>Fix (H48):</strong> Use <code>&lt;ul&gt;</code> for unordered items and <code>&lt;ol&gt;</code> for sequential items. Use CSS <code>list-style</code> to control bullet appearance. The HTML element type communicates the list structure semantically.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.2.5.html" class="criterion-nav__link">← 1.2.5 Audio Description (Prerecorded)</a>
+            <a href="1.3.2.html" class="criterion-nav__link">Next: 1.3.2 Meaningful Sequence →</a>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a> published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>. Content is for training and reference purposes.</p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships" rel="noopener noreferrer" target="_blank">Understanding 1.3.1</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#info-and-relationships" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
