@@ -70,6 +70,11 @@
   --badge-deprecated-bg:   #f8fafc;
   --badge-deprecated-text: #475569;
 
+  /* Link colour — #1e40af on white = 8.75:1 ✓ */
+  --color-link:            #1e40af;
+  --color-link-hover:      #1e3a8a;
+  --color-link-decoration: rgba(30, 64, 175, 0.4);
+
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
@@ -839,19 +844,19 @@ a:hover { text-decoration: underline; }
   gap: var(--space-1);
   font-size: 0.8rem;
   font-weight: 700;
-  color: #1e40af;
+  color: var(--color-link);
   border-radius: var(--radius-sm);
   padding: 2px 4px;
   margin: -2px -4px;
   text-decoration: underline;
-  text-decoration-color: rgba(30, 64, 175, 0.4);
+  text-decoration-color: var(--color-link-decoration);
   text-underline-offset: 2px;
   transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
 .criterion-card__link:hover {
-  color: #1e3a8a;
-  text-decoration-color: #1e3a8a;
+  color: var(--color-link-hover);
+  text-decoration-color: var(--color-link-hover);
   text-decoration: underline;
 }
 
@@ -1145,6 +1150,11 @@ a:hover { text-decoration: underline; }
 
     --shadow-sm:  0 1px 2px rgba(0,0,0,0.3);
     --shadow-md:  0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
+
+    /* Link — #60a5fa on #1e293b card = 5.8:1 ✓ */
+    --color-link:            #60a5fa;
+    --color-link-hover:      #93c5fd;
+    --color-link-decoration: rgba(96, 165, 250, 0.4);
   }
 
   .site-header,
