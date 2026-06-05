@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples, failure conditions, and remediation guidance for WCAG 2.2 Success Criterion 1.2.2 Captions (Prerecorded).">
+  <title>1.2.2 Captions (Prerecorded) — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link" aria-current="page">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =====================================================
+         Criterion Hero
+    ====================================================== -->
+    <div class="criterion-page-hero">
+      <div class="container">
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.2 Time-based Media</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.2.2 Captions (Prerecorded)</li>
+          </ol>
+        </nav>
+
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.2 Time-based Media</span>
+            </div>
+            <h1>1.2.2 Captions (Prerecorded)</h1>
+            <p class="criterion-page-description">
+              Captions must be provided for all prerecorded audio content in synchronised media —
+              unless the media is itself a media alternative for text and is clearly labelled as such.
+              Captions must convey dialogue, speaker identity, and meaningful non-speech sounds.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded"
+                 class="btn btn--outline-green"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                W3C Understanding 1.2.2 ↗
+              </a>
+            </div>
+          </div>
+
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Criterion</dt>
+                <dd class="quick-info-item__value">1.2.2</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Level</dt>
+                <dd class="quick-info-item__value">A (Minimum)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Principle</dt>
+                <dd class="quick-info-item__value">1. Perceivable</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Guideline</dt>
+                <dd class="quick-info-item__value">1.2 Time-based Media</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">WCAG Version</dt>
+                <dd class="quick-info-item__value">2.0 (2008)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Examples below</dt>
+                <dd class="quick-info-item__value">5 scenarios</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =====================================================
+         Main Content
+    ====================================================== -->
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <!-- Intent -->
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              This criterion requires captions for prerecorded <strong>synchronised media</strong> —
+              video that has a corresponding audio track with speech, sound effects, or other auditory
+              information. Unlike SC 1.2.1 (which covers audio-only and video-only), this criterion
+              applies to video <em>with</em> audio.
+            </p>
+            <p>
+              Captions differ from subtitles. Subtitles translate dialogue for hearing users.
+              Captions are for deaf and hard-of-hearing users — they must convey everything in the
+              audio track that is needed to understand the content:
+            </p>
+            <ul style="margin: 0.75rem 0; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li>All spoken dialogue, verbatim</li>
+              <li>Speaker identification when multiple speakers are present</li>
+              <li>Meaningful sound effects: [DOOR SLAMS], [ALARM BEEPS], [CROWD CHEERING]</li>
+              <li>Music descriptions when they carry meaning: [TENSE ORCHESTRAL MUSIC]</li>
+              <li>Tone-of-voice cues when relevant: [SARCASTICALLY], [WHISPERING]</li>
+            </ul>
+            <p>
+              Captions may be <strong>closed</strong> (user-toggled, via a caption track) or
+              <strong>open</strong> (burned into the video frame and always visible). Both satisfy
+              the criterion — but closed captions are strongly preferred as they respect user choice.
+            </p>
+          </div>
+        </section>
+
+        <!-- Key distinctions -->
+        <section class="content-section" aria-labelledby="distinctions-heading">
+          <h2 id="distinctions-heading">Key Distinctions &amp; Exemption</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Captions ≠ Subtitles</div>
+              <div class="exception-item__desc">
+                Subtitles translate spoken language for hearing viewers. Captions provide a complete
+                text equivalent of the audio track — including non-speech sounds — for users who
+                cannot hear the audio. A video with subtitles only does <em>not</em> satisfy 1.2.2.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Auto-generated Captions Are Not Sufficient Alone</div>
+              <div class="exception-item__desc">
+                Platforms like YouTube generate captions automatically using speech recognition.
+                These often contain errors — especially with proper nouns and accents — and rarely
+                include speaker IDs or sound effects. Auto-captions must be reviewed and corrected
+                before a video is considered accessible.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Media Alternative Exemption</div>
+              <div class="exception-item__desc">
+                If the synchronised media is itself an alternative for existing text on the same page
+                (e.g., a video version of a written tutorial) and is clearly labelled as such, captions
+                are not required. The text already provides the equivalent.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+
+          <div class="examples-list">
+
+            <!-- ============================================================
+                 Example 1: Video with Dialogue — No Captions (F75)
+            ============================================================= -->
+            <article class="example" id="ex-no-captions" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 5</p>
+                  <h3 class="example__title" id="ex1-title">Video with Dialogue — No Captions Provided</h3>
+                  <p class="example__scenario">
+                    A company publishes a product demo video that includes a presenter speaking over
+                    a screen recording. No caption track is added. Deaf users who visit the page
+                    encounter the video player but have no way to access the spoken content.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F75</span>
+                  <span class="tag tag--technique">Technique: G87</span>
+                  <span class="tag tag--technique">Technique: H95</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad" aria-label="Poor practice">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Poor practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <!-- Video player with no captions -->
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <!-- Video frame: presenter + screen -->
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <!-- Screen recording area -->
+                        <div style="width:62%;background:#1e293b;border-radius:4px;aspect-ratio:4/3;display:flex;flex-direction:column;padding:6px;gap:4px;margin-right:6px;">
+                          <div style="background:#e2e8f0;border-radius:2px;height:7px;width:70%;"></div>
+                          <div style="background:#e2e8f0;border-radius:2px;height:5px;width:50%;"></div>
+                          <div style="background:#2563eb;border-radius:2px;height:5px;width:35%;margin-top:auto;align-self:flex-start;"></div>
+                        </div>
+                        <!-- Presenter circle avatar -->
+                        <div style="width:28%;aspect-ratio:1;border-radius:50%;background:#334155;border:2px solid #475569;display:flex;align-items:center;justify-content:center;">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                        </div>
+                        <!-- Speech bubble (no captions below) -->
+                        <div style="position:absolute;bottom:0;left:0;right:0;height:18%;background:transparent;"></div>
+                      </div>
+                      <!-- Controls -->
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:30%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:42 / 2:18</span>
+                        <!-- CC button — off -->
+                        <div style="background:#334155;border-radius:3px;padding:1px 4px;font-size:0.5rem;color:#64748b;font-weight:700;font-family:monospace;">CC</div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.72rem;color:#ef4444;margin-top:8px;font-style:italic;">✗ No caption track — CC button inactive</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"product-demo.mp4"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span>
+  <span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- F75: synchronised media with
+       audio but no captions at all --&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note" aria-label="Impact on deaf users">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user experiences</span>
+                      <span class="sr-output__text">Video plays — presenter is visibly speaking but no text appears; all spoken product information is inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F75):</strong> The video contains spoken dialogue — the presenter
+                    explains features and demonstrates the product. Without captions, deaf and
+                    hard-of-hearing users see a presenter talking but receive none of the content.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good" aria-label="Good practice">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Good practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <!-- Video player WITH captions displayed -->
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <!-- Screen recording -->
+                        <div style="width:62%;background:#1e293b;border-radius:4px;aspect-ratio:4/3;display:flex;flex-direction:column;padding:6px;gap:4px;margin-right:6px;">
+                          <div style="background:#e2e8f0;border-radius:2px;height:7px;width:70%;"></div>
+                          <div style="background:#e2e8f0;border-radius:2px;height:5px;width:50%;"></div>
+                          <div style="background:#2563eb;border-radius:2px;height:5px;width:35%;margin-top:auto;align-self:flex-start;"></div>
+                        </div>
+                        <!-- Presenter -->
+                        <div style="width:28%;aspect-ratio:1;border-radius:50%;background:#334155;border:2px solid #475569;display:flex;align-items:center;justify-content:center;">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                        </div>
+                        <!-- Caption bar -->
+                        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.82);padding:5px 10px;text-align:center;">
+                          <span style="color:#ffffff;font-size:0.6rem;font-weight:500;line-height:1.4;">PRESENTER: Click "Save" to apply your changes and the settings will update immediately.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:30%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:42 / 2:18</span>
+                        <!-- CC button — active -->
+                        <div style="background:#2563eb;border-radius:3px;padding:1px 4px;font-size:0.5rem;color:#fff;font-weight:700;font-family:monospace;">CC</div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.72rem;color:#047857;margin-top:8px;font-style:italic;">✓ Caption track active — text appears synchronised with speech</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- G87 + H95: closed caption track --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"product-demo.mp4"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span>
+  <span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- H95: captions track (WebVTT) --&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"captions"</span>
+    <span class="tok-hi">src</span>=<span class="tok-val">"product-demo-captions.vtt"</span>
+    <span class="tok-hi">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-hi">label</span>=<span class="tok-val">"English captions"</span>
+    <span class="tok-hi">default</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note" aria-label="Experience with good practice">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user experiences</span>
+                      <span class="sr-output__text">Caption text appears synchronised with speech — "PRESENTER: Click Save to apply your changes…" — every spoken word and sound is accessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G87 + H95):</strong> Add a <code>&lt;track kind="captions"&gt;</code>
+                    element pointing to a WebVTT caption file. Use the <code>default</code> attribute
+                    so captions are on by default for users who have enabled them in their OS or
+                    browser preferences.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📁</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">WebVTT is the standard caption format for HTML5</p>
+                      <p class="remediation-item__desc">Use <code>kind="captions"</code> (not "subtitles") so the browser signals the track contains non-speech sounds and is intended for deaf users. Caption tracks show in media players alongside the CC button.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⚙️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Use <code>default</code> respectfully</p>
+                      <p class="remediation-item__desc">The <code>default</code> attribute activates the track for users whose OS accessibility settings request captions. Do not force captions on for all users — respect preference — but do add <code>default</code> so the OS setting is honoured.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🎬</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Third-party video embeds</p>
+                      <p class="remediation-item__desc">YouTube and Vimeo support caption uploads. After uploading, verify captions render correctly, toggle them on and off, and check they synchronise accurately. Do not rely on the platform's auto-generated captions without review.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 2: WebVTT Caption File — Anatomy
+            ============================================================= -->
+            <article class="example" id="ex-vtt-anatomy" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 5</p>
+                  <h3 class="example__title" id="ex2-title">WebVTT File — What Captions Must Include</h3>
+                  <p class="example__scenario">
+                    A training video is captioned but only includes the spoken words. Important
+                    non-speech audio — a fire alarm, background music indicating urgency, and a
+                    second speaker entering the room — are absent. This is Failure F8.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F8</span>
+                  <span class="tag tag--technique">Technique: G87</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output — captions on screen</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#1a1a2e;aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;">
+                        <!-- Office environment mockup -->
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);display:flex;align-items:center;gap:8px;">
+                          <div style="width:22px;height:22px;border-radius:50%;background:#475569;border:1.5px solid #64748b;display:flex;align-items:center;justify-content:center;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="#94a3b8" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                          <div style="width:18px;height:18px;border-radius:50%;background:#334155;border:1.5px solid #475569;display:flex;align-items:center;justify-content:center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="#64748b" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                        </div>
+                        <!-- Caption bar — missing sounds -->
+                        <div style="width:100%;background:rgba(0,0,0,0.82);padding:5px 10px;text-align:center;">
+                          <span style="color:#fff;font-size:0.58rem;line-height:1.4;">Please proceed with the evacuation procedure.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:55%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">1:22 / 2:30</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Fire alarm and second speaker are absent from captions</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">WebVTT</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:01:18.000 --> 00:01:22.000</span>
+<span class="tok-val">Please proceed with the evacuation</span>
+<span class="tok-val">procedure.</span>
+
+<span class="tok-comment">00:01:23.000 --> 00:01:27.000</span>
+<span class="tok-val">All staff should exit through the</span>
+<span class="tok-val">nearest fire door.</span>
+
+<span class="tok-comment">&lt;!-- Missing:
+  - [FIRE ALARM BLARING] sound cue
+  - [SUPERVISOR (entering)]: speaker ID
+  - [URGENT, RAISED VOICE] tone cue --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer reads</span>
+                      <span class="sr-output__text">"Please proceed with the evacuation procedure." — the alarm sound and a second person's entry are invisible; the viewer cannot understand the urgency or that a new speaker has arrived</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F8):</strong> The captions include only spoken words. The fire
+                    alarm blaring in the background — which conveys urgency — and the arrival of a
+                    supervisor (a second speaker) are both absent. The caption fails to provide an
+                    equivalent experience.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output — captions on screen</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#1a1a2e;aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;">
+                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);display:flex;align-items:center;gap:8px;">
+                          <div style="width:22px;height:22px;border-radius:50%;background:#475569;border:1.5px solid #64748b;display:flex;align-items:center;justify-content:center;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="#94a3b8" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                          <div style="width:18px;height:18px;border-radius:50%;background:#334155;border:1.5px solid #475569;display:flex;align-items:center;justify-content:center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="#64748b" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                        </div>
+                        <!-- Full caption bar -->
+                        <div style="width:100%;background:rgba(0,0,0,0.84);padding:5px 10px;text-align:center;">
+                          <span style="color:#fde68a;font-size:0.55rem;font-weight:600;">[FIRE ALARM BLARING]</span><br>
+                          <span style="color:#fff;font-size:0.55rem;line-height:1.4;">SUPERVISOR: Please proceed with the evacuation procedure.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:55%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">1:22 / 2:30</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Sound cue and speaker label both present</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">WebVTT</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">WEBVTT</span>
+
+<span class="tok-comment">00:01:16.000 --> 00:01:19.000</span>
+<span class="tok-hi">[FIRE ALARM BLARING]</span>
+
+<span class="tok-comment">00:01:18.000 --> 00:01:22.000</span>
+<span class="tok-hi">SUPERVISOR:</span> <span class="tok-val">Please proceed with the</span>
+<span class="tok-val">evacuation procedure.</span>
+
+<span class="tok-comment">00:01:23.000 --> 00:01:27.000</span>
+<span class="tok-hi">SUPERVISOR:</span> <span class="tok-val">All staff should exit</span>
+<span class="tok-val">through the nearest fire door.</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer reads</span>
+                      <span class="sr-output__text">"[FIRE ALARM BLARING] SUPERVISOR: Please proceed with the evacuation procedure." — the urgency, the alarm, and who is speaking are all conveyed</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G87):</strong> Add sound effect cues in square brackets before the
+                    dialogue, and prefix each speaker turn with their name or role. This ensures
+                    deaf viewers receive the same context as hearing viewers — including the alarm,
+                    the urgency, and the identity of the speaker.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔈</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">What counts as a meaningful non-speech sound?</p>
+                      <p class="remediation-item__desc">Include sounds that change how the viewer interprets the video: alarms, music mood, laughter, applause, doorbells, gunshots, or a phone ringing. Omit ambient noise that carries no informational value (general street traffic, air conditioning hum).</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🏷️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Speaker identification conventions</p>
+                      <p class="remediation-item__desc">Prefix each turn with "NAME:" or "ROLE:" — e.g., "DR. PATEL:", "INTERVIEWER:", "CUSTOMER:". When the speaker is unknown or off-camera, use a description like "MAN (off-screen):". Never leave a caption ambiguous about who is speaking.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⏱️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Sound cue timing</p>
+                      <p class="remediation-item__desc">Place the sound cue cue slightly <em>before</em> the related dialogue so viewers have context before reading the words. An alarm that appears at the same time as the dialogue about evacuation gives no advance warning.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 3: Auto-generated Captions — Not Sufficient (F8)
+            ============================================================= -->
+            <article class="example" id="ex-auto-captions" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 5</p>
+                  <h3 class="example__title" id="ex3-title">Auto-generated Captions Without Review</h3>
+                  <p class="example__scenario">
+                    A team uploads a conference talk to YouTube and enables auto-generated captions.
+                    The speaker has an accent and uses technical terminology — the auto-captions
+                    contain errors throughout. Publishing without review results in Failure F8:
+                    captions that do not accurately convey the audio content.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F8</span>
+                  <span class="tag tag--technique">Technique: G87</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Auto-caption output — errors highlighted</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:340px;font-size:0.68rem;line-height:1.7;color:#e2e8f0;">
+                      <p style="margin:0 0 8px;font-size:0.6rem;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Auto-generated caption transcript</p>
+                      <p style="margin:0 0 5px;">so the <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;font-weight:600;">arya label</span> attribute allows assistive technologies to override the visible label</p>
+                      <p style="margin:0 0 5px;">this is particularly useful when the visual design <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;font-weight:600;">constrains</span> how much text can be displayed</p>
+                      <p style="margin:0 0 5px;"><span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;font-weight:600;">so</span> the <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;font-weight:600;">wc ag</span> success criterion here is <span style="background:#7f1d1d;color:#fca5a5;padding:1px 3px;border-radius:2px;font-weight:600;">4.1 to</span></p>
+                      <p style="margin:0;font-size:0.58rem;color:#94a3b8;font-style:italic;margin-top:6px;">Errors: "arya label" (aria-label), "wc ag" (WCAG), "4.1 to" (4.1.2)</p>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">WebVTT (auto-generated)</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">WEBVTT
+&lt;!-- Platform: YouTube auto-captions --&gt;</span>
+
+<span class="tok-comment">00:04:12.000 --> 00:04:16.000</span>
+<span class="tok-val">so the </span><span class="tok-hi">arya label</span><span class="tok-val"> attribute allows</span>
+<span class="tok-val">assistive technologies to override</span>
+
+<span class="tok-comment">00:04:17.000 --> 00:04:21.000</span>
+<span class="tok-val">the </span><span class="tok-hi">wc ag</span><span class="tok-val"> success criterion is </span><span class="tok-hi">4.1 to</span>
+
+<span class="tok-comment">&lt;!-- "aria-label" → "arya label"
+     "WCAG" → "wc ag"
+     "4.1.2" → "4.1 to" --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer reads</span>
+                      <span class="sr-output__text">"so the arya label attribute… the wc ag success criterion is 4.1 to" — technical terms are unrecognisable; the content is misleading and unusable</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F8):</strong> Auto-generated captions frequently misrecognise
+                    technical terms, proper nouns, and accented speech. Publishing without review
+                    results in captions that actively mislead deaf viewers rather than informing them.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Reviewed and corrected caption output</span>
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:8px;padding:12px;max-width:340px;font-size:0.68rem;line-height:1.7;color:#e2e8f0;">
+                      <p style="margin:0 0 8px;font-size:0.6rem;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Reviewed caption transcript</p>
+                      <p style="margin:0 0 5px;">So the <span style="background:#14532d;color:#86efac;padding:1px 3px;border-radius:2px;font-weight:600;">aria-label</span> attribute allows assistive technologies to override the visible label.</p>
+                      <p style="margin:0 0 5px;">This is particularly useful when the visual design constrains how much text can be displayed.</p>
+                      <p style="margin:0 0 5px;">The <span style="background:#14532d;color:#86efac;padding:1px 3px;border-radius:2px;font-weight:600;">WCAG</span> success criterion here is <span style="background:#14532d;color:#86efac;padding:1px 3px;border-radius:2px;font-weight:600;">4.1.2</span>.</p>
+                      <p style="margin:0;font-size:0.58rem;color:#6ee7b7;font-style:italic;margin-top:6px;">Corrected: aria-label, WCAG, 4.1.2 — accurate and readable</p>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">WebVTT (reviewed)</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">WEBVTT
+&lt;!-- Reviewed and corrected captions --&gt;</span>
+
+<span class="tok-comment">00:04:12.000 --> 00:04:16.000</span>
+<span class="tok-val">So the </span><span class="tok-hi">aria-label</span><span class="tok-val"> attribute allows</span>
+<span class="tok-val">assistive technologies to override</span>
+<span class="tok-val">the visible label.</span>
+
+<span class="tok-comment">00:04:17.000 --> 00:04:21.000</span>
+<span class="tok-val">The </span><span class="tok-hi">WCAG</span><span class="tok-val"> success criterion here</span>
+<span class="tok-val">is </span><span class="tok-hi">4.1.2</span><span class="tok-val">.</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer reads</span>
+                      <span class="sr-output__text">"So the aria-label attribute allows assistive technologies to override the visible label. The WCAG success criterion here is 4.1.2." — technically accurate and fully comprehensible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> Use auto-generated captions only as a starting point.
+                    Download the draft .vtt file from the platform, correct every error, add missing
+                    sound cues and speaker labels, then re-upload the reviewed file. Never publish
+                    unreviewed auto-captions for technical or specialised content.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">✅</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Caption review workflow</p>
+                      <p class="remediation-item__desc">1. Generate auto-captions. 2. Download the .vtt file. 3. Review against the audio in a text editor. 4. Correct errors, add speaker labels and sound cues. 5. Re-upload. Tools like Amara, Kapwing, and YouTube Studio all support this workflow.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🎯</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Higher error rate for technical content</p>
+                      <p class="remediation-item__desc">Auto-captioning accuracy drops significantly for technical terminology, acronyms, non-English names, and accented speech. For these content types, manual captioning or a professional captioning service is strongly recommended over auto-review.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📏</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Caption line length and reading speed</p>
+                      <p class="remediation-item__desc">Keep each caption cue to 1–2 lines of 32–42 characters maximum. Reading speed for captions is typically 160–180 wpm — ensure cue duration matches text length. Short cues that flash by too fast are a common F8 failure mode.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 4: Subtitle Track Mistaken for Caption Track
+            ============================================================= -->
+            <article class="example" id="ex-subtitle-not-caption" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 5</p>
+                  <h3 class="example__title" id="ex4-title">Subtitle Track Used Instead of Caption Track</h3>
+                  <p class="example__scenario">
+                    A developer adds a <code>&lt;track kind="subtitles"&gt;</code> for the English
+                    dialogue. The text includes only the spoken words — no sound effects, no music
+                    cues, no speaker IDs. While subtitles aid non-native speakers, they do not satisfy
+                    1.2.2 because they are not designed for deaf users and omit critical non-speech audio.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F8</span>
+                  <span class="tag tag--technique">Technique: H95</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;">
+                        <div style="position:absolute;top:30%;left:50%;transform:translateX(-50%);width:80%;height:45%;background:#1e293b;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+                          <span style="color:#64748b;font-size:0.55rem;text-align:center;padding:8px;">Video content area</span>
+                        </div>
+                        <!-- Subtitle bar (yellow — traditional subtitle styling) -->
+                        <div style="width:100%;background:transparent;padding:5px 10px;text-align:center;margin-bottom:4px;">
+                          <span style="color:#fde68a;font-size:0.58rem;text-shadow:0 1px 2px rgba(0,0,0,0.9),0 0 4px rgba(0,0,0,0.9);">Welcome back. Let's continue from where we left off.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:20%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:18 / 1:30</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Subtitle track — dialogue only, no sound cues or speaker IDs</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"webinar.mp4"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- Wrong: kind="subtitles" only
+       covers spoken dialogue --&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"subtitles"</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"webinar-subtitles.vtt"</span>
+    <span class="tok-attr">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-attr">label</span>=<span class="tok-val">"English"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer experiences</span>
+                      <span class="sr-output__text">Dialogue is readable, but a background music change signalling a tone shift and a notification chime are not captioned — meaning is lost</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F8):</strong> <code>kind="subtitles"</code> signals to the browser
+                    and to users that the track is for hearing viewers who need the language translated
+                    — not for deaf users. The track omits sound effects, music, and speaker IDs that
+                    are mandatory in captions.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:flex-end;position:relative;">
+                        <div style="position:absolute;top:30%;left:50%;transform:translateX(-50%);width:80%;height:45%;background:#1e293b;border-radius:4px;"></div>
+                        <!-- Caption bar (white on black — standard caption styling) -->
+                        <div style="width:100%;background:rgba(0,0,0,0.84);padding:5px 10px;text-align:center;">
+                          <span style="color:#d1fae5;font-size:0.55rem;">[SOFT NOTIFICATION CHIME]</span><br>
+                          <span style="color:#fff;font-size:0.56rem;">HOST: Welcome back. Let's continue from where we left off.</span>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:5px 10px;display:flex;gap:8px;align-items:center;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:20%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:18 / 1:30</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Caption track — sound cue + speaker ID included</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-val">"webinar.mp4"</span><span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- H95: correct kind="captions"
+       includes sounds + speaker IDs --&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"captions"</span>
+    <span class="tok-hi">src</span>=<span class="tok-val">"webinar-captions.vtt"</span>
+    <span class="tok-hi">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-hi">label</span>=<span class="tok-val">"English captions"</span>
+    <span class="tok-hi">default</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer reads</span>
+                      <span class="sr-output__text">"[SOFT NOTIFICATION CHIME] HOST: Welcome back. Let's continue from where we left off." — sound and speaker identity fully conveyed</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (H95):</strong> Change the track kind from <code>"subtitles"</code> to
+                    <code>"captions"</code> and update the .vtt file to include sound effect cues and
+                    speaker identification. The two track kinds are semantically distinct and cannot
+                    be used interchangeably for WCAG compliance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🏷️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title"><code>kind</code> attribute values — what each means</p>
+                      <p class="remediation-item__desc"><code>captions</code>: for deaf/HoH users, includes non-speech audio. <code>subtitles</code>: translates dialogue for hearing viewers. <code>descriptions</code>: audio descriptions for blind users. <code>chapters</code>: navigation landmarks. <code>metadata</code>: machine-readable data only.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🌐</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Provide both subtitles and captions when needed</p>
+                      <p class="remediation-item__desc">A video may need both: <code>kind="captions"</code> for English deaf users and <code>kind="subtitles" srclang="fr"</code> for French-speaking hearing users. Multiple <code>&lt;track&gt;</code> elements can coexist — the browser surfaces them as separate options.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📺</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Caption styling and positioning</p>
+                      <p class="remediation-item__desc">WebVTT supports positioning cues so captions do not obscure important on-screen content. Use the VTT <code>::cue</code> CSS pseudo-element to style caption text. High-contrast white text on a semi-opaque black background is the broadly supported default.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 5: Open Captions — Baked into the Video (G93)
+            ============================================================= -->
+            <article class="example" id="ex-open-captions" aria-labelledby="ex5-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 5 of 5</p>
+                  <h3 class="example__title" id="ex5-title">Open Captions — Baked into the Video Frame</h3>
+                  <p class="example__scenario">
+                    Some platforms and workflows do not support external caption tracks. An
+                    alternative approach is open captions — captions permanently rendered into
+                    the video frame during export. They are always visible and require no player
+                    support, but cannot be turned off or restyled by the user.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--technique">Technique: G93</span>
+                  <span class="tag tag--special">Note: tradeoffs apply</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Open captions — what they look like -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Without Open Captions</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Video uploaded to a platform with no caption track support</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#111827;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <!-- Presenter video frame -->
+                        <div style="width:75%;background:#1e293b;border-radius:6px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+                          <svg width="40" height="40" viewBox="0 0 24 24" fill="#475569" aria-hidden="true"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                        </div>
+                        <!-- No captions -->
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 3:12</span>
+                        <!-- No CC button -->
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#ef4444;margin-top:6px;font-style:italic;">✗ Platform has no CC button — external tracks not supported</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">Scenario</span>
+                      <span class="code-status code-status--fail">BARRIER</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Some social platforms (older
+     Instagram, certain LMS systems)
+     do not support &lt;track&gt; elements
+     or external caption uploads --&gt;</span>
+
+<span class="tok-comment">&lt;!-- Without open captions burned in,
+     deaf users have no access to
+     any audio content --&gt;</span>
+
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span>
+       <span class="tok-attr">src</span>=<span class="tok-val">"training-no-captions.mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer sees</span>
+                      <span class="sr-output__text">Presenter speaking — no text visible anywhere on screen; platform offers no CC toggle; content is completely inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> When the distribution platform does not support external
+                    caption tracks and no alternative is provided, the video is completely inaccessible
+                    to deaf users. Open captions (burned in) are the fallback solution.
+                  </p>
+                </div>
+
+                <!-- Open captions — good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Open Captions — Always Visible</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Open captions rendered into the video frame</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <div style="background:#111827;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <div style="width:75%;background:#1e293b;border-radius:6px;aspect-ratio:4/3;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;">
+                          <div style="width:100%;display:flex;align-items:flex-end;justify-content:center;flex:1;padding:0 4px 0;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="#475569" aria-hidden="true" style="margin-bottom:24px;"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                          </div>
+                          <!-- Open captions baked into the video frame -->
+                          <div style="position:absolute;bottom:28px;left:0;right:0;background:rgba(0,0,0,0.84);padding:4px 8px;text-align:center;">
+                            <span style="color:#fff;font-size:0.52rem;line-height:1.4;">TRAINER: Now hover over the element to reveal its computed ARIA role.</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"><div style="width:45%;height:100%;background:#2563eb;border-radius:2px;"></div></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">1:26 / 3:12</span>
+                      </div>
+                    </div>
+                    <p style="font-size:0.68rem;color:#047857;margin-top:6px;font-style:italic;">✓ Captions permanent — no player support needed (G93)</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">Production approach</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- G93: open captions are burned into
+     the video frame at export time.
+     No &lt;track&gt; element needed —
+     captions are part of the video itself.
+
+     Tooling options:
+     - DaVinci Resolve (free)
+     - Adobe Premiere Pro
+     - Kapwing (browser-based)
+     - ffmpeg with subtitle filter
+
+     ffmpeg example: --&gt;</span>
+
+<span class="tok-comment"># Burn .vtt captions into video with ffmpeg</span>
+<span class="tok-val">ffmpeg -i input.mp4 \</span>
+<span class="tok-val">  -vf "subtitles=captions.vtt" \</span>
+<span class="tok-val">  output-open-captions.mp4</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf viewer sees</span>
+                      <span class="sr-output__text">Caption text is always visible in the video frame regardless of platform — "TRAINER: Now hover over the element to reveal its computed ARIA role."</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Technique G93:</strong> Open captions are rendered directly into the video
+                    frame at export time. They work on any platform and in any player — no browser or
+                    player support required. The tradeoff is that users cannot turn them off or customise
+                    their appearance. Prefer closed captions (G87) when the platform supports them.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⚖️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Open vs. closed captions — choosing the right approach</p>
+                      <p class="remediation-item__desc">Closed captions (user-controlled) are always preferred — they respect individual preference and can be resized, repositioned, and restyled. Open captions are a valid fallback when the distribution platform does not support caption tracks.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🎥</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Produce two versions if budget allows</p>
+                      <p class="remediation-item__desc">For important content, produce both: a version with open captions for platforms without caption support, and a version without for platforms that accept caption tracks. Store the .vtt file regardless — it is reusable across platforms.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🚫</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Open captions must still be complete</p>
+                      <p class="remediation-item__desc">The same requirements apply: all dialogue, speaker IDs, sound effects, and music cues. "Burned in" does not lower the quality bar — only the delivery mechanism changes. Incomplete open captions are still Failure F8.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <!-- end .examples-list -->
+
+          <!-- Criterion navigation -->
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.2.1.html" class="criterion-nav__link">← 1.2.1 Audio-only and Video-only</a>
+            <a href="1.2.3.html" class="criterion-nav__link">Next: 1.2.3 Audio Description or Media Alternative →</a>
+          </nav>
+
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">
+        Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a>
+        published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>.
+        Content is for training and reference purposes.
+      </p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded" rel="noopener noreferrer" target="_blank">Understanding 1.2.2</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#captions-prerecorded" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

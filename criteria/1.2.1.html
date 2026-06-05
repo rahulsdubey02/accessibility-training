@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples, failure conditions, and remediation guidance for WCAG 2.2 Success Criterion 1.2.1 Audio-only and Video-only (Prerecorded).">
+  <title>1.2.1 Audio-only and Video-only (Prerecorded) — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link" aria-current="page">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =====================================================
+         Criterion Hero
+    ====================================================== -->
+    <div class="criterion-page-hero">
+      <div class="container">
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.2 Time-based Media</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.2.1 Audio-only and Video-only (Prerecorded)</li>
+          </ol>
+        </nav>
+
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.2 Time-based Media</span>
+            </div>
+            <h1>1.2.1 Audio-only and Video-only (Prerecorded)</h1>
+            <p class="criterion-page-description">
+              For prerecorded audio-only and prerecorded video-only content, provide a text-based
+              alternative that presents equivalent information — unless the media is itself a media
+              alternative for text and is clearly labelled as such.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded"
+                 class="btn btn--outline-green"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                W3C Understanding 1.2.1 ↗
+              </a>
+            </div>
+          </div>
+
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Criterion</dt>
+                <dd class="quick-info-item__value">1.2.1</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Level</dt>
+                <dd class="quick-info-item__value">A (Minimum)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Principle</dt>
+                <dd class="quick-info-item__value">1. Perceivable</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Guideline</dt>
+                <dd class="quick-info-item__value">1.2 Time-based Media</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">WCAG Version</dt>
+                <dd class="quick-info-item__value">2.0 (2008)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Examples below</dt>
+                <dd class="quick-info-item__value">5 scenarios</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =====================================================
+         Main Content
+    ====================================================== -->
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <!-- Intent -->
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              This criterion covers two distinct content types — each with its own requirement:
+            </p>
+            <ul style="margin: 0.75rem 0; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>
+                <strong>Audio-only (prerecorded):</strong> Content conveyed only through sound —
+                such as a podcast, press conference recording, or narrated audio clip — must have
+                a full text transcript that captures all spoken words, identifies speakers by name
+                or role, and describes significant non-speech sounds (e.g., [APPLAUSE], [MUSIC]).
+              </li>
+              <li>
+                <strong>Video-only (prerecorded):</strong> Content conveyed only through visuals
+                with no meaningful audio — such as a silent screencast, animated infographic, or
+                muted product walkthrough — must have either a text description of the visual
+                information, or an audio track that narrates equivalent content.
+              </li>
+            </ul>
+            <p>
+              Text alternatives enable users who are deaf, hard-of-hearing, or deaf-blind to access
+              the same information through their preferred modality. They also benefit users in
+              sound-sensitive environments and improve content discoverability via search indexing.
+            </p>
+          </div>
+        </section>
+
+        <!-- Key notes -->
+        <section class="content-section" aria-labelledby="notes-heading">
+          <h2 id="notes-heading">Key Notes &amp; Exemption</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Media Alternative Exemption</div>
+              <div class="exception-item__desc">
+                If the audio-only or video-only content <em>is itself</em> an alternative for
+                existing text on the same page (e.g., a "listen to this article" audio version
+                alongside the full written article) and is clearly labelled as such, no additional
+                text alternative is required.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Equivalence Is the Standard</div>
+              <div class="exception-item__desc">
+                A transcript must convey the <em>same</em> information as the audio — including
+                every spoken statement, figure, and significant sound. For video-only, the text
+                or audio alternative must cover all visual information, not just a title or summary.
+              </div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Two Valid Options for Video-only</div>
+              <div class="exception-item__desc">
+                A text description (G159) or an audio narration track (G166) both satisfy this
+                criterion for video-only content. The audio track option is especially natural for
+                animated content where narration follows the visual flow.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+
+          <div class="examples-list">
+
+            <!-- ============================================================
+                 Example 1: Audio-only — Podcast with No Transcript
+            ============================================================= -->
+            <article class="example" id="ex-audio-no-transcript" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 5</p>
+                  <h3 class="example__title" id="ex1-title">Audio-only — Podcast Episode with No Transcript</h3>
+                  <p class="example__scenario">
+                    A company publishes a 30-minute accessibility podcast episode embedded with an
+                    <code>&lt;audio&gt;</code> element. No transcript is provided anywhere on the page —
+                    making the entire spoken content inaccessible to deaf and hard-of-hearing users.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F67</span>
+                  <span class="tag tag--technique">Technique: G158</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad" aria-label="Poor practice">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Poor practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <!-- Audio player mockup -->
+                    <div aria-hidden="true" style="background:#1e293b;border-radius:10px;padding:14px 16px;max-width:340px;width:100%;display:flex;align-items:center;gap:12px;">
+                      <button tabindex="-1" style="width:36px;height:36px;border-radius:50%;background:#2563eb;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                      </button>
+                      <div style="flex:1;min-width:0;">
+                        <p style="color:#e2e8f0;font-size:0.72rem;font-weight:600;margin:0 0 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Episode 12: Building Accessible Forms</p>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                          <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">00:00</span>
+                          <div style="flex:1;height:4px;background:#334155;border-radius:2px;"></div>
+                          <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">32:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p style="font-size:0.72rem;color:#ef4444;margin-top:8px;font-style:italic;">✗ No transcript provided on this page</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;h2&gt;</span>Episode 12: Building Accessible Forms<span class="tok-tag">&lt;/h2&gt;</span>
+<span class="tok-tag">&lt;audio</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"ep12.mp3"</span><span class="tok-tag">&gt;</span>
+  Your browser does not support audio.
+<span class="tok-tag">&lt;/audio&gt;</span>
+
+<span class="tok-comment">&lt;!-- No transcript provided anywhere --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note" aria-label="Impact on users without audio access">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user finds</span>
+                      <span class="sr-output__text">"Audio, Episode 12: Building Accessible Forms" — the episode's 30 minutes of spoken content is completely inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F67):</strong> The audio player is present but no equivalent text
+                    alternative exists anywhere. A deaf user or someone unable to play audio has no
+                    access to the episode's content. This is a complete barrier under SC 1.2.1.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good" aria-label="Good practice">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Good practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:340px;width:100%;">
+                      <!-- Audio player -->
+                      <div style="background:#1e293b;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                        <button tabindex="-1" style="width:36px;height:36px;border-radius:50%;background:#2563eb;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div style="flex:1;min-width:0;">
+                          <p style="color:#e2e8f0;font-size:0.72rem;font-weight:600;margin:0 0 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Episode 12: Building Accessible Forms</p>
+                          <div style="display:flex;align-items:center;gap:8px;">
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">00:00</span>
+                            <div style="flex:1;height:4px;background:#334155;border-radius:2px;"></div>
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">32:47</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Transcript disclosure -->
+                      <div style="border:1px solid #a7f3d0;border-radius:8px;background:#ecfdf5;overflow:hidden;">
+                        <div style="padding:8px 12px;display:flex;align-items:center;gap:6px;cursor:pointer;border-bottom:1px solid #a7f3d0;">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="#047857" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+                          <span style="font-size:0.72rem;font-weight:700;color:#047857;">Read transcript</span>
+                        </div>
+                        <div style="padding:8px 12px;font-size:0.68rem;color:#065f46;line-height:1.6;">
+                          <p style="margin:0 0 4px;"><strong>[INTRO MUSIC FADES]</strong></p>
+                          <p style="margin:0 0 4px;"><strong>HOST (Maya Chen):</strong> Welcome to A11y Talks, episode 12.</p>
+                          <p style="margin:0 0 4px;"><strong>GUEST (Sam Rivera):</strong> Thanks for having me…</p>
+                          <p style="margin:0;color:#6ee7b7;font-style:italic;">[transcript continues…]</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;h2&gt;</span>Episode 12: Building Accessible Forms<span class="tok-tag">&lt;/h2&gt;</span>
+<span class="tok-tag">&lt;audio</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"ep12.mp3"</span><span class="tok-tag">&gt;</span>
+  Your browser does not support audio.
+<span class="tok-tag">&lt;/audio&gt;</span>
+
+<span class="tok-comment">&lt;!-- G158: full transcript immediately follows --&gt;</span>
+<span class="tok-tag">&lt;details&gt;</span>
+  <span class="tok-tag">&lt;summary&gt;</span>Read transcript<span class="tok-tag">&lt;/summary&gt;</span>
+  <span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"transcript"</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span><span class="tok-tag">&lt;strong&gt;</span>[INTRO MUSIC FADES]<span class="tok-tag">&lt;/strong&gt;&lt;/p&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span>
+      <span class="tok-tag">&lt;strong&gt;</span>HOST (Maya Chen):<span class="tok-tag">&lt;/strong&gt;</span>
+      Welcome to A11y Talks, episode 12.
+    <span class="tok-tag">&lt;/p&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span>
+      <span class="tok-tag">&lt;strong&gt;</span>GUEST (Sam Rivera):<span class="tok-tag">&lt;/strong&gt;</span>
+      Thanks for having me…
+    <span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/details&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note" aria-label="Experience with good practice">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user finds</span>
+                      <span class="sr-output__text">"Read transcript, collapsed, disclosure triangle" — activates to reveal full verbatim content with speaker labels</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G158):</strong> Provide a full verbatim transcript immediately adjacent
+                    to the audio. A <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> disclosure
+                    keeps the page clean while ensuring the transcript is always programmatically accessible.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📝</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Transcripts must capture everything</p>
+                      <p class="remediation-item__desc">Include all spoken words verbatim, identify every speaker by name or role, and describe significant non-speech sounds in brackets: [APPLAUSE], [MUSIC], [PHONE RINGS]. Omitting any spoken content is Failure F67.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📍</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Placement matters</p>
+                      <p class="remediation-item__desc">The transcript must be immediately adjacent to the audio element, or reachable via a clearly labelled link on the same page. A transcript buried in a separate site section is not sufficient.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🤖</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Automated transcription needs review</p>
+                      <p class="remediation-item__desc">Tools like Whisper, Otter.ai, or Azure Speech produce initial transcripts quickly. Always review for accuracy — especially for proper nouns, technical terms, and speaker attributions — before publishing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 2: Audio-only — Placeholder "Description" (F30)
+            ============================================================= -->
+            <article class="example" id="ex-audio-placeholder" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 5</p>
+                  <h3 class="example__title" id="ex2-title">Audio-only — Placeholder Description Instead of Transcript</h3>
+                  <p class="example__scenario">
+                    A quarterly earnings call is recorded and published as audio. The page includes a
+                    paragraph saying what the recording is about — but this is a description of the
+                    audio's subject, not a transcript of its content. Under Failure F30, a text
+                    alternative that does not convey equivalent information fails this criterion.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F30</span>
+                  <span class="tag tag--technique">Technique: G158</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:340px;width:100%;">
+                      <div style="background:#1e293b;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                        <button tabindex="-1" style="width:36px;height:36px;border-radius:50%;background:#2563eb;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div style="flex:1;min-width:0;">
+                          <p style="color:#e2e8f0;font-size:0.72rem;font-weight:600;margin:0 0 6px;">Q3 2024 Earnings Call</p>
+                          <div style="display:flex;align-items:center;gap:8px;">
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">00:00</span>
+                            <div style="flex:1;height:4px;background:#334155;border-radius:2px;"></div>
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">48:12</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p style="font-size:0.72rem;color:#334155;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;margin:0;font-style:italic;">
+                        "This recording contains our Q3 2024 earnings call with CEO Jane Smith and CFO Robert Lee, covering financial results and company outlook."
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;audio</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"q3-earnings.mp3"</span><span class="tok-tag">&gt;&lt;/audio&gt;</span>
+
+<span class="tok-comment">&lt;!-- F30: a description of the audio,
+     not a transcript of its content --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>
+  This recording contains our Q3 2024
+  earnings call with CEO Jane Smith and
+  CFO Robert Lee, covering financial
+  results and company outlook.
+<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user reads</span>
+                      <span class="sr-output__text">"This recording contains our Q3 2024 earnings call…" — the actual financial figures, decisions, and Q&amp;A statements remain completely inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F30):</strong> The paragraph describes what the audio is about
+                    but conveys none of the actual content. Revenue figures, strategic decisions, and
+                    analyst Q&amp;A responses — the entire informational value of the call — are
+                    inaccessible to deaf and hard-of-hearing users.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:340px;width:100%;">
+                      <div style="background:#1e293b;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                        <button tabindex="-1" style="width:36px;height:36px;border-radius:50%;background:#2563eb;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div style="flex:1;min-width:0;">
+                          <p style="color:#e2e8f0;font-size:0.72rem;font-weight:600;margin:0 0 6px;">Q3 2024 Earnings Call</p>
+                          <div style="display:flex;align-items:center;gap:8px;">
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">00:00</span>
+                            <div style="flex:1;height:4px;background:#334155;border-radius:2px;"></div>
+                            <span style="color:#94a3b8;font-size:0.65rem;font-family:monospace;flex-shrink:0;">48:12</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="border:1px solid #a7f3d0;border-radius:8px;background:#ecfdf5;overflow:hidden;font-size:0.68rem;">
+                        <div style="padding:6px 10px;font-weight:700;color:#047857;border-bottom:1px solid #a7f3d0;">Full transcript</div>
+                        <div style="padding:8px 12px;color:#065f46;line-height:1.6;">
+                          <p style="margin:0 0 4px;"><strong>OPERATOR:</strong> Good morning. Welcome to the Q3 2024 earnings call. [PAUSE]</p>
+                          <p style="margin:0 0 4px;"><strong>J. SMITH (CEO):</strong> Thank you. Revenue grew 14% year-over-year to $2.3 billion…</p>
+                          <p style="margin:0;color:#6ee7b7;font-style:italic;">[full transcript continues…]</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;audio</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"q3-earnings.mp3"</span><span class="tok-tag">&gt;&lt;/audio&gt;</span>
+
+<span class="tok-comment">&lt;!-- G158: verbatim speaker-labelled transcript --&gt;</span>
+<span class="tok-tag">&lt;section</span> <span class="tok-attr">aria-label</span>=<span class="tok-val">"Full transcript"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h3&gt;</span>Full transcript<span class="tok-tag">&lt;/h3&gt;</span>
+
+  <span class="tok-tag">&lt;p&gt;</span>
+    <span class="tok-tag">&lt;strong&gt;</span>OPERATOR:<span class="tok-tag">&lt;/strong&gt;</span>
+    Good morning. Welcome to the
+    Q3 2024 earnings call. [PAUSE]
+  <span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>
+    <span class="tok-tag">&lt;strong&gt;</span>J. SMITH (CEO):<span class="tok-tag">&lt;/strong&gt;</span>
+    Thank you. Revenue grew 14%
+    year-over-year to $2.3 billion…
+  <span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/section&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A deaf user reads</span>
+                      <span class="sr-output__text">"OPERATOR: Good morning… J. SMITH (CEO): Revenue grew 14% year-over-year to $2.3 billion…" — all financial detail fully accessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G158):</strong> Replace the subject summary with a full verbatim,
+                    speaker-labelled transcript. Every statement, figure, and audience question must
+                    appear so the text conveys the same information as the recording itself.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⚖️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Equivalence is the test</p>
+                      <p class="remediation-item__desc">Ask: could a user who only reads the transcript come away knowing everything a user who listened would know? If not — if any figure, name, or decision is missing — the transcript fails the equivalence test.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🏷️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Label every speaker clearly</p>
+                      <p class="remediation-item__desc">Use "JANE SMITH (CEO):", "INTERVIEWER:", "AUDIENCE MEMBER:", or "SPEAKER 1:" at the start of every turn. This allows users to follow a multi-voice conversation without audio.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔔</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Include meaningful non-speech sounds</p>
+                      <p class="remediation-item__desc">Note sounds that carry meaning — [APPLAUSE], [LAUGHTER], [PHONE RINGS], [LONG PAUSE] — in square brackets inline with the text. Pure ambient background noise can be omitted.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 3: Video-only — Silent Screencast, No Alternative
+            ============================================================= -->
+            <article class="example" id="ex-video-no-alt" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 5</p>
+                  <h3 class="example__title" id="ex3-title">Video-only — Silent Screen Recording with No Text Alternative</h3>
+                  <p class="example__scenario">
+                    A software company publishes a silent screen recording demonstrating how to
+                    configure privacy settings. The video has no audio track, no captions, and
+                    no text description anywhere on the page. A blind user, or anyone unable to
+                    play video, cannot access the procedure being shown.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F67</span>
+                  <span class="tag tag--technique">Technique: G159</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <!-- Screen recording mockup -->
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;flex-direction:column;padding:8px;position:relative;">
+                        <!-- Browser chrome -->
+                        <div style="background:#1e293b;border-radius:4px;padding:4px 8px;display:flex;align-items:center;gap:4px;margin-bottom:5px;flex-shrink:0;">
+                          <div style="width:6px;height:6px;background:#ef4444;border-radius:50%;"></div>
+                          <div style="width:6px;height:6px;background:#f59e0b;border-radius:50%;"></div>
+                          <div style="width:6px;height:6px;background:#22c55e;border-radius:50%;"></div>
+                          <div style="flex:1;background:#0f172a;border-radius:3px;height:10px;margin-left:6px;display:flex;align-items:center;padding:0 5px;">
+                            <span style="font-size:0.42rem;color:#475569;font-family:monospace;">settings/privacy</span>
+                          </div>
+                        </div>
+                        <!-- Settings UI -->
+                        <div style="flex:1;background:#f8fafc;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:5px;">
+                          <div style="background:#e2e8f0;border-radius:2px;height:8px;width:55%;"></div>
+                          <div style="display:flex;align-items:center;gap:5px;">
+                            <div style="width:11px;height:11px;background:#2563eb;border-radius:2px;flex-shrink:0;"></div>
+                            <div style="background:#e2e8f0;border-radius:2px;height:6px;width:52%;"></div>
+                          </div>
+                          <div style="display:flex;align-items:center;gap:5px;">
+                            <div style="width:11px;height:11px;border:1.5px solid #cbd5e1;border-radius:2px;flex-shrink:0;"></div>
+                            <div style="background:#e2e8f0;border-radius:2px;height:6px;width:38%;"></div>
+                          </div>
+                          <div style="display:flex;align-items:center;gap:5px;">
+                            <div style="width:11px;height:11px;border:1.5px solid #cbd5e1;border-radius:2px;flex-shrink:0;"></div>
+                            <div style="background:#e2e8f0;border-radius:2px;height:6px;width:45%;"></div>
+                          </div>
+                          <div style="margin-top:auto;align-self:flex-start;background:#2563eb;color:#fff;font-size:0.5rem;padding:3px 8px;border-radius:3px;font-weight:600;">Save changes</div>
+                        </div>
+                        <div style="position:absolute;bottom:28px;right:36px;width:5px;height:7px;background:#1e40af;clip-path:polygon(0 0,100% 30%,50% 55%,50% 100%,0 0);"></div>
+                      </div>
+                      <!-- Controls -->
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 1:24</span>
+                        <!-- Mute icon -->
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#ef4444" aria-hidden="true"><path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l2 2L21 18.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                      </div>
+                    </div>
+                    <p style="font-size:0.72rem;color:#ef4444;margin-top:8px;font-style:italic;">✗ Silent video — no text description provided</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"privacy-settings.mp4"</span><span class="tok-tag">&gt;</span>
+  Your browser does not support video.
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- Video has no audio track and no
+     text alternative is provided --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user encounters</span>
+                      <span class="sr-output__text">"Video" — plays in silence; the UI steps and interactions shown on screen are completely inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F67):</strong> The screen recording demonstrates a sequence of
+                    UI interactions purely through visuals. A blind user or anyone unable to view the
+                    video receives no information about the procedure being shown.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;">
+                      <!-- Same video -->
+                      <div style="border-radius:10px;overflow:hidden;border:1px solid #334155;margin-bottom:10px;">
+                        <div style="background:#0f172a;aspect-ratio:16/9;display:flex;flex-direction:column;padding:8px;">
+                          <div style="background:#1e293b;border-radius:4px;padding:4px 8px;display:flex;align-items:center;gap:4px;margin-bottom:5px;flex-shrink:0;">
+                            <div style="width:6px;height:6px;background:#ef4444;border-radius:50%;"></div>
+                            <div style="width:6px;height:6px;background:#f59e0b;border-radius:50%;"></div>
+                            <div style="width:6px;height:6px;background:#22c55e;border-radius:50%;"></div>
+                            <div style="flex:1;background:#0f172a;border-radius:3px;height:10px;margin-left:6px;"></div>
+                          </div>
+                          <div style="flex:1;background:#f8fafc;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:5px;">
+                            <div style="background:#e2e8f0;border-radius:2px;height:8px;width:55%;"></div>
+                            <div style="display:flex;align-items:center;gap:5px;"><div style="width:11px;height:11px;background:#2563eb;border-radius:2px;flex-shrink:0;"></div><div style="background:#e2e8f0;border-radius:2px;height:6px;width:52%;"></div></div>
+                            <div style="display:flex;align-items:center;gap:5px;"><div style="width:11px;height:11px;border:1.5px solid #cbd5e1;border-radius:2px;flex-shrink:0;"></div><div style="background:#e2e8f0;border-radius:2px;height:6px;width:38%;"></div></div>
+                            <div style="margin-top:auto;align-self:flex-start;background:#2563eb;color:#fff;font-size:0.5rem;padding:3px 8px;border-radius:3px;font-weight:600;">Save changes</div>
+                          </div>
+                        </div>
+                        <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                          <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                          <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                          <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 1:24</span>
+                        </div>
+                      </div>
+                      <!-- Text description -->
+                      <div style="border:1px solid #a7f3d0;border-radius:8px;background:#ecfdf5;padding:10px 12px;font-size:0.68rem;color:#065f46;line-height:1.6;">
+                        <p style="margin:0 0 6px;font-weight:700;color:#047857;">Step-by-step description</p>
+                        <ol style="margin:0;padding-left:16px;">
+                          <li>Open the Account menu in the top-right corner</li>
+                          <li>Click <strong>Settings</strong> from the dropdown</li>
+                          <li>Select the <strong>Privacy</strong> tab</li>
+                          <li>Check <strong>Limit data sharing</strong></li>
+                          <li>Click <strong>Save changes</strong></li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span> <span class="tok-attr">src</span>=<span class="tok-val">"privacy-settings.mp4"</span><span class="tok-tag">&gt;</span>
+  Your browser does not support video.
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- G159: text alternative describing
+     all visual information in the video --&gt;</span>
+<span class="tok-tag">&lt;section</span> <span class="tok-attr">aria-label</span>=<span class="tok-val">"Video description"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h3&gt;</span>Step-by-step description<span class="tok-tag">&lt;/h3&gt;</span>
+  <span class="tok-tag">&lt;ol&gt;</span>
+    <span class="tok-tag">&lt;li&gt;</span>Open the Account menu (top-right)<span class="tok-tag">&lt;/li&gt;</span>
+    <span class="tok-tag">&lt;li&gt;</span>Click Settings from the dropdown<span class="tok-tag">&lt;/li&gt;</span>
+    <span class="tok-tag">&lt;li&gt;</span>Select the Privacy tab<span class="tok-tag">&lt;/li&gt;</span>
+    <span class="tok-tag">&lt;li&gt;</span>Check "Limit data sharing"<span class="tok-tag">&lt;/li&gt;</span>
+    <span class="tok-tag">&lt;li&gt;</span>Click Save changes<span class="tok-tag">&lt;/li&gt;</span>
+  <span class="tok-tag">&lt;/ol&gt;</span>
+<span class="tok-tag">&lt;/section&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user reads</span>
+                      <span class="sr-output__text">"Step-by-step description, list of 5 items. 1. Open Account menu top-right. 2. Click Settings from dropdown…" — complete procedure accessible without video</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G159):</strong> Provide a text description immediately adjacent to the
+                    video that covers all visual actions shown. For instructional screencasts, a numbered
+                    list is ideal — it mirrors the visual sequence, is accessible, and doubles as
+                    useful written documentation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">👁️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Describe actions, not appearance</p>
+                      <p class="remediation-item__desc">Write what the user needs to <em>do</em>: "Click Settings → Privacy → enable Limit data sharing". Describing appearance ("a blue panel slides open") is less useful and harder to follow.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔎</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Text alternatives improve SEO</p>
+                      <p class="remediation-item__desc">A text description of a how-to video is indexed by search engines. Accessibility and discoverability align here — the same work that satisfies 1.2.1 also makes your tutorial discoverable via search.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔗</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Linking to a separate description page</p>
+                      <p class="remediation-item__desc">If the text description lives on a dedicated guide page, link to it directly adjacent to the video: <code>&lt;a href="/privacy-guide"&gt;Read the step-by-step guide&lt;/a&gt;</code>. The link must be immediately adjacent, not buried elsewhere.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 4: Video-only — Audio Description Track (G166/H96)
+            ============================================================= -->
+            <article class="example" id="ex-video-audio-track" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 5</p>
+                  <h3 class="example__title" id="ex4-title">Video-only — Adding an Audio Description Track</h3>
+                  <p class="example__scenario">
+                    A medical e-learning platform publishes a silent animation demonstrating a
+                    physiotherapy exercise routine. Instead of a text transcript, the accessibility
+                    team records a narration describing every movement and adds it as an audio
+                    description track using the HTML <code>&lt;track&gt;</code> element.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F67</span>
+                  <span class="tag tag--technique">Technique: G166</span>
+                  <span class="tag tag--technique">Technique: H96</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;border-radius:10px;overflow:hidden;border:1px solid #334155;">
+                      <!-- Animation mockup -->
+                      <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                        <svg width="100" height="80" viewBox="0 0 100 80" aria-hidden="true">
+                          <!-- Stick figure doing exercise -->
+                          <circle cx="50" cy="14" r="8" fill="none" stroke="#64748b" stroke-width="1.5"/>
+                          <line x1="50" y1="22" x2="50" y2="46" stroke="#64748b" stroke-width="1.5"/>
+                          <!-- Arms raised -->
+                          <line x1="50" y1="30" x2="28" y2="18" stroke="#64748b" stroke-width="1.5"/>
+                          <line x1="50" y1="30" x2="72" y2="18" stroke="#64748b" stroke-width="1.5"/>
+                          <!-- Legs -->
+                          <line x1="50" y1="46" x2="38" y2="65" stroke="#64748b" stroke-width="1.5"/>
+                          <line x1="50" y1="46" x2="62" y2="65" stroke="#64748b" stroke-width="1.5"/>
+                          <!-- Motion arcs -->
+                          <path d="M30 22 Q20 14 28 8" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                          <path d="M70 22 Q80 14 72 8" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                        </svg>
+                        <div style="position:absolute;bottom:6px;right:8px;background:rgba(0,0,0,0.65);border-radius:3px;padding:2px 5px;font-size:0.5rem;color:#94a3b8;font-family:monospace;">SILENT</div>
+                      </div>
+                      <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                        <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                        <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                        <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 2:30</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#ef4444" aria-hidden="true"><path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18l2 2L21 18.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                      </div>
+                    </div>
+                    <p style="font-size:0.72rem;color:#ef4444;margin-top:8px;font-style:italic;">✗ Silent animation — no description track added</p>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"shoulder-exercise.mp4"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span>
+  <span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- No &lt;track&gt; element — no
+       audio description provided --&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user hears</span>
+                      <span class="sr-output__text">Complete silence — the animation plays with no narration; the exercise movements and instructions are completely inaccessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F67):</strong> The animation plays in silence. A blind user
+                    hears nothing at all. All visual information — the exercise movements, repetition
+                    counts, and form guidance — is completely lost.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;">
+                      <div style="border-radius:10px;overflow:hidden;border:1px solid #334155;margin-bottom:10px;">
+                        <div style="background:#0f172a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;">
+                          <svg width="100" height="80" viewBox="0 0 100 80" aria-hidden="true">
+                            <circle cx="50" cy="14" r="8" fill="none" stroke="#64748b" stroke-width="1.5"/>
+                            <line x1="50" y1="22" x2="50" y2="46" stroke="#64748b" stroke-width="1.5"/>
+                            <line x1="50" y1="30" x2="28" y2="18" stroke="#64748b" stroke-width="1.5"/>
+                            <line x1="50" y1="30" x2="72" y2="18" stroke="#64748b" stroke-width="1.5"/>
+                            <line x1="50" y1="46" x2="38" y2="65" stroke="#64748b" stroke-width="1.5"/>
+                            <line x1="50" y1="46" x2="62" y2="65" stroke="#64748b" stroke-width="1.5"/>
+                            <path d="M30 22 Q20 14 28 8" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                            <path d="M70 22 Q80 14 72 8" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                          </svg>
+                          <!-- AD badge -->
+                          <div style="position:absolute;bottom:6px;right:8px;background:rgba(4,120,87,0.9);border-radius:3px;padding:2px 5px;font-size:0.5rem;color:#fff;font-family:monospace;font-weight:700;">AD</div>
+                        </div>
+                        <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                          <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                          <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                          <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 2:30</span>
+                        </div>
+                      </div>
+                      <p style="font-size:0.7rem;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:6px 10px;margin:0;">
+                        ✓ "Audio description" track available — narrates all visual content in sync with the animation
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- G166 + H96: audio description track --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"shoulder-exercise.mp4"</span>
+    <span class="tok-attr">type</span>=<span class="tok-val">"video/mp4"</span>
+  <span class="tok-tag">&gt;</span>
+
+  <span class="tok-comment">&lt;!-- H96: descriptions track (WebVTT) --&gt;</span>
+  <span class="tok-tag">&lt;track</span>
+    <span class="tok-hi">kind</span>=<span class="tok-val">"descriptions"</span>
+    <span class="tok-hi">src</span>=<span class="tok-val">"shoulder-exercise-ad.vtt"</span>
+    <span class="tok-hi">srclang</span>=<span class="tok-val">"en"</span>
+    <span class="tok-hi">label</span>=<span class="tok-val">"Audio description"</span>
+  <span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- shoulder-exercise-ad.vtt example:
+
+WEBVTT
+
+00:00:02.000 --&gt; 00:00:06.000
+Stand with feet shoulder-width apart,
+arms relaxed at your sides.
+
+00:00:07.000 --&gt; 00:00:12.000
+Slowly raise both arms out to the sides
+until they are level with your shoulders.
+--&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user hears</span>
+                      <span class="sr-output__text">"Stand with feet shoulder-width apart, arms relaxed at your sides. Slowly raise both arms out to the sides…" — full narration synchronised with the animation</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G166 + H96):</strong> Add a <code>&lt;track kind="descriptions"&gt;</code>
+                    element pointing to a WebVTT file. Each cue is timestamped and narrates the visual
+                    content at that moment. The description plays in sync with the video, giving blind
+                    users an equivalent experience.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📻</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Audio track vs. text: choose what fits</p>
+                      <p class="remediation-item__desc">For video-only content you can satisfy 1.2.1 with either a text alternative (G159) <em>or</em> an audio description track (G166). Audio narration is especially natural for animated content where a live, synchronised description enhances the experience.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📋</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">WebVTT format for description cues</p>
+                      <p class="remediation-item__desc">Description tracks use the same .vtt format as captions. Each cue has a timestamp range followed by the narration text. Keep cues short enough to be spoken clearly within their time window.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⚠️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Browser support for description tracks</p>
+                      <p class="remediation-item__desc"><code>kind="descriptions"</code> renders text on-screen in some browsers but does not auto-play as audio. A custom JS audio renderer or a dedicated audio description player may be needed. Provide a text alternative as a fallback.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ============================================================
+                 Example 5: Video-only — Animated Infographic, Inadequate Description
+            ============================================================= -->
+            <article class="example" id="ex-video-inadequate" aria-labelledby="ex5-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 5 of 5</p>
+                  <h3 class="example__title" id="ex5-title">Video-only — Animated Infographic with Inadequate Description</h3>
+                  <p class="example__scenario">
+                    A marketing team creates a 45-second silent animation showing Q3 sales data
+                    across five regions — bars animate in and figures appear on screen. They add a
+                    sentence below reading: <em>"Watch our animated Q3 sales summary."</em> This is
+                    Failure F30: the text describes the video's subject rather than its informational content.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F30</span>
+                  <span class="tag tag--technique">Technique: G159</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;">
+                      <!-- Animated chart video mockup -->
+                      <div style="border-radius:10px;overflow:hidden;border:1px solid #334155;margin-bottom:10px;">
+                        <div style="background:#0f172a;aspect-ratio:16/9;padding:12px 10px 0;display:flex;flex-direction:column;">
+                          <p style="color:#94a3b8;font-size:0.55rem;font-weight:600;margin:0 0 6px;text-align:center;">Q3 Sales by Region</p>
+                          <div style="flex:1;display:flex;align-items:flex-end;gap:5px;padding-bottom:4px;">
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;">
+                              <span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.2M</span>
+                              <div style="width:100%;background:#1d4ed8;height:42%;border-radius:2px 2px 0 0;"></div>
+                              <span style="font-size:0.38rem;color:#64748b;">North</span>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;">
+                              <span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$2.1M</span>
+                              <div style="width:100%;background:#1d4ed8;height:75%;border-radius:2px 2px 0 0;"></div>
+                              <span style="font-size:0.38rem;color:#64748b;">South</span>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;">
+                              <span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.8M</span>
+                              <div style="width:100%;background:#1d4ed8;height:63%;border-radius:2px 2px 0 0;"></div>
+                              <span style="font-size:0.38rem;color:#64748b;">East</span>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;">
+                              <span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$0.9M</span>
+                              <div style="width:100%;background:#1d4ed8;height:32%;border-radius:2px 2px 0 0;"></div>
+                              <span style="font-size:0.38rem;color:#64748b;">West</span>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;">
+                              <span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.5M</span>
+                              <div style="width:100%;background:#1d4ed8;height:54%;border-radius:2px 2px 0 0;"></div>
+                              <span style="font-size:0.38rem;color:#64748b;">Central</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                          <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                          <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                          <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 0:45</span>
+                        </div>
+                      </div>
+                      <!-- Inadequate text -->
+                      <p style="font-size:0.72rem;color:#334155;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;margin:0;font-style:italic;">
+                        "Watch our animated Q3 sales summary."
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span>
+       <span class="tok-attr">src</span>=<span class="tok-val">"q3-sales-animation.mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- F30: subject description, not
+     an equivalent text alternative --&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>Watch our animated Q3 sales summary.<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user reads</span>
+                      <span class="sr-output__text">"Watch our animated Q3 sales summary." — none of the five regional figures or trends are accessible; the entire data payload is lost</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem (F30):</strong> The sentence tells users an animation exists but
+                    conveys none of the data it contains. All five regional revenue figures — the
+                    entire informational content of the video — are inaccessible.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div aria-hidden="true" style="max-width:320px;width:100%;">
+                      <!-- Same video -->
+                      <div style="border-radius:10px;overflow:hidden;border:1px solid #334155;margin-bottom:10px;">
+                        <div style="background:#0f172a;aspect-ratio:16/9;padding:12px 10px 0;display:flex;flex-direction:column;">
+                          <p style="color:#94a3b8;font-size:0.55rem;font-weight:600;margin:0 0 6px;text-align:center;">Q3 Sales by Region</p>
+                          <div style="flex:1;display:flex;align-items:flex-end;gap:5px;padding-bottom:4px;">
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.2M</span><div style="width:100%;background:#1d4ed8;height:42%;border-radius:2px 2px 0 0;"></div><span style="font-size:0.38rem;color:#64748b;">North</span></div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$2.1M</span><div style="width:100%;background:#1d4ed8;height:75%;border-radius:2px 2px 0 0;"></div><span style="font-size:0.38rem;color:#64748b;">South</span></div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.8M</span><div style="width:100%;background:#1d4ed8;height:63%;border-radius:2px 2px 0 0;"></div><span style="font-size:0.38rem;color:#64748b;">East</span></div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$0.9M</span><div style="width:100%;background:#1d4ed8;height:32%;border-radius:2px 2px 0 0;"></div><span style="font-size:0.38rem;color:#64748b;">West</span></div>
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><span style="font-size:0.42rem;color:#60a5fa;font-weight:700;">$1.5M</span><div style="width:100%;background:#1d4ed8;height:54%;border-radius:2px 2px 0 0;"></div><span style="font-size:0.38rem;color:#64748b;">Central</span></div>
+                          </div>
+                        </div>
+                        <div style="background:#1e293b;padding:6px 10px;display:flex;align-items:center;gap:8px;">
+                          <button tabindex="-1" style="background:none;border:none;color:#fff;cursor:pointer;padding:0;display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                          <div style="flex:1;height:3px;background:#334155;border-radius:2px;"></div>
+                          <span style="color:#94a3b8;font-size:0.6rem;font-family:monospace;">0:00 / 0:45</span>
+                        </div>
+                      </div>
+                      <!-- Full data table -->
+                      <div style="border:1px solid #a7f3d0;border-radius:8px;background:#ecfdf5;overflow:hidden;font-size:0.65rem;">
+                        <div style="padding:6px 10px;font-weight:700;color:#047857;border-bottom:1px solid #a7f3d0;">Q3 2024 Sales by Region</div>
+                        <table style="width:100%;border-collapse:collapse;">
+                          <thead>
+                            <tr style="background:rgba(4,120,87,0.12);">
+                              <th style="padding:4px 8px;text-align:left;color:#065f46;font-weight:700;">Region</th>
+                              <th style="padding:4px 8px;text-align:right;color:#065f46;font-weight:700;">Revenue</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr><td style="padding:3px 8px;color:#064e3b;">North</td><td style="padding:3px 8px;text-align:right;color:#064e3b;">$1.2M</td></tr>
+                            <tr style="background:rgba(4,120,87,0.06);"><td style="padding:3px 8px;color:#064e3b;">South</td><td style="padding:3px 8px;text-align:right;color:#064e3b;font-weight:700;">$2.1M ↑ highest</td></tr>
+                            <tr><td style="padding:3px 8px;color:#064e3b;">East</td><td style="padding:3px 8px;text-align:right;color:#064e3b;">$1.8M</td></tr>
+                            <tr style="background:rgba(4,120,87,0.06);"><td style="padding:3px 8px;color:#064e3b;">West</td><td style="padding:3px 8px;text-align:right;color:#064e3b;">$0.9M ↓ lowest</td></tr>
+                            <tr><td style="padding:3px 8px;color:#064e3b;">Central</td><td style="padding:3px 8px;text-align:right;color:#064e3b;">$1.5M</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span>
+       <span class="tok-attr">src</span>=<span class="tok-val">"q3-sales-animation.mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-comment">&lt;!-- G159: text alternative conveys
+     all data shown in the animation --&gt;</span>
+<span class="tok-tag">&lt;section</span> <span class="tok-attr">aria-label</span>=<span class="tok-val">"Q3 2024 sales data"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h3&gt;</span>Q3 2024 Sales by Region<span class="tok-tag">&lt;/h3&gt;</span>
+  <span class="tok-tag">&lt;table&gt;</span>
+    <span class="tok-tag">&lt;thead&gt;&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-val">"col"</span><span class="tok-tag">&gt;</span>Region<span class="tok-tag">&lt;/th&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-val">"col"</span><span class="tok-tag">&gt;</span>Revenue<span class="tok-tag">&lt;/th&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;&lt;/thead&gt;</span>
+    <span class="tok-tag">&lt;tbody&gt;</span>
+      <span class="tok-tag">&lt;tr&gt;&lt;td&gt;</span>North<span class="tok-tag">&lt;/td&gt;&lt;td&gt;</span>$1.2M<span class="tok-tag">&lt;/td&gt;&lt;/tr&gt;</span>
+      <span class="tok-tag">&lt;tr&gt;&lt;td&gt;</span>South<span class="tok-tag">&lt;/td&gt;&lt;td&gt;</span>$2.1M (highest)<span class="tok-tag">&lt;/td&gt;&lt;/tr&gt;</span>
+      <span class="tok-tag">&lt;tr&gt;&lt;td&gt;</span>East<span class="tok-tag">&lt;/td&gt;&lt;td&gt;</span>$1.8M<span class="tok-tag">&lt;/td&gt;&lt;/tr&gt;</span>
+      <span class="tok-tag">&lt;tr&gt;&lt;td&gt;</span>West<span class="tok-tag">&lt;/td&gt;&lt;td&gt;</span>$0.9M (lowest)<span class="tok-tag">&lt;/td&gt;&lt;/tr&gt;</span>
+      <span class="tok-tag">&lt;tr&gt;&lt;td&gt;</span>Central<span class="tok-tag">&lt;/td&gt;&lt;td&gt;</span>$1.5M<span class="tok-tag">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="tok-tag">&lt;/tbody&gt;</span>
+  <span class="tok-tag">&lt;/table&gt;</span>
+<span class="tok-tag">&lt;/section&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">A blind user reads</span>
+                      <span class="sr-output__text">"Q3 2024 Sales by Region, table 5 rows 2 columns. North $1.2M. South $2.1M highest. East $1.8M…" — all data fully accessible</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G159):</strong> Replace the vague description with a structured data
+                    table containing every figure shown in the animation. For data-driven content a
+                    table is the ideal alternative — it is machine-readable, sortable, and conveys
+                    the same information a sighted user extracts from the chart.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📊</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Match the alternative format to the content type</p>
+                      <p class="remediation-item__desc">Use a <strong>data table</strong> for animated charts, a <strong>numbered list</strong> for procedural screencasts, and <strong>prose</strong> for animated narratives. The format should reflect the structure of the information itself.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🧮</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Include all data — no omissions</p>
+                      <p class="remediation-item__desc">If the animation shows five regional figures, the text alternative must show all five. If it calls out a trend ("South is the top region"), that context must also appear. Any omission is a failure of equivalence.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">✅</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Dual benefit: accessibility and usability</p>
+                      <p class="remediation-item__desc">A data table adjacent to an animated chart benefits all users — sighted users can copy figures, sort columns, and reference numbers without replaying the animation. Accessibility improvements frequently improve usability for everyone.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <!-- end .examples-list -->
+
+          <!-- Criterion navigation -->
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="1.1.1.html" class="criterion-nav__link">← 1.1.1 Non-text Content</a>
+            <a href="1.2.2.html" class="criterion-nav__link">Next: 1.2.2 Captions (Prerecorded) →</a>
+          </nav>
+
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">
+        Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a>
+        published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>.
+        Content is for training and reference purposes.
+      </p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded" rel="noopener noreferrer" target="_blank">Understanding 1.2.1</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#audio-only-and-video-only-prerecorded" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
