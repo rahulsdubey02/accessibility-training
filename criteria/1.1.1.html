@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples, failure conditions, and remediation guidance for WCAG 2.2 Success Criterion 1.1.1 Non-text Content.">
+  <title>1.1.1 Non-text Content — WCAG 2.2 Accessibility Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/examples.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span class="site-header__title">Learning WCAG with Examples</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="../index.html" class="nav-link" aria-current="page">Criteria</a>
+        <a href="../about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =====================================================
+         Criterion Hero
+    ====================================================== -->
+    <div class="criterion-page-hero">
+      <div class="container">
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">All Criteria</a></li>
+            <li aria-hidden="true">›</li>
+            <li>1.1 Text Alternatives</li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">1.1.1 Non-text Content</li>
+          </ol>
+        </nav>
+
+        <div class="criterion-hero-body">
+          <div class="criterion-hero-text">
+            <div class="criterion-page-meta">
+              <span class="badge badge--level-a">Level A</span>
+              <span class="badge badge--v20">WCAG 2.0</span>
+              <span class="criterion-guideline">1.1 Text Alternatives</span>
+            </div>
+            <h1>1.1.1 Non-text Content</h1>
+            <p class="criterion-page-description">
+              All non-text content that is presented to the user has a text alternative
+              that serves the equivalent purpose — with specific exceptions for controls,
+              time-based media, tests, sensory experiences, CAPTCHA, and decoration.
+            </p>
+            <div class="criterion-hero-actions">
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content"
+                 class="btn btn--outline-green"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                W3C Understanding 1.1.1 ↗
+              </a>
+            </div>
+          </div>
+
+          <aside class="criterion-hero-sidebar" aria-label="Quick reference">
+            <dl class="criterion-quick-info">
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Criterion</dt>
+                <dd class="quick-info-item__value">1.1.1</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Level</dt>
+                <dd class="quick-info-item__value">A (Minimum)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Principle</dt>
+                <dd class="quick-info-item__value">1. Perceivable</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Guideline</dt>
+                <dd class="quick-info-item__value">1.1 Text Alternatives</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">WCAG Version</dt>
+                <dd class="quick-info-item__value">2.0 (2008)</dd>
+              </div>
+              <div class="quick-info-item">
+                <dt class="quick-info-item__label">Examples below</dt>
+                <dd class="quick-info-item__value">7 scenarios</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =====================================================
+         Main Content
+    ====================================================== -->
+    <div class="criterion-page-content">
+      <div class="container">
+
+        <!-- Intent -->
+        <section class="content-section" aria-labelledby="intent-heading">
+          <h2 id="intent-heading">Intent</h2>
+          <div class="intent-box">
+            <p>
+              The purpose of this criterion is to make information conveyed by non-text content
+              accessible through the use of a text alternative. Text alternatives can be rendered
+              through any sensory modality — visual, auditory, or tactile — to match the needs of
+              the user.
+            </p>
+            <p>
+              When a text alternative is not provided, screen reader users receive no information,
+              or worse, a filename or placeholder that conveys nothing meaningful. This is one of
+              the most commonly violated — and most impactful — accessibility requirements.
+            </p>
+          </div>
+        </section>
+
+        <!-- Exceptions -->
+        <section class="content-section" aria-labelledby="exceptions-heading">
+          <h2 id="exceptions-heading">Exceptions &amp; Special Cases</h2>
+          <div class="exceptions-grid">
+            <div class="exception-item">
+              <div class="exception-item__title">Controls / Inputs</div>
+              <div class="exception-item__desc">Non-text content acting as a control needs a name that describes its purpose (not the image itself).</div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Time-based Media</div>
+              <div class="exception-item__desc">Provides descriptive identification only. Full alternatives are covered by 1.2.x criteria.</div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Tests / Exercises</div>
+              <div class="exception-item__desc">Where describing the content would invalidate the assessment, provide only a descriptive name.</div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Sensory Experiences</div>
+              <div class="exception-item__desc">Content primarily creating a sensory experience (e.g., music) needs a descriptive text alternative.</div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">CAPTCHA</div>
+              <div class="exception-item__desc">Must identify it as a CAPTCHA and provide alternatives using different sensory modalities.</div>
+            </div>
+            <div class="exception-item">
+              <div class="exception-item__title">Decoration / Invisible</div>
+              <div class="exception-item__desc">Purely decorative images must be implemented so assistive technology can ignore them entirely.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section" aria-labelledby="examples-heading">
+          <h2 id="examples-heading">Examples</h2>
+
+          <div class="examples-list">
+
+            <!-- ==========================================
+                 Example 1: Informative Image
+            =========================================== -->
+            <article class="example" id="ex-informative-image" aria-labelledby="ex1-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 1 of 7</p>
+                  <h3 class="example__title" id="ex1-title">Informative Image</h3>
+                  <p class="example__scenario">
+                    A company logo displayed in the site header — it identifies whose website the user is on.
+                    Without an alt attribute, screen readers announce the filename or nothing at all.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F65</span>
+                  <span class="tag tag--technique">Technique: H37</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <!-- Bad -->
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad" aria-label="Poor practice">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Poor practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <svg width="140" height="44" viewBox="0 0 140 44" aria-label="Logo image with no alt text" role="img" style="border:1px solid #e2e8f0; border-radius:6px;">
+                      <rect width="140" height="44" fill="#1d4ed8" rx="6"/>
+                      <text x="70" y="28" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="white" text-anchor="middle">Acme Corp</text>
+                    </svg>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"acme-logo.png"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- alt attribute is completely missing --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note" aria-label="Screen reader output for poor practice">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"acme-logo.png, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> The screen reader reads the filename as the label.
+                    Users have no idea what organisation this logo represents.
+                  </p>
+                </div>
+
+                <!-- Good -->
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good" aria-label="Good practice">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview" aria-label="Good practice — visual output">
+                    <span class="preview-label">Rendered output</span>
+                    <svg width="140" height="44" viewBox="0 0 140 44" aria-label="Acme Corp" role="img" style="border:1px solid #e2e8f0; border-radius:6px;">
+                      <rect width="140" height="44" fill="#1d4ed8" rx="6"/>
+                      <text x="70" y="28" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="white" text-anchor="middle">Acme Corp</text>
+                    </svg>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-val">"acme-logo.png"</span>
+  <span class="tok-hi">alt</span>=<span class="tok-val">"Acme Corp"</span>
+<span class="tok-tag">&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note" aria-label="Screen reader output for good practice">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"Acme Corp, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> Add <code>alt</code> text that conveys the same information as
+                    the image — for a logo, the company name is sufficient.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">💡</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Alt text should convey purpose, not appearance</p>
+                      <p class="remediation-item__desc">Write <code>alt="Acme Corp"</code> not <code>alt="blue rounded rectangle with white text"</code>. The goal is equivalent information, not description.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔍</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Test with automated tools first</p>
+                      <p class="remediation-item__desc">Missing alt attributes are easy to detect with axe, WAVE, or Lighthouse. Catch these programmatically before manual testing.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">✏️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Keep it concise</p>
+                      <p class="remediation-item__desc">Screen readers pause at punctuation. Most alt text should be one short phrase. Avoid starting with "Image of…" — the element type is already announced.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 2: Decorative Image
+            =========================================== -->
+            <article class="example" id="ex-decorative-image" aria-labelledby="ex2-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 2 of 7</p>
+                  <h3 class="example__title" id="ex2-title">Decorative Image</h3>
+                  <p class="example__scenario">
+                    A visual flourish or section divider that adds aesthetic value but carries no
+                    informational content. The wrong treatment forces screen reader users to hear
+                    meaningless noise on every page.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F38</span>
+                  <span class="tag tag--failure">Failure: F39</span>
+                  <span class="tag tag--technique">Technique: H67</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <svg width="200" height="20" viewBox="0 0 200 20" aria-hidden="true" style="display:block;">
+                      <path d="M0 10 Q25 0 50 10 Q75 20 100 10 Q125 0 150 10 Q175 20 200 10"
+                            fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+                    </svg>
+                    <span style="font-size:0.75rem;color:#94a3b8;font-style:italic;">A decorative wave separator</span>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Case A: missing alt (F38) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"wave.svg"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Case B: unnecessary alt text (F39) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"wave.svg"</span>
+     <span class="tok-attr">alt</span>=<span class="tok-val">"decorative wavy divider"</span>
+<span class="tok-tag">&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces (Case A)</span>
+                      <span class="sr-output__text">"wave.svg, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem A:</strong> No alt causes the filename to be read aloud — meaningless noise.<br><br>
+                    <strong>Problem B:</strong> A non-empty alt on a decorative image forces screen readers to announce
+                    it, interrupting the reading experience unnecessarily.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output (visually identical)</span>
+                    <svg width="200" height="20" viewBox="0 0 200 20" aria-hidden="true" style="display:block;">
+                      <path d="M0 10 Q25 0 50 10 Q75 20 100 10 Q125 0 150 10 Q175 20 200 10"
+                            fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+                    </svg>
+                    <span style="font-size:0.75rem;color:#94a3b8;font-style:italic;">Screen readers skip this entirely</span>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Null alt — AT ignores the image --&gt;</span>
+<span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-val">"wave.svg"</span>
+  <span class="tok-hi">alt</span>=<span class="tok-val">""</span>
+  <span class="tok-hi">role</span>=<span class="tok-val">"presentation"</span>
+<span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Better: CSS background (C9) --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-val">"wave-divider"</span>
+     <span class="tok-attr">aria-hidden</span>=<span class="tok-val">"true"</span><span class="tok-tag">&gt;&lt;/div&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">(nothing — image is skipped)</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> Use <code>alt=""</code> (empty string, not missing) so assistive technology
+                    knows the image is intentionally skipped. Pair with <code>role="presentation"</code> for maximum
+                    compatibility, or use CSS backgrounds for decoration instead.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">⚠️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Empty alt ≠ missing alt</p>
+                      <p class="remediation-item__desc"><code>alt=""</code> is a deliberate signal. A missing <code>alt</code> attribute triggers different (often broken) behaviour in assistive technology.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🎨</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Prefer CSS for decoration</p>
+                      <p class="remediation-item__desc">Moving purely decorative images to CSS <code>background-image</code> removes them from the accessibility tree entirely (Technique C9).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 3: Functional Image (Icon Button)
+            =========================================== -->
+            <article class="example" id="ex-functional-image" aria-labelledby="ex3-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 3 of 7</p>
+                  <h3 class="example__title" id="ex3-title">Functional Image — Icon Button</h3>
+                  <p class="example__scenario">
+                    A search button that contains only an icon and no visible text. When the image
+                    has no accessible name, a screen reader user knows there is a button but not
+                    what it does.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F65</span>
+                  <span class="tag tag--technique">Technique: H36</span>
+                  <span class="tag tag--technique">Technique: ARIA6</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <button style="border:1px solid #e2e8f0;border-radius:6px;padding:8px 12px;background:#fff;cursor:pointer;display:inline-flex;align-items:center;gap:6px;" tabindex="-1" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                      </svg>
+                    </button>
+                    <span style="font-size:0.75rem;color:#94a3b8;display:block;margin-top:6px;">No visible label — and no accessible name either</span>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;button&gt;</span>
+  <span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"search-icon.svg"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span>
+
+<span class="tok-comment">&lt;!-- img has no alt — button has no name --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"button"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> The button has no accessible name. A screen reader user
+                    hears "button" with no indication of what it does.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Option A — alt on the image</span>
+                    <button style="border:1px solid #e2e8f0;border-radius:6px;padding:8px 12px;background:#fff;cursor:pointer;display:inline-flex;align-items:center;gap:6px;" tabindex="-1" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                      </svg>
+                    </button>
+                    <span style="font-size:0.75rem;color:#059669;display:block;margin-top:6px;">Visually same — now has accessible name "Search"</span>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Option A: alt on the image --&gt;</span>
+<span class="tok-tag">&lt;button&gt;</span>
+  <span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"search-icon.svg"</span>
+       <span class="tok-hi">alt</span>=<span class="tok-val">"Search"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span>
+
+<span class="tok-comment">&lt;!-- Option B: aria-label on button (SVG icon) --&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-hi">aria-label</span>=<span class="tok-val">"Search"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;svg</span> <span class="tok-hi">aria-hidden</span>=<span class="tok-val">"true"</span> …<span class="tok-tag">&gt;</span>…<span class="tok-tag">&lt;/svg&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"Search, button"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> For <code>&lt;img&gt;</code> inside a button, add <code>alt="Search"</code>.
+                    For SVG icons, hide the SVG with <code>aria-hidden="true"</code> and label
+                    the button with <code>aria-label</code>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🏷️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">The name comes from the control, not the image</p>
+                      <p class="remediation-item__desc">For interactive controls, the accessible name should describe what the control <em>does</em>, not what the icon looks like. "Submit" not "pointing arrow".</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔗</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Links with image + text</p>
+                      <p class="remediation-item__desc">If a link wraps both an image and text, use <code>alt=""</code> on the image — the link text already provides the name (Technique H2).</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📐</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Don't double-announce</p>
+                      <p class="remediation-item__desc">If a button has <code>aria-label="Search"</code>, the SVG inside should be <code>aria-hidden="true"</code>. Otherwise screen readers may announce both.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 4: Complex Image (Chart)
+            =========================================== -->
+            <article class="example" id="ex-complex-image" aria-labelledby="ex4-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 4 of 7</p>
+                  <h3 class="example__title" id="ex4-title">Complex Image — Chart or Infographic</h3>
+                  <p class="example__scenario">
+                    A bar chart showing quarterly revenue. A vague alt like "Chart" is a
+                    named failure (F30) — it's present but useless. The text alternative
+                    must convey the same information as the image.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F30</span>
+                  <span class="tag tag--technique">Technique: G92</span>
+                  <span class="tag tag--technique">Technique: G73</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <svg width="180" height="90" viewBox="0 0 180 90" aria-hidden="true" style="display:block;">
+                      <rect x="10" y="30" width="28" height="50" fill="#2563eb"/>
+                      <rect x="50" y="15" width="28" height="65" fill="#2563eb"/>
+                      <rect x="90" y="40" width="28" height="40" fill="#2563eb"/>
+                      <rect x="130" y="10" width="28" height="70" fill="#2563eb"/>
+                      <line x1="10" y1="80" x2="170" y2="80" stroke="#94a3b8" stroke-width="1"/>
+                      <text x="24" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q1</text>
+                      <text x="64" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q2</text>
+                      <text x="104" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q3</text>
+                      <text x="144" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q4</text>
+                    </svg>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Case A: no alt (F65) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"revenue.png"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Case B: vague alt (F30) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"revenue.png"</span>
+     <span class="tok-attr">alt</span>=<span class="tok-val">"Chart"</span><span class="tok-tag">&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces (Case B)</span>
+                      <span class="sr-output__text">"Chart, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> "Chart" tells the user nothing about the data. Failure F30
+                    specifically names placeholder text that is not an actual alternative.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output with figure + caption</span>
+                    <figure style="margin:0;">
+                      <svg width="180" height="90" viewBox="0 0 180 90" aria-hidden="true" style="display:block;">
+                        <rect x="10" y="30" width="28" height="50" fill="#2563eb"/>
+                        <rect x="50" y="15" width="28" height="65" fill="#2563eb"/>
+                        <rect x="90" y="40" width="28" height="40" fill="#2563eb"/>
+                        <rect x="130" y="10" width="28" height="70" fill="#2563eb"/>
+                        <line x1="10" y1="80" x2="170" y2="80" stroke="#94a3b8" stroke-width="1"/>
+                        <text x="24" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q1</text>
+                        <text x="64" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q2</text>
+                        <text x="104" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q3</text>
+                        <text x="144" y="88" font-size="9" fill="#64748b" text-anchor="middle" font-family="Inter,sans-serif">Q4</text>
+                      </svg>
+                      <figcaption style="font-size:0.75rem;color:#64748b;margin-top:4px;">2024 Revenue: Q1 $1.8M · Q2 $2.1M · Q3 $1.5M · Q4 $2.4M</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;figure&gt;</span>
+  <span class="tok-tag">&lt;img</span>
+    <span class="tok-attr">src</span>=<span class="tok-val">"revenue.png"</span>
+    <span class="tok-hi">alt</span>=<span class="tok-val">"2024 Revenue: Q1 $1.8M,
+         Q2 $2.1M, Q3 $1.5M,
+         Q4 $2.4M"</span>
+  <span class="tok-tag">&gt;</span>
+  <span class="tok-comment">&lt;!-- Long data: link to a data table --&gt;</span>
+  <span class="tok-tag">&lt;figcaption&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"#revenue-table"</span><span class="tok-tag">&gt;</span>
+      View full data table
+    <span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-tag">&lt;/figcaption&gt;</span>
+<span class="tok-tag">&lt;/figure&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"2024 Revenue: Q1 $1.8M, Q2 $2.1M, Q3 $1.5M, Q4 $2.4M, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> For short data (4 values), encode it in <code>alt</code>. For complex charts,
+                    provide a summary in <code>alt</code> and link to a data table or long description (Technique G73).
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📊</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">When alt alone isn't enough</p>
+                      <p class="remediation-item__desc">For complex charts, use <code>alt</code> for a summary trend, then link to a fully accessible data table (<code>&lt;table&gt;</code>) nearby on the page.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔲</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">SVG charts can be made natively accessible</p>
+                      <p class="remediation-item__desc">Inline SVG charts can use <code>&lt;title&gt;</code>, <code>&lt;desc&gt;</code>, and ARIA roles to expose data to screen readers without needing a separate table.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">❌</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Watch out for Failure F30</p>
+                      <p class="remediation-item__desc">"Chart", "Graph", "Image001.png" — these are explicitly named failures. An alt attribute that is present but not informative still fails 1.1.1.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 5: Inline SVG Icon
+            =========================================== -->
+            <article class="example" id="ex-svg-icon" aria-labelledby="ex5-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 5 of 7</p>
+                  <h3 class="example__title" id="ex5-title">Inline SVG Icon</h3>
+                  <p class="example__scenario">
+                    Navigation icons rendered as inline SVG. Unlike <code>&lt;img&gt;</code>, inline SVG is
+                    not automatically exposed as an image to screen readers — it requires explicit
+                    ARIA markup.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F65</span>
+                  <span class="tag tag--technique">Technique: ARIA6</span>
+                  <span class="tag tag--technique">Technique: ARIA10</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output (navigation icons)</span>
+                    <div style="display:flex;gap:16px;" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;nav&gt;</span>
+  <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"/"</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;svg</span> <span class="tok-attr">viewBox</span>=<span class="tok-val">"0 0 24 24"</span><span class="tok-tag">&gt;</span>
+      <span class="tok-tag">&lt;path</span> <span class="tok-attr">d</span>=<span class="tok-val">"M3 9l9-7…"</span><span class="tok-tag">/&gt;</span>
+    <span class="tok-tag">&lt;/svg&gt;</span>
+  <span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;/nav&gt;</span>
+
+<span class="tok-comment">&lt;!-- No title, no aria-label anywhere --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"link" (no name)</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> Inline SVG without labels produces unlabelled links.
+                    A keyboard user navigating links hears only "link, link, link" with no way to
+                    distinguish them.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Visually identical — now accessible</span>
+                    <div style="display:flex;gap:16px;" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-tag">&lt;nav&gt;</span>
+  <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"/"</span> <span class="tok-hi">aria-label</span>=<span class="tok-val">"Home"</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;svg</span> <span class="tok-hi">aria-hidden</span>=<span class="tok-val">"true"</span>
+         <span class="tok-attr">viewBox</span>=<span class="tok-val">"0 0 24 24"</span><span class="tok-tag">&gt;</span>
+      <span class="tok-tag">&lt;path</span> <span class="tok-attr">d</span>=<span class="tok-val">"M3 9l9-7…"</span><span class="tok-tag">/&gt;</span>
+    <span class="tok-tag">&lt;/svg&gt;</span>
+  <span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;/nav&gt;</span>
+
+<span class="tok-comment">&lt;!-- OR: title element inside SVG --&gt;</span>
+<span class="tok-tag">&lt;svg</span> <span class="tok-hi">role</span>=<span class="tok-val">"img"</span>
+     <span class="tok-hi">aria-labelledby</span>=<span class="tok-val">"home-title"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;title</span> <span class="tok-attr">id</span>=<span class="tok-val">"home-title"</span><span class="tok-tag">&gt;</span>Home<span class="tok-tag">&lt;/title&gt;</span>
+  <span class="tok-tag">&lt;path</span> <span class="tok-attr">d</span>=<span class="tok-val">"M3 9l9-7…"</span><span class="tok-tag">/&gt;</span>
+<span class="tok-tag">&lt;/svg&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"Home, link"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> Add <code>aria-label</code> to the parent link <em>and</em> hide the SVG with
+                    <code>aria-hidden="true"</code>. Alternatively, add a <code>&lt;title&gt;</code> inside the SVG
+                    and reference it with <code>aria-labelledby</code>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🙈</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Hide SVG from AT when the parent is labelled</p>
+                      <p class="remediation-item__desc">If the containing link or button has an <code>aria-label</code>, set <code>aria-hidden="true"</code> on the SVG to prevent double-announcing.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">📝</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Visually hidden text is a valid alternative</p>
+                      <p class="remediation-item__desc">A <code>&lt;span class="sr-only"&gt;Home&lt;/span&gt;</code> adjacent to the SVG is semantically clean and well-supported across all screen readers.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 6: Image of Text
+            =========================================== -->
+            <article class="example" id="ex-image-of-text" aria-labelledby="ex6-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 6 of 7</p>
+                  <h3 class="example__title" id="ex6-title">Image of Text</h3>
+                  <p class="example__scenario">
+                    A stylised call-to-action button or heading rendered as a raster image.
+                    Screen readers cannot extract the text from the pixels — the alt attribute
+                    must exactly match what the image says.
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--failure">Failure: F65</span>
+                  <span class="tag tag--failure">Failure: F30</span>
+                  <span class="tag tag--technique">Technique: H37</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <svg width="200" height="48" viewBox="0 0 200 48" aria-hidden="true" style="display:block;border-radius:8px;overflow:hidden;">
+                      <defs>
+                        <linearGradient id="cta-grad" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="#7c3aed"/>
+                          <stop offset="100%" stop-color="#2563eb"/>
+                        </linearGradient>
+                      </defs>
+                      <rect width="200" height="48" fill="url(#cta-grad)" rx="8"/>
+                      <text x="100" y="30" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Get started today</text>
+                    </svg>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Case A: No alt (F65) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"get-started.png"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Case B: wrong/vague alt (F30) --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"get-started.png"</span>
+     <span class="tok-attr">alt</span>=<span class="tok-val">"button"</span><span class="tok-tag">&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces (Case B)</span>
+                      <span class="sr-output__text">"button, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> Neither the filename nor "button" conveys the marketing copy
+                    in the image. Screen reader users miss the call to action entirely.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Option A — match the text in the image</span>
+                    <svg width="200" height="48" viewBox="0 0 200 48" aria-hidden="true" style="display:block;border-radius:8px;overflow:hidden;">
+                      <defs>
+                        <linearGradient id="cta-grad2" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="#7c3aed"/>
+                          <stop offset="100%" stop-color="#2563eb"/>
+                        </linearGradient>
+                      </defs>
+                      <rect width="200" height="48" fill="url(#cta-grad2)" rx="8"/>
+                      <text x="100" y="30" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Get started today</text>
+                    </svg>
+                    <span style="font-size:0.75rem;color:#059669;display:block;margin-top:6px;">Better: replace with real CSS text</span>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Match alt text exactly to image text --&gt;</span>
+<span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-val">"get-started.png"</span>
+  <span class="tok-hi">alt</span>=<span class="tok-val">"Get started today"</span>
+<span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Preferred: use real text + CSS styling --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-val">"/signup"</span>
+   <span class="tok-attr">class</span>=<span class="tok-val">"btn btn--gradient"</span><span class="tok-tag">&gt;</span>
+  Get started today
+<span class="tok-tag">&lt;/a&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"Get started today, graphic"</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix:</strong> The alt attribute must match the text in the image verbatim.
+                    The best fix is to eliminate image-of-text entirely and use real HTML text styled
+                    with CSS — this also supports text resize (SC 1.4.4) and user stylesheets.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🎯</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Alt must match image text exactly</p>
+                      <p class="remediation-item__desc">If the image says "Get started today — free for 30 days", the alt must say exactly that. Paraphrasing is Failure F30.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">✨</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">CSS can achieve almost any text styling</p>
+                      <p class="remediation-item__desc">Custom fonts (Google Fonts, variable fonts), gradients on text, letter-spacing, and drop shadows mean there is almost never a reason to use images of text.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">↕️</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Images of text fail other criteria too</p>
+                      <p class="remediation-item__desc">They can't be resized (1.4.4), are not overridable with user stylesheets, and may fail colour contrast if the image is a JPEG (lossy compression).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+                 Example 7: CAPTCHA
+            =========================================== -->
+            <article class="example" id="ex-captcha" aria-labelledby="ex7-title">
+              <div class="example__header">
+                <div class="example__title-group">
+                  <p class="example__number">Example 7 of 7</p>
+                  <h3 class="example__title" id="ex7-title">CAPTCHA</h3>
+                  <p class="example__scenario">
+                    A visual CAPTCHA used to verify the user is human. This is a special exception:
+                    alt text must <em>not</em> solve the CAPTCHA, but it must identify its purpose
+                    and a non-visual alternative must be provided (Techniques G143 + G144).
+                  </p>
+                </div>
+                <div class="example__tags">
+                  <span class="tag tag--special">Exception case</span>
+                  <span class="tag tag--technique">Technique: G143</span>
+                  <span class="tag tag--technique">Technique: G144</span>
+                </div>
+              </div>
+
+              <div class="example__pair">
+                <div class="example__col example__col--bad">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--bad">✗ Poor Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output</span>
+                    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:12px;display:inline-block;">
+                      <svg width="160" height="48" viewBox="0 0 160 48" aria-hidden="true">
+                        <rect width="160" height="48" fill="#e2e8f0" rx="4"/>
+                        <text x="80" y="22" font-family="monospace" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle" letter-spacing="6" transform="rotate(-3,80,22)">R7mK9p</text>
+                        <line x1="20" y1="28" x2="140" y2="20" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+                        <line x1="10" y1="35" x2="150" y2="15" stroke="#cbd5e1" stroke-width="1" opacity="0.4"/>
+                      </svg>
+                      <div style="font-size:0.75rem;color:#64748b;margin-top:6px;">No audio alternative. No helpful alt text.</div>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--fail">FAIL</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- Case A: no alt --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"captcha.png"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- Case B: vague alt, no alternative --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-val">"captcha.png"</span>
+     <span class="tok-attr">alt</span>=<span class="tok-val">"security check"</span><span class="tok-tag">&gt;</span>
+<span class="tok-comment">&lt;!-- No audio/alternative mode offered --&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--bad" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces (Case B)</span>
+                      <span class="sr-output__text">"security check, graphic" — cannot complete form</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--problem">
+                    <strong>Problem:</strong> Screen reader users cannot solve the CAPTCHA and cannot
+                    submit the form. They are blocked from the service entirely.
+                  </p>
+                </div>
+
+                <div class="example__col example__col--good">
+                  <div class="example__col-header">
+                    <span class="practice-badge practice-badge--good">✓ Good Practice</span>
+                  </div>
+
+                  <div class="example__preview">
+                    <span class="preview-label">Rendered output with audio alternative</span>
+                    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:12px;display:inline-flex;flex-direction:column;gap:8px;">
+                      <svg width="160" height="48" viewBox="0 0 160 48" aria-hidden="true">
+                        <rect width="160" height="48" fill="#e2e8f0" rx="4"/>
+                        <text x="80" y="22" font-family="monospace" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle" letter-spacing="6" transform="rotate(-3,80,22)">R7mK9p</text>
+                        <line x1="20" y1="28" x2="140" y2="20" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+                      </svg>
+                      <button style="font-size:0.75rem;padding:4px 10px;border:1px solid #2563eb;border-radius:20px;color:#2563eb;background:transparent;cursor:pointer;display:flex;align-items:center;gap:4px;width:fit-content;" tabindex="-1" aria-hidden="true">
+                        🔊 Use audio CAPTCHA instead
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="example__code">
+                    <div class="code-toolbar">
+                      <span class="code-lang">HTML</span>
+                      <span class="code-status code-status--pass">PASS</span>
+                    </div>
+                    <pre><code><span class="tok-comment">&lt;!-- G143: describe purpose, not the answer --&gt;</span>
+<span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-val">"captcha.png"</span>
+  <span class="tok-hi">alt</span>=<span class="tok-val">"Visual CAPTCHA: enter the
+       characters shown to verify
+       you are not a robot"</span>
+<span class="tok-tag">&gt;</span>
+
+<span class="tok-comment">&lt;!-- G144: offer an alternative modality --&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">type</span>=<span class="tok-val">"button"</span><span class="tok-tag">&gt;</span>
+  Use audio CAPTCHA instead
+<span class="tok-tag">&lt;/button&gt;</span></code></pre>
+                  </div>
+
+                  <div class="sr-output sr-output--good" role="note">
+                    <span class="sr-output__icon" aria-hidden="true">🔊</span>
+                    <span>
+                      <span class="sr-output__label">Screen reader announces</span>
+                      <span class="sr-output__text">"Visual CAPTCHA: enter the characters shown to verify you are not a robot, graphic" — then finds audio alternative button</span>
+                    </span>
+                  </div>
+
+                  <p class="example__note example__note--solution">
+                    <strong>Fix (G143):</strong> Describe the purpose of the CAPTCHA — never reveal the answer.<br><br>
+                    <strong>Fix (G144):</strong> Provide an alternative CAPTCHA using a different sense (audio,
+                    logic puzzle). Both G143 <em>and</em> G144 are required together.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example__remediation">
+                <h4>Remediation Notes</h4>
+                <div class="remediation-grid">
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🔐</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Both G143 and G144 are required</p>
+                      <p class="remediation-item__desc">G143 alone (alt text describing the CAPTCHA) is not sufficient. A second CAPTCHA using a different sensory modality (G144) must also be available.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🧩</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Consider cognitive accessibility alternatives</p>
+                      <p class="remediation-item__desc">Third-party CAPTCHA providers (e.g., hCaptcha, Friendly CAPTCHA) offer logic-based and invisible alternatives that reduce friction for all users.</p>
+                    </div>
+                  </div>
+                  <div class="remediation-item">
+                    <span class="remediation-item__icon" aria-hidden="true">🚫</span>
+                    <div class="remediation-item__body">
+                      <p class="remediation-item__title">Never solve the CAPTCHA in alt text</p>
+                      <p class="remediation-item__desc">The alt text must describe the CAPTCHA's <em>purpose</em>, not its answer. Exposing the answer defeats the security mechanism.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <!-- end .examples-list -->
+
+          <!-- Page navigation -->
+          <nav class="criterion-nav" aria-label="Criterion navigation">
+            <a href="../index.html" class="criterion-nav__link">← Back to all criteria</a>
+            <a href="1.1.2.html" class="criterion-nav__link">Next: 1.2.1 Audio-only and Video-only →</a>
+          </nav>
+
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">
+        Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a>
+        published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>.
+        Content is for training and reference purposes.
+      </p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content" rel="noopener noreferrer" target="_blank">Understanding 1.1.1</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/#non-text-content" rel="noopener noreferrer" target="_blank">Quick Reference</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

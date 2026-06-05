@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A comprehensive reference and example library for WCAG 2.2 success criteria, organized by principles, guidelines, and conformance level.">
+  <title>WCAG 2.2 Accessibility Training — Success Criteria Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================
+       Site Header
+  ======================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="site-header__brand" aria-label="WCAG Accessibility Training home">
+        <span class="site-header__logo" aria-hidden="true">A11y</span>
+        <span>
+          <span class="site-header__title">Learning WCAG with Examples</span>
+        </span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Site navigation">
+        <a href="index.html" class="nav-link" aria-current="page">Criteria</a>
+        <a href="about.html" class="nav-link">About WCAG</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       Main
+  ======================================================= -->
+  <main id="main" tabindex="-1">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero__eyebrow" aria-label="Specification version">
+          <span aria-hidden="true">◆</span>
+          WCAG 2.2 · W3C Recommendation
+        </p>
+        <h1 id="hero-heading">WCAG Success Criteria</h1>
+        <p class="hero__description">
+          A structured reference and example library for all 87 success criteria in the
+          Web Content Accessibility Guidelines 2.2, organized by principles, guidelines,
+          and conformance levels.
+        </p>
+        <div class="hero__stats" role="list" aria-label="WCAG statistics">
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">87</span>
+            <span class="stat-card__label">Success Criteria</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">4</span>
+            <span class="stat-card__label">Principles</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">13</span>
+            <span class="stat-card__label">Guidelines</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">3</span>
+            <span class="stat-card__label">Conformance Levels</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-bar" id="filters" aria-label="Filter success criteria">
+      <div class="container">
+
+        <!-- Row 1: Search + Principle + Count (always visible) -->
+        <div class="filters-row filters-row--primary">
+          <div class="filter-search">
+            <span class="filter-search__icon" aria-hidden="true">⌕</span>
+            <input
+              type="search"
+              id="filter-search"
+              class="filter-search__input"
+              placeholder="Search by ID, name, or keyword…"
+              aria-label="Search WCAG success criteria"
+              autocomplete="off"
+              spellcheck="false"
+            >
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group__label" id="filter-principle-label">Principle</span>
+            <div class="filter-pills" role="group" aria-labelledby="filter-principle-label">
+              <button class="filter-pill" data-filter-type="principle" data-filter-value="all" aria-pressed="true">All</button>
+              <button class="filter-pill filter-pill--perceivable" data-filter-type="principle" data-filter-value="perceivable" aria-pressed="false">Perceivable</button>
+              <button class="filter-pill filter-pill--operable" data-filter-type="principle" data-filter-value="operable" aria-pressed="false">Operable</button>
+              <button class="filter-pill filter-pill--understandable" data-filter-type="principle" data-filter-value="understandable" aria-pressed="false">Understandable</button>
+              <button class="filter-pill filter-pill--robust" data-filter-type="principle" data-filter-value="robust" aria-pressed="false">Robust</button>
+            </div>
+          </div>
+
+          <p class="filters-bar__count" aria-live="polite" aria-atomic="true">
+            <span id="criteria-count">87</span> criteria
+          </p>
+        </div>
+
+        <!-- Row 2: WCAG Version — Step 1 (always visible) -->
+        <div class="filters-row filters-row--step" role="search" aria-label="Step 1: Filter by WCAG version">
+          <div class="step-indicator">
+            <span class="step-number" aria-hidden="true">1</span>
+            <span class="filter-group__label" id="filter-version-label">WCAG Version</span>
+          </div>
+          <div class="filter-pills" role="group" aria-labelledby="filter-version-label">
+            <button class="filter-pill" data-filter-type="version" data-filter-value="all" aria-pressed="false">All Versions</button>
+            <button class="filter-pill" data-filter-type="version" data-filter-value="2.0" aria-pressed="false">
+              2.0 <span class="pill-tag">Original</span>
+            </button>
+            <button class="filter-pill" data-filter-type="version" data-filter-value="2.1" aria-pressed="false">
+              2.1 <span class="pill-tag pill-tag--21">New</span>
+            </button>
+            <button class="filter-pill" data-filter-type="version" data-filter-value="2.2" aria-pressed="false">
+              2.2 <span class="pill-tag pill-tag--22">New</span>
+            </button>
+          </div>
+          <p class="step-hint" id="version-step-hint">
+            Select a version above, then refine by conformance level below
+          </p>
+        </div>
+
+        <!-- Row 3: Conformance Level — Step 2 (conditional, revealed after version click) -->
+        <div class="filters-row filters-row--step filters-row--conditional"
+             id="level-filter-row"
+             aria-hidden="true"
+             role="search"
+             aria-label="Step 2: Filter by conformance level">
+          <div class="step-indicator">
+            <span class="step-number" aria-hidden="true">2</span>
+            <span class="filter-group__label" id="filter-level-label">Conformance Level</span>
+          </div>
+          <div class="filter-pills" role="group" aria-labelledby="filter-level-label">
+            <button class="filter-pill" data-filter-type="level" data-filter-value="all" aria-pressed="true">All Levels</button>
+            <button class="filter-pill filter-pill--level-a" data-filter-type="level" data-filter-value="A" aria-pressed="false">
+              <span class="level-dot level-dot--a" aria-hidden="true"></span>Level A
+            </button>
+            <button class="filter-pill filter-pill--level-aa" data-filter-type="level" data-filter-value="AA" aria-pressed="false">
+              <span class="level-dot level-dot--aa" aria-hidden="true"></span>Level AA
+            </button>
+            <button class="filter-pill filter-pill--level-aaa" data-filter-type="level" data-filter-value="AAA" aria-pressed="false">
+              <span class="level-dot level-dot--aaa" aria-hidden="true"></span>Level AAA
+            </button>
+          </div>
+          <p class="level-inclusive-note" aria-live="polite" id="level-inclusive-note">
+            AA includes all Level A criteria &middot; AAA includes all A and AA criteria
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Criteria List -->
+    <div class="main-content">
+      <div class="container">
+
+        <!-- JS renders principles, guidelines, and cards here -->
+        <div id="criteria-list"></div>
+
+        <!-- Empty State -->
+        <div id="empty-state" hidden aria-live="polite">
+          <div class="empty-state">
+            <div class="empty-state__icon" aria-hidden="true">🔍</div>
+            <h3>No criteria found</h3>
+            <p>No success criteria match your current filters. Try adjusting your search or filter selections.</p>
+            <button id="reset-filters" class="empty-state__reset">Reset all filters</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======================================================
+       Footer
+  ======================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">
+        Based on <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer" target="_blank">WCAG 2.2</a>
+        published by the <a href="https://www.w3.org/WAI/" rel="noopener noreferrer" target="_blank">W3C Web Accessibility Initiative (WAI)</a>.
+        Content is for training and reference purposes.
+      </p>
+      <ul class="footer-links" aria-label="Footer links">
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/" rel="noopener noreferrer" target="_blank">WCAG Quick Reference</a></li>
+        <li><a href="https://www.w3.org/WAI/fundamentals/" rel="noopener noreferrer" target="_blank">WAI Fundamentals</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
